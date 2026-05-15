@@ -1,0 +1,32 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 4
+  metrics: count: path: 4
+  metrics: count: method: 4
+
+  entity: api: {
+    path: "/api": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: batman: {
+    path: "/batman": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: dcn: {
+    path: "/dc": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: star_war: {
+    path: "/star-wars": {
+      op: load: method: *GET
+    }
+  }
+
+}

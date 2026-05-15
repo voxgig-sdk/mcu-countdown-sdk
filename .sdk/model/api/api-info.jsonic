@@ -1,0 +1,31 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://github.com/DiljotSG/MCU-Countdown"
+      }
+      description: "API to find out when the next MCU film is releasing. A simple but powerful API wrapper for TMDB lists that can work with any TMDB list to track upcoming productions."
+      license: {
+        name: "GPL-3.0"
+        url: "https://github.com/DiljotSG/MCU-Countdown/blob/main/LICENSE"
+      }
+      servers: [
+        {
+          description: "Production server"
+          url: "https://www.whenisthenextmcufilm.com"
+        }
+        {
+          description: "Local development server"
+          url: "http://localhost:5000"
+        }
+      ]
+      title: "MCU-Countdown"
+      version: "2.0.10"
+    }
+  }
+}
+
+}

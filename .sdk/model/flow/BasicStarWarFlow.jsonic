@@ -1,0 +1,28 @@
+# BasicStarWarFlow
+
+main: kit: flow: BasicStarWarFlow:
+{
+  entity: "star_war",
+  kind: "basic",
+  name: "BasicStarWarFlow",
+  step: [
+    {
+      input: {
+        ref: "star_war_ref01",
+        srcdatavar: "star_war_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-star_war_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicStarWarFlow"
+}

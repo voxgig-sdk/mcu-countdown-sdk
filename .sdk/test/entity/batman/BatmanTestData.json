@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "batman": {
+      "BATMAN00": {
+        "days_until": "s50",
+        "following_production": {},
+        "id": "BATMAN00",
+        "overview": "s53",
+        "poster_url": "s54",
+        "release_date": "s55",
+        "title": "s56",
+        "type": "s57"
+      },
+      "BATMAN01": {
+        "days_until": "sa0",
+        "following_production": {},
+        "id": "BATMAN01",
+        "overview": "sa3",
+        "poster_url": "sa4",
+        "release_date": "sa5",
+        "title": "sa6",
+        "type": "sa7"
+      },
+      "BATMAN02": {
+        "days_until": "sf0",
+        "following_production": {},
+        "id": "BATMAN02",
+        "overview": "sf3",
+        "poster_url": "sf4",
+        "release_date": "sf5",
+        "title": "sf6",
+        "type": "sf7"
+      }
+    }
+  },
+  "new": {
+    "batman": {
+      "batman_ref01": {
+        "days_until": "s140",
+        "following_production": {},
+        "overview": "s143",
+        "poster_url": "s144",
+        "release_date": "s145",
+        "title": "s146",
+        "type": "s147"
+      }
+    }
+  }
+}

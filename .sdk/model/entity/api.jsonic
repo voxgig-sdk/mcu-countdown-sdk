@@ -1,0 +1,103 @@
+# Entity: api
+
+main: kit: entity: api: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "days_until"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "following_production"
+      req: true
+      type: "`$OBJECT`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "overview"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "poster_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "release_date"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "title"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "type"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "api"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "2025-01-01"
+                kind: "query"
+                name: "date"
+                orig: "date"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "1"
+                kind: "query"
+                name: "list_id"
+                orig: "list_id"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/api"
+          parts: [
+            "api"
+          ]
+          select: {
+            exist: [
+              "date"
+              "list_id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

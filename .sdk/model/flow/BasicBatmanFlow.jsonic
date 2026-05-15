@@ -1,0 +1,28 @@
+# BasicBatmanFlow
+
+main: kit: flow: BasicBatmanFlow:
+{
+  entity: "batman",
+  kind: "basic",
+  name: "BasicBatmanFlow",
+  step: [
+    {
+      input: {
+        ref: "batman_ref01",
+        srcdatavar: "batman_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-batman_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicBatmanFlow"
+}

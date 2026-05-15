@@ -1,0 +1,382 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "MCU-Countdown",
+    "description": "API to find out when the next MCU film is releasing. A simple but powerful API wrapper for TMDB lists that can work with any TMDB list to track upcoming productions.",
+    "version": "2.0.10",
+    "contact": {
+      "url": "https://github.com/DiljotSG/MCU-Countdown"
+    },
+    "license": {
+      "name": "GPL-3.0",
+      "url": "https://github.com/DiljotSG/MCU-Countdown/blob/main/LICENSE"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.whenisthenextmcufilm.com",
+      "description": "Production server"
+    },
+    {
+      "url": "http://localhost:5000",
+      "description": "Local development server"
+    }
+  ],
+  "paths": {
+    "/api": {
+      "get": {
+        "summary": "Get next MCU production",
+        "description": "Returns information about the next MCU production release, including details about the following production. Can be customized with query parameters to use custom TMDB lists or specific dates.",
+        "operationId": "getNextProduction",
+        "tags": [
+          "Productions"
+        ],
+        "parameters": [
+          {
+            "name": "list_id",
+            "in": "query",
+            "description": "TMDB list ID to query. If not provided, defaults to the MCU list. You can view any TMDB list at: https://www.themoviedb.org/list/YOUR_LIST_ID",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "1"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Get the next production after a specific date in YYYY-MM-DD format",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "2025-01-01"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with next production details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductionResponse"
+                },
+                "example": {
+                  "id": 533535,
+                  "title": "Deadpool & Wolverine",
+                  "type": "Movie",
+                  "release_date": "2024-07-24",
+                  "days_until": 289,
+                  "overview": "A listless Wade Wilson toils away in civilian life...",
+                  "poster_url": "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+                  "following_production": {
+                    "id": 912649,
+                    "title": "Venom: The Last Dance",
+                    "type": "Movie",
+                    "release_date": "2024-10-22",
+                    "days_until": 379,
+                    "overview": "Eddie and Venom are on the run...",
+                    "poster_url": "https://image.tmdb.org/t/p/w500/..."
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No productions found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/star-wars": {
+      "get": {
+        "summary": "Get next Star Wars production",
+        "description": "Named route for Star Wars productions. Returns information about the next Star Wars release.",
+        "operationId": "getNextStarWars",
+        "tags": [
+          "Named Routes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with next Star Wars production details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No productions found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dc": {
+      "get": {
+        "summary": "Get next DC Universe production",
+        "description": "Named route for DC Universe productions. Returns information about the next DC release.",
+        "operationId": "getNextDC",
+        "tags": [
+          "Named Routes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with next DC production details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No productions found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/batman": {
+      "get": {
+        "summary": "Get next Matt Reeves' Batman Universe production",
+        "description": "Named route for Matt Reeves' Batman Universe productions. Returns information about the next Batman release.",
+        "operationId": "getNextBatman",
+        "tags": [
+          "Named Routes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with next Batman production details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductionResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No productions found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ProductionResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "TMDB ID of the production",
+            "example": 533535
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the production",
+            "example": "Deadpool & Wolverine"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of production",
+            "example": "Movie"
+          },
+          "release_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Release date in YYYY-MM-DD format",
+            "example": "2024-07-24"
+          },
+          "days_until": {
+            "type": "integer",
+            "description": "Number of days until release (negative if already released)",
+            "example": 289
+          },
+          "overview": {
+            "type": "string",
+            "description": "Brief overview/synopsis of the production",
+            "example": "A listless Wade Wilson toils away in civilian life..."
+          },
+          "poster_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the poster image from TMDB",
+            "example": "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg"
+          },
+          "following_production": {
+            "$ref": "#/components/schemas/FollowingProduction"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "type",
+          "release_date",
+          "days_until"
+        ]
+      },
+      "FollowingProduction": {
+        "type": "object",
+        "description": "Information about the production following the next one",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "TMDB ID of the following production",
+            "example": 912649
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the following production",
+            "example": "Venom: The Last Dance"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of production",
+            "example": "Movie"
+          },
+          "release_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Release date in YYYY-MM-DD format",
+            "example": "2024-10-22"
+          },
+          "days_until": {
+            "type": "integer",
+            "description": "Number of days until release",
+            "example": 379
+          },
+          "overview": {
+            "type": "string",
+            "description": "Brief overview/synopsis of the production",
+            "example": "Eddie and Venom are on the run..."
+          },
+          "poster_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the poster image from TMDB",
+            "example": "https://image.tmdb.org/t/p/w500/..."
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "type",
+          "release_date",
+          "days_until"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message describing what went wrong"
+          },
+          "message": {
+            "type": "string",
+            "description": "Additional details about the error"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Productions",
+      "description": "Endpoints for retrieving information about upcoming productions"
+    },
+    {
+      "name": "Named Routes",
+      "description": "Pre-configured routes for popular franchises"
+    }
+  ],
+  "externalDocs": {
+    "description": "Full documentation and source code",
+    "url": "https://github.com/DiljotSG/MCU-Countdown"
+  }
+}

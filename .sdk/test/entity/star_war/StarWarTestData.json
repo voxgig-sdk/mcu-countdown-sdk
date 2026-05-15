@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "star_war": {
+      "STAR_WAR00": {
+        "days_until": "s50",
+        "following_production": {},
+        "id": "STAR_WAR00",
+        "overview": "s53",
+        "poster_url": "s54",
+        "release_date": "s55",
+        "title": "s56",
+        "type": "s57"
+      },
+      "STAR_WAR01": {
+        "days_until": "sa0",
+        "following_production": {},
+        "id": "STAR_WAR01",
+        "overview": "sa3",
+        "poster_url": "sa4",
+        "release_date": "sa5",
+        "title": "sa6",
+        "type": "sa7"
+      },
+      "STAR_WAR02": {
+        "days_until": "sf0",
+        "following_production": {},
+        "id": "STAR_WAR02",
+        "overview": "sf3",
+        "poster_url": "sf4",
+        "release_date": "sf5",
+        "title": "sf6",
+        "type": "sf7"
+      }
+    }
+  },
+  "new": {
+    "star_war": {
+      "star_war_ref01": {
+        "days_until": "s140",
+        "following_production": {},
+        "overview": "s143",
+        "poster_url": "s144",
+        "release_date": "s145",
+        "title": "s146",
+        "type": "s147"
+      }
+    }
+  }
+}

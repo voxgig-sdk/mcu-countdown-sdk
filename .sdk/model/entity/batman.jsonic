@@ -1,0 +1,77 @@
+# Entity: batman
+
+main: kit: entity: batman: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "days_until"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "following_production"
+      req: true
+      type: "`$OBJECT`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "overview"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "poster_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "release_date"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "title"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "type"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "batman"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/batman"
+          parts: [
+            "batman"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
