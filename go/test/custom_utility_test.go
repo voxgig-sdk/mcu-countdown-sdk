@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/mcu-countdown-sdk"
+	sdk "github.com/voxgig-sdk/mcu-countdown-sdk/go"
 )
 
 func TestCustomUtility(t *testing.T) {

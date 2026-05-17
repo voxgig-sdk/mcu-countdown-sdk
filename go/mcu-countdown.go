@@ -1,10 +1,10 @@
 package voxgigmcucountdownsdk
 
 import (
-	"github.com/voxgig-sdk/mcu-countdown-sdk/core"
-	"github.com/voxgig-sdk/mcu-countdown-sdk/entity"
-	"github.com/voxgig-sdk/mcu-countdown-sdk/feature"
-	_ "github.com/voxgig-sdk/mcu-countdown-sdk/utility"
+	"github.com/voxgig-sdk/mcu-countdown-sdk/go/core"
+	"github.com/voxgig-sdk/mcu-countdown-sdk/go/entity"
+	"github.com/voxgig-sdk/mcu-countdown-sdk/go/feature"
+	_ "github.com/voxgig-sdk/mcu-countdown-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

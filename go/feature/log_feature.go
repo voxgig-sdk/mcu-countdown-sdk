@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/mcu-countdown-sdk/core"
+	"github.com/voxgig-sdk/mcu-countdown-sdk/go/core"
 )
 
 type LogFeature struct {

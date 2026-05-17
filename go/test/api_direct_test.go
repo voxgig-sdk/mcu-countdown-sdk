@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/mcu-countdown-sdk"
-	"github.com/voxgig-sdk/mcu-countdown-sdk/core"
+	sdk "github.com/voxgig-sdk/mcu-countdown-sdk/go"
+	"github.com/voxgig-sdk/mcu-countdown-sdk/go/core"
 )
 
 func TestApiDirect(t *testing.T) {

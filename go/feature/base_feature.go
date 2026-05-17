@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/mcu-countdown-sdk/core"
+	"github.com/voxgig-sdk/mcu-countdown-sdk/go/core"
 )
 
 type BaseFeature struct {

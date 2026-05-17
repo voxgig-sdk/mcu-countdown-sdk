@@ -3,7 +3,7 @@ package core
 import (
 	"fmt"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/mcu-countdown-sdk/go/utility/struct"
 )
 
 type McuCountdownSDK struct {
