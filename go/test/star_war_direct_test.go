@@ -99,14 +99,12 @@ func star_warDirectSetup(mockres any) *star_warDirectSetupResult {
 	env := envOverride(map[string]any{
 		"MCUCOUNTDOWN_TEST_STAR_WAR_ENTID": map[string]any{},
 		"MCUCOUNTDOWN_TEST_LIVE":    "FALSE",
-		"MCUCOUNTDOWN_APIKEY":       "NONE",
 	})
 
 	live := env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["MCUCOUNTDOWN_APIKEY"],
 		}
 		client := sdk.NewMcuCountdownSDK(mergedOpts)
 

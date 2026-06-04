@@ -24,8 +24,28 @@ main: {
       ]
       title: "MCU-Countdown"
       version: "2.0.10"
+      tagline: "Find out when the next Marvel Cinematic Universe film (or Star Wars, DC, Batman title) releases"
+      homepage: "https://www.whenisthenextmcufilm.com"
+      docs_url: "https://github.com/DiljotSG/MCU-Countdown"
+      license_short: "GPL-3.0 (codebase); film metadata sourced from TMDB"
+      license_md: `- Source code is released under the GPL-3.0 license by [DiljotSG](https://github.com/DiljotSG/MCU-Countdown).
+- Film metadata is provided via [The Movie Database (TMDB)](https://www.themoviedb.org/) and is subject to TMDB's terms of use.
+- The hosted instance at \`whenisthenextmcufilm.com\` is operated by the project maintainer; you may also self-host via Docker Compose.
+- This product uses the TMDB API but is not endorsed or certified by TMDB.`
+      about_md: `MCU-Countdown is a small public API maintained by [DiljotSG](https://github.com/DiljotSG/MCU-Countdown) that tells you when the next Marvel Cinematic Universe film or series releases. It is a thin wrapper around curated [TMDB](https://www.themoviedb.org/) lists, exposed under [whenisthenextmcufilm.com](https://www.whenisthenextmcufilm.com).
+
+The API returns a single JSON object describing the next upcoming production, with fields such as production ID, title, type (Movie or Series), release date, days remaining, overview, and a poster URL, plus a peek at the production after that one.
+
+Alongside the default MCU list, named routes are provided for adjacent franchises (\`/star-wars\`, \`/dc\`, \`/batman\`), and any custom TMDB list can be queried via \`?list_id=...\`. A \`?date=YYYY-MM-DD\` parameter lets you ask what is next relative to a specific date.
+
+No authentication is required, CORS is enabled, and responses are typically served in under a couple of hundred milliseconds. The project is open source and can be self-hosted if you prefer to run your own instance.`
+      entity_desc: {
+        api: "The default MCU countdown endpoint at `/api`, returning the next upcoming Marvel Cinematic Universe film or series from TMDB."
+        batman: "Batman-franchise variant of the countdown, served from the `/batman` route."
+        dcn: "DC-universe variant of the countdown, served from the `/dc` route."
+        star_war: "Star Wars variant of the countdown, served from the `/star-wars` route."
+      }
+      auth: false
     }
   }
-}
-
 }

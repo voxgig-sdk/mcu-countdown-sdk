@@ -67,14 +67,12 @@ function star_war_direct_setup($mockres)
     $env = Runner::env_override([
         "MCUCOUNTDOWN_TEST_STAR_WAR_ENTID" => [],
         "MCUCOUNTDOWN_TEST_LIVE" => "FALSE",
-        "MCUCOUNTDOWN_APIKEY" => "NONE",
     ]);
 
     $live = $env["MCUCOUNTDOWN_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["MCUCOUNTDOWN_APIKEY"],
         ];
         $client = new McuCountdownSDK($merged_opts);
         return [
