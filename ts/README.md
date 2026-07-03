@@ -10,7 +10,7 @@ The TypeScript SDK for the McuCountdown API — a type-safe, entity-oriented cli
 
 ## Install
 ```bash
-npm install mcu-countdown
+npm install @voxgig-sdk/mcu-countdown
 ```
 ## Tutorial: your first API call
 

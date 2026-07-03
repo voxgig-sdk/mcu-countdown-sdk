@@ -10,13 +10,13 @@ The Ruby SDK for the McuCountdown API — an entity-oriented client using idioma
 
 ## Install
 ```bash
-gem install mcu-countdown-sdk
+gem install voxgig-sdk-mcu-countdown
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "mcu-countdown-sdk"
+gem "voxgig-sdk-mcu-countdown"
 ```
 
 Then run:

@@ -10,7 +10,7 @@ The PHP SDK for the McuCountdown API — an entity-oriented client using PHP con
 
 ## Install
 ```bash
-composer require voxgig/mcu-countdown-sdk
+composer require voxgig-sdk/mcu-countdown
 ```
 
 

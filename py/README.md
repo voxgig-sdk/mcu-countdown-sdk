@@ -10,7 +10,7 @@ The Python SDK for the McuCountdown API — an entity-oriented client following 
 
 ## Install
 ```bash
-pip install mcu-countdown-sdk
+pip install voxgig-sdk-mcu-countdown
 ```
 
 Or install from source:
