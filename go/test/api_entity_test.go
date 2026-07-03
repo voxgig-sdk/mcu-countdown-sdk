@@ -123,6 +123,7 @@ func apiBasicSetup(extra map[string]any) *entityTestSetup {
 		"MCUCOUNTDOWN_TEST_API_ENTID": idmap,
 		"MCUCOUNTDOWN_TEST_LIVE":      "FALSE",
 		"MCUCOUNTDOWN_TEST_EXPLAIN":   "FALSE",
+		"MCUCOUNTDOWN_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["MCUCOUNTDOWN_TEST_API_ENTID"])
@@ -133,6 +134,7 @@ func apiBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["MCUCOUNTDOWN_APIKEY"],
 			},
 			extra,
 		})

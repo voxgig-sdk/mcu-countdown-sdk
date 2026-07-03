@@ -1,18 +1,8 @@
 # McuCountdown SDK
 
-Find out when the next Marvel Cinematic Universe film (or Star Wars, DC, Batman title) releases
+MCU-Countdown client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About MCU-Countdown
-
-MCU-Countdown is a small public API maintained by [DiljotSG](https://github.com/DiljotSG/MCU-Countdown) that tells you when the next Marvel Cinematic Universe film or series releases. It is a thin wrapper around curated [TMDB](https://www.themoviedb.org/) lists, exposed under [whenisthenextmcufilm.com](https://www.whenisthenextmcufilm.com).
-
-The API returns a single JSON object describing the next upcoming production, with fields such as production ID, title, type (Movie or Series), release date, days remaining, overview, and a poster URL, plus a peek at the production after that one.
-
-Alongside the default MCU list, named routes are provided for adjacent franchises (`/star-wars`, `/dc`, `/batman`), and any custom TMDB list can be queried via `?list_id=...`. A `?date=YYYY-MM-DD` parameter lets you ask what is next relative to a specific date.
-
-No authentication is required, CORS is enabled, and responses are typically served in under a couple of hundred milliseconds. The project is open source and can be self-hosted if you prefer to run your own instance.
 
 ## Try it
 
@@ -46,27 +36,31 @@ gem install mcu-countdown-sdk
 luarocks install mcu-countdown-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { McuCountdownSDK } from 'mcu-countdown'
 
-const client = new McuCountdownSDK({})
+const client = new McuCountdownSDK({
+  apikey: process.env.MCU-COUNTDOWN_APIKEY,
+})
 
+// Load api data
+const api = await client.Api().load({})
+console.log(api.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -96,10 +90,10 @@ The API exposes 4 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Api** | The default MCU countdown endpoint at `/api`, returning the next upcoming Marvel Cinematic Universe film or series from TMDB. | `/api` |
-| **Batman** | Batman-franchise variant of the countdown, served from the `/batman` route. | `/batman` |
-| **Dcn** | DC-universe variant of the countdown, served from the `/dc` route. | `/dc` |
-| **StarWar** | Star Wars variant of the countdown, served from the `/star-wars` route. | `/star-wars` |
+| **Api** |  | `/api` |
+| **Batman** |  | `/batman` |
+| **Dcn** |  | `/dc` |
+| **StarWar** |  | `/star-wars` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -109,15 +103,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from mcucountdown_sdk import McuCountdownSDK
 
-client = McuCountdownSDK({})
+client = McuCountdownSDK({
+    "apikey": os.environ.get("MCU-COUNTDOWN_APIKEY"),
+})
 
 
 # Load a specific api
-api, err = client.Api(None).load(
-    {"id": "example_id"}, None
-)
+api, err = client.Api().load({"id": "example_id"})
+print(api)
 ```
 
 ### PHP
@@ -126,13 +122,14 @@ api, err = client.Api(None).load(
 <?php
 require_once 'mcucountdown_sdk.php';
 
-$client = new McuCountdownSDK([]);
+$client = new McuCountdownSDK([
+    "apikey" => getenv("MCU-COUNTDOWN_APIKEY"),
+]);
 
 
 // Load a specific api
-[$api, $err] = $client->Api(null)->load(
-    ["id" => "example_id"], null
-);
+[$api, $err] = $client->Api()->load(["id" => "example_id"]);
+print_r($api);
 ```
 
 ### Golang
@@ -140,8 +137,13 @@ $client = new McuCountdownSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/mcu-countdown-sdk/go"
 
-client := sdk.NewMcuCountdownSDK(map[string]any{})
+client := sdk.NewMcuCountdownSDK(map[string]any{
+    "apikey": os.Getenv("MCU-COUNTDOWN_APIKEY"),
+})
 
+// Load api data
+api, err := client.Api(nil).Load(map[string]any{}, nil)
+fmt.Println(api)
 ```
 
 ### Ruby
@@ -149,13 +151,14 @@ client := sdk.NewMcuCountdownSDK(map[string]any{})
 ```ruby
 require_relative "McuCountdown_sdk"
 
-client = McuCountdownSDK.new({})
+client = McuCountdownSDK.new({
+  "apikey" => ENV["MCU-COUNTDOWN_APIKEY"],
+})
 
 
 # Load a specific api
-api, err = client.Api(nil).load(
-  { "id" => "example_id" }, nil
-)
+api, err = client.Api().load({ "id" => "example_id" })
+puts api
 ```
 
 ### Lua
@@ -163,13 +166,14 @@ api, err = client.Api(nil).load(
 ```lua
 local sdk = require("mcu-countdown_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("MCU-COUNTDOWN_APIKEY"),
+})
 
 
 -- Load a specific api
-local api, err = client:Api(nil):load(
-  { id = "example_id" }, nil
-)
+local api, err = client:Api():load({ id = "example_id" })
+print(api)
 ```
 
 ## Unit testing in offline mode
@@ -188,25 +192,21 @@ const result = await client.Api().load({ id: 'test01' })
 ### Python
 
 ```python
-client = McuCountdownSDK.test(None, None)
-result, err = client.Api(None).load(
-    {"id": "test01"}, None
-)
+client = McuCountdownSDK.test()
+result, err = client.Api().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = McuCountdownSDK::test(null, null);
-[$result, $err] = $client->Api(null)->load(
-    ["id" => "test01"], null
-);
+$client = McuCountdownSDK::test();
+[$result, $err] = $client->Api()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Api(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -215,19 +215,15 @@ result, err := client.Api(nil).Load(
 ### Ruby
 
 ```ruby
-client = McuCountdownSDK.test(nil, nil)
-result, err = client.Api(nil).load(
-  { "id" => "test01" }, nil
-)
+client = McuCountdownSDK.test
+result, err = client.Api().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Api(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Api():load({ id = "test01" })
 ```
 
 ## How it works
@@ -331,16 +327,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the MCU-Countdown
-
-- Upstream: [https://www.whenisthenextmcufilm.com](https://www.whenisthenextmcufilm.com)
-- API docs: [https://github.com/DiljotSG/MCU-Countdown](https://github.com/DiljotSG/MCU-Countdown)
-
-- Source code is released under the GPL-3.0 license by [DiljotSG](https://github.com/DiljotSG/MCU-Countdown).
-- Film metadata is provided via [The Movie Database (TMDB)](https://www.themoviedb.org/) and is subject to TMDB's terms of use.
-- The hosted instance at `whenisthenextmcufilm.com` is operated by the project maintainer; you may also self-host via Docker Compose.
-- This product uses the TMDB API but is not endorsed or certified by TMDB.
 
 ---
 

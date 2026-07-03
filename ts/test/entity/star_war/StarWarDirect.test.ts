@@ -74,12 +74,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'MCUCOUNTDOWN_TEST_STAR_WAR_ENTID': {},
     'MCUCOUNTDOWN_TEST_LIVE': 'FALSE',
+    'MCUCOUNTDOWN_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.MCUCOUNTDOWN_TEST_LIVE
 
   if (live) {
     const client = new McuCountdownSDK({
+      apikey: env.MCUCOUNTDOWN_APIKEY,
     })
 
     let idmap: any = env['MCUCOUNTDOWN_TEST_STAR_WAR_ENTID']

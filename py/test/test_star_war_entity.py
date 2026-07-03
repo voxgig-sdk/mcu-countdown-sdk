@@ -95,6 +95,7 @@ def _star_war_basic_setup(extra):
         "MCUCOUNTDOWN_TEST_STAR_WAR_ENTID": idmap,
         "MCUCOUNTDOWN_TEST_LIVE": "FALSE",
         "MCUCOUNTDOWN_TEST_EXPLAIN": "FALSE",
+        "MCUCOUNTDOWN_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -105,6 +106,7 @@ def _star_war_basic_setup(extra):
     if env.get("MCUCOUNTDOWN_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("MCUCOUNTDOWN_APIKEY"),
             },
             extra or {},
         ])

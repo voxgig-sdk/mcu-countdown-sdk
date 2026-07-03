@@ -86,6 +86,7 @@ def dcn_basic_setup(extra)
     "MCUCOUNTDOWN_TEST_DCN_ENTID" => idmap,
     "MCUCOUNTDOWN_TEST_LIVE" => "FALSE",
     "MCUCOUNTDOWN_TEST_EXPLAIN" => "FALSE",
+    "MCUCOUNTDOWN_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -97,6 +98,7 @@ def dcn_basic_setup(extra)
   if env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["MCUCOUNTDOWN_APIKEY"],
       },
       extra || {},
     ])

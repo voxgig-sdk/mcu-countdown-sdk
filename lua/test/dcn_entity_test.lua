@@ -95,6 +95,7 @@ function dcn_basic_setup(extra)
     ["MCUCOUNTDOWN_TEST_DCN_ENTID"] = idmap,
     ["MCUCOUNTDOWN_TEST_LIVE"] = "FALSE",
     ["MCUCOUNTDOWN_TEST_EXPLAIN"] = "FALSE",
+    ["MCUCOUNTDOWN_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -106,6 +107,7 @@ function dcn_basic_setup(extra)
   if env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["MCUCOUNTDOWN_APIKEY"],
       },
       extra or {},
     })

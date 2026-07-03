@@ -59,12 +59,14 @@ def _dcn_direct_setup(mockres):
     env = runner.env_override({
         "MCUCOUNTDOWN_TEST_DCN_ENTID": {},
         "MCUCOUNTDOWN_TEST_LIVE": "FALSE",
+        "MCUCOUNTDOWN_APIKEY": "NONE",
     })
 
     live = env.get("MCUCOUNTDOWN_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("MCUCOUNTDOWN_APIKEY"),
         }
         client = McuCountdownSDK(merged_opts)
         return {
