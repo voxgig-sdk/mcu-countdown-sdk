@@ -95,7 +95,7 @@ same parameters as `direct()`.
 ## ApiEntity
 
 ```lua
-local api = client:api(nil)
+local api = client:Api(nil)
 ```
 
 ### Fields
@@ -118,7 +118,7 @@ local api = client:api(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:api():load({ id = "api_id" })
+local result, err = client:Api():load({ id = "api_id" })
 ```
 
 ### Common Methods
@@ -154,7 +154,7 @@ Return the entity name.
 ## BatmanEntity
 
 ```lua
-local batman = client:batman(nil)
+local batman = client:Batman(nil)
 ```
 
 ### Fields
@@ -177,7 +177,7 @@ local batman = client:batman(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:batman():load({ id = "batman_id" })
+local result, err = client:Batman():load({ id = "batman_id" })
 ```
 
 ### Common Methods
@@ -213,7 +213,7 @@ Return the entity name.
 ## DcnEntity
 
 ```lua
-local dcn = client:dcn(nil)
+local dcn = client:Dcn(nil)
 ```
 
 ### Fields
@@ -236,7 +236,7 @@ local dcn = client:dcn(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:dcn():load({ id = "dcn_id" })
+local result, err = client:Dcn():load({ id = "dcn_id" })
 ```
 
 ### Common Methods
@@ -272,7 +272,7 @@ Return the entity name.
 ## StarWarEntity
 
 ```lua
-local star_war = client:star_war(nil)
+local star_war = client:StarWar(nil)
 ```
 
 ### Fields
@@ -295,7 +295,7 @@ local star_war = client:star_war(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:star_war():load({ id = "star_war_id" })
+local result, err = client:StarWar():load({ id = "star_war_id" })
 ```
 
 ### Common Methods

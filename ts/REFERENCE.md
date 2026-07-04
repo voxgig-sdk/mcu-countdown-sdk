@@ -145,7 +145,7 @@ Alias for `McuCountdownSDK.test()`.
 ## ApiEntity
 
 ```ts
-const api = client.api
+const api = client.Api()
 ```
 
 ### Fields
@@ -168,7 +168,7 @@ const api = client.api
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.api.load({ id: 'api_id' })
+const result = await client.Api().load({ id: 'api_id' })
 ```
 
 ### Common Methods
@@ -202,7 +202,7 @@ Return a copy of the entity options.
 ## BatmanEntity
 
 ```ts
-const batman = client.batman
+const batman = client.Batman()
 ```
 
 ### Fields
@@ -225,7 +225,7 @@ const batman = client.batman
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.batman.load({ id: 'batman_id' })
+const result = await client.Batman().load({ id: 'batman_id' })
 ```
 
 ### Common Methods
@@ -259,7 +259,7 @@ Return a copy of the entity options.
 ## DcnEntity
 
 ```ts
-const dcn = client.dcn
+const dcn = client.Dcn()
 ```
 
 ### Fields
@@ -282,7 +282,7 @@ const dcn = client.dcn
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.dcn.load({ id: 'dcn_id' })
+const result = await client.Dcn().load({ id: 'dcn_id' })
 ```
 
 ### Common Methods
@@ -316,7 +316,7 @@ Return a copy of the entity options.
 ## StarWarEntity
 
 ```ts
-const star_war = client.star_war
+const star_war = client.StarWar()
 ```
 
 ### Fields
@@ -339,7 +339,7 @@ const star_war = client.star_war
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.star_war.load({ id: 'star_war_id' })
+const result = await client.StarWar().load({ id: 'star_war_id' })
 ```
 
 ### Common Methods

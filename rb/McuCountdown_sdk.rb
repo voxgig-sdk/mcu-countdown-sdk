@@ -208,52 +208,28 @@ class McuCountdownSDK
   end
 
 
-  # Idiomatic facade: client.api.list / client.api.load({ "id" => ... })
-  def api
-    require_relative 'entity/api_entity'
-    @api ||= ApiEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.api instead.
+  # Canonical facade: client.Api.list / client.Api.load({ "id" => ... })
   def Api(data = nil)
     require_relative 'entity/api_entity'
     ApiEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.batman.list / client.batman.load({ "id" => ... })
-  def batman
-    require_relative 'entity/batman_entity'
-    @batman ||= BatmanEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.batman instead.
+  # Canonical facade: client.Batman.list / client.Batman.load({ "id" => ... })
   def Batman(data = nil)
     require_relative 'entity/batman_entity'
     BatmanEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.dcn.list / client.dcn.load({ "id" => ... })
-  def dcn
-    require_relative 'entity/dcn_entity'
-    @dcn ||= DcnEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.dcn instead.
+  # Canonical facade: client.Dcn.list / client.Dcn.load({ "id" => ... })
   def Dcn(data = nil)
     require_relative 'entity/dcn_entity'
     DcnEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.star_war.list / client.star_war.load({ "id" => ... })
-  def star_war
-    require_relative 'entity/star_war_entity'
-    @star_war ||= StarWarEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.star_war instead.
+  # Canonical facade: client.StarWar.list / client.StarWar.load({ "id" => ... })
   def StarWar(data = nil)
     require_relative 'entity/star_war_entity'
     StarWarEntity.new(self, data)

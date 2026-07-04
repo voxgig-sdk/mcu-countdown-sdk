@@ -4,105 +4,113 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Api:
+class ApiRequired(TypedDict):
     days_until: int
     following_production: dict
     id: int
     release_date: str
     title: str
     type: str
-    overview: Optional[str] = None
-    poster_url: Optional[str] = None
 
 
-@dataclass
-class ApiLoadMatch:
-    days_until: Optional[int] = None
-    following_production: Optional[dict] = None
-    id: Optional[int] = None
-    overview: Optional[str] = None
-    poster_url: Optional[str] = None
-    release_date: Optional[str] = None
-    title: Optional[str] = None
-    type: Optional[str] = None
+class Api(ApiRequired, total=False):
+    overview: str
+    poster_url: str
 
 
-@dataclass
-class Batman:
+class ApiLoadMatch(TypedDict, total=False):
+    days_until: int
+    following_production: dict
+    id: int
+    overview: str
+    poster_url: str
+    release_date: str
+    title: str
+    type: str
+
+
+class BatmanRequired(TypedDict):
     days_until: int
     following_production: dict
     id: int
     release_date: str
     title: str
     type: str
-    overview: Optional[str] = None
-    poster_url: Optional[str] = None
 
 
-@dataclass
-class BatmanLoadMatch:
-    days_until: Optional[int] = None
-    following_production: Optional[dict] = None
-    id: Optional[int] = None
-    overview: Optional[str] = None
-    poster_url: Optional[str] = None
-    release_date: Optional[str] = None
-    title: Optional[str] = None
-    type: Optional[str] = None
+class Batman(BatmanRequired, total=False):
+    overview: str
+    poster_url: str
 
 
-@dataclass
-class Dcn:
+class BatmanLoadMatch(TypedDict, total=False):
+    days_until: int
+    following_production: dict
+    id: int
+    overview: str
+    poster_url: str
+    release_date: str
+    title: str
+    type: str
+
+
+class DcnRequired(TypedDict):
     days_until: int
     following_production: dict
     id: int
     release_date: str
     title: str
     type: str
-    overview: Optional[str] = None
-    poster_url: Optional[str] = None
 
 
-@dataclass
-class DcnLoadMatch:
-    days_until: Optional[int] = None
-    following_production: Optional[dict] = None
-    id: Optional[int] = None
-    overview: Optional[str] = None
-    poster_url: Optional[str] = None
-    release_date: Optional[str] = None
-    title: Optional[str] = None
-    type: Optional[str] = None
+class Dcn(DcnRequired, total=False):
+    overview: str
+    poster_url: str
 
 
-@dataclass
-class StarWar:
+class DcnLoadMatch(TypedDict, total=False):
+    days_until: int
+    following_production: dict
+    id: int
+    overview: str
+    poster_url: str
+    release_date: str
+    title: str
+    type: str
+
+
+class StarWarRequired(TypedDict):
     days_until: int
     following_production: dict
     id: int
     release_date: str
     title: str
     type: str
-    overview: Optional[str] = None
-    poster_url: Optional[str] = None
 
 
-@dataclass
-class StarWarLoadMatch:
-    days_until: Optional[int] = None
-    following_production: Optional[dict] = None
-    id: Optional[int] = None
-    overview: Optional[str] = None
-    poster_url: Optional[str] = None
-    release_date: Optional[str] = None
-    title: Optional[str] = None
-    type: Optional[str] = None
+class StarWar(StarWarRequired, total=False):
+    overview: str
+    poster_url: str
 
+
+class StarWarLoadMatch(TypedDict, total=False):
+    days_until: int
+    following_production: dict
+    id: int
+    overview: str
+    poster_url: str
+    release_date: str
+    title: str
+    type: str

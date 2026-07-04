@@ -98,7 +98,7 @@ same parameters as `direct()`. Raises on error.
 ## ApiEntity
 
 ```ruby
-api = client.api
+api = client.Api
 ```
 
 ### Fields
@@ -121,7 +121,7 @@ api = client.api
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.api.load({ "id" => "api_id" })
+result = client.Api.load({ "id" => "api_id" })
 ```
 
 ### Common Methods
@@ -157,7 +157,7 @@ Return the entity name.
 ## BatmanEntity
 
 ```ruby
-batman = client.batman
+batman = client.Batman
 ```
 
 ### Fields
@@ -180,7 +180,7 @@ batman = client.batman
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.batman.load({ "id" => "batman_id" })
+result = client.Batman.load({ "id" => "batman_id" })
 ```
 
 ### Common Methods
@@ -216,7 +216,7 @@ Return the entity name.
 ## DcnEntity
 
 ```ruby
-dcn = client.dcn
+dcn = client.Dcn
 ```
 
 ### Fields
@@ -239,7 +239,7 @@ dcn = client.dcn
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.dcn.load({ "id" => "dcn_id" })
+result = client.Dcn.load({ "id" => "dcn_id" })
 ```
 
 ### Common Methods
@@ -275,7 +275,7 @@ Return the entity name.
 ## StarWarEntity
 
 ```ruby
-star_war = client.star_war
+star_war = client.StarWar
 ```
 
 ### Fields
@@ -298,7 +298,7 @@ star_war = client.star_war
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.star_war.load({ "id" => "star_war_id" })
+result = client.StarWar.load({ "id" => "star_war_id" })
 ```
 
 ### Common Methods

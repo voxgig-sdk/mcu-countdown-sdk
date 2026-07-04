@@ -220,73 +220,33 @@ class McuCountdownSDK:
         }
 
 
-    @property
-    def api(self):
-        """Idiomatic facade: client.api.list() / client.api.load({"id": ...})."""
-        from entity.api_entity import ApiEntity
-        cached = getattr(self, "_api", None)
-        if cached is None:
-            cached = ApiEntity(self, None)
-            self._api = cached
-        return cached
-
-    def Api(self, data=None):
-        # Deprecated: use client.api instead.
+    def Api(self, data=None) -> "ApiEntity":
+        """Entity factory: client.Api().list({}) / client.Api().load({"id": ...})."""
         from entity.api_entity import ApiEntity
         return ApiEntity(self, data)
 
 
-    @property
-    def batman(self):
-        """Idiomatic facade: client.batman.list() / client.batman.load({"id": ...})."""
-        from entity.batman_entity import BatmanEntity
-        cached = getattr(self, "_batman", None)
-        if cached is None:
-            cached = BatmanEntity(self, None)
-            self._batman = cached
-        return cached
-
-    def Batman(self, data=None):
-        # Deprecated: use client.batman instead.
+    def Batman(self, data=None) -> "BatmanEntity":
+        """Entity factory: client.Batman().list({}) / client.Batman().load({"id": ...})."""
         from entity.batman_entity import BatmanEntity
         return BatmanEntity(self, data)
 
 
-    @property
-    def dcn(self):
-        """Idiomatic facade: client.dcn.list() / client.dcn.load({"id": ...})."""
-        from entity.dcn_entity import DcnEntity
-        cached = getattr(self, "_dcn", None)
-        if cached is None:
-            cached = DcnEntity(self, None)
-            self._dcn = cached
-        return cached
-
-    def Dcn(self, data=None):
-        # Deprecated: use client.dcn instead.
+    def Dcn(self, data=None) -> "DcnEntity":
+        """Entity factory: client.Dcn().list({}) / client.Dcn().load({"id": ...})."""
         from entity.dcn_entity import DcnEntity
         return DcnEntity(self, data)
 
 
-    @property
-    def star_war(self):
-        """Idiomatic facade: client.star_war.list() / client.star_war.load({"id": ...})."""
-        from entity.star_war_entity import StarWarEntity
-        cached = getattr(self, "_star_war", None)
-        if cached is None:
-            cached = StarWarEntity(self, None)
-            self._star_war = cached
-        return cached
-
-    def StarWar(self, data=None):
-        # Deprecated: use client.star_war instead.
+    def StarWar(self, data=None) -> "StarWarEntity":
+        """Entity factory: client.StarWar().list({}) / client.StarWar().load({"id": ...})."""
         from entity.star_war_entity import StarWarEntity
         return StarWarEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "McuCountdownSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -306,3 +266,12 @@ class McuCountdownSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.api_entity import ApiEntity
+    from entity.batman_entity import BatmanEntity
+    from entity.dcn_entity import DcnEntity
+    from entity.star_war_entity import StarWarEntity

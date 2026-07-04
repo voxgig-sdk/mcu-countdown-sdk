@@ -26,9 +26,9 @@ import { McuCountdownSDK } from '@voxgig-sdk/mcu-countdown'
 
 const client = new McuCountdownSDK()
 
-// Load api data
-const api = await client.api.load({})
-console.log(api.data)
+// Load api data (returns a Api)
+const api = await client.Api().load()
+console.log(api)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -87,8 +87,8 @@ from mcucountdown_sdk import McuCountdownSDK
 client = McuCountdownSDK()
 
 
-# Load a specific api
-api = client.api.load({"id": "example_id"})
+# Load a specific api (returns the record, raises on error)
+api = client.Api().load({"id": "example_id"})
 print(api)
 ```
 
@@ -101,8 +101,8 @@ require_once 'mcucountdown_sdk.php';
 $client = new McuCountdownSDK();
 
 
-// Load a specific api
-$api = $client->api()->load(["id" => "example_id"]);
+// Load a specific api (returns the bare record; throws on error)
+$api = $client->Api()->load(["id" => "example_id"]);
 print_r($api);
 ```
 
@@ -126,8 +126,8 @@ require_relative "McuCountdown_sdk"
 client = McuCountdownSDK.new
 
 
-# Load a specific api
-api = client.api.load({ "id" => "example_id" })
+# Load a specific api (returns the bare record; raises on error)
+api = client.Api.load({ "id" => "example_id" })
 puts api
 ```
 
@@ -140,7 +140,7 @@ local client = sdk.new()
 
 
 -- Load a specific api
-local api, err = client:api():load({ id = "example_id" })
+local api, err = client:Api():load({ id = "example_id" })
 print(api)
 ```
 
@@ -153,22 +153,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = McuCountdownSDK.test()
-const result = await client.api.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const api = await client.Api().load({ id: 1 })
+// api is a bare Api populated with mock data
+console.log(api)
 ```
 
 ### Python
 
 ```python
 client = McuCountdownSDK.test()
-result = client.api.load({"id": "test01"})
+api = client.Api().load({"id": "test01"})
+print(api)
 ```
 
 ### PHP
 
 ```php
-$client = McuCountdownSDK::test();
-$result = $client->api()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = McuCountdownSDK::test([
+    "entity" => ["api" => ["test01" => ["id" => "test01"]]],
+]);
+$api = $client->Api()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -183,15 +188,18 @@ result, err := client.Api(nil).Load(
 ### Ruby
 
 ```ruby
-client = McuCountdownSDK.test
-result = client.api.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = McuCountdownSDK.test({
+  "entity" => { "api" => { "test01" => { "id" => "test01" } } },
+})
+api = client.Api.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:api():load({ id = "test01" })
+local result, err = client:Api():load({ id = "test01" })
 ```
 
 ## How it works
@@ -239,6 +247,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

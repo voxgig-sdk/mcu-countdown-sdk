@@ -207,56 +207,28 @@ class McuCountdownSDK {
 
 
 
-  _api?: ApiEntity
-
-  // Idiomatic facade: `client.api.list()` / `client.api.load({ id })`.
-  get api(): ApiEntity {
-    return (this._api ??= new ApiEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.api` instead. */
+  // Entity access: `client.Api().list()` / `client.Api().load({ id })`.
   Api(data?: any) {
     const self = this
     return new ApiEntity(self,data)
   }
 
 
-  _batman?: BatmanEntity
-
-  // Idiomatic facade: `client.batman.list()` / `client.batman.load({ id })`.
-  get batman(): BatmanEntity {
-    return (this._batman ??= new BatmanEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.batman` instead. */
+  // Entity access: `client.Batman().list()` / `client.Batman().load({ id })`.
   Batman(data?: any) {
     const self = this
     return new BatmanEntity(self,data)
   }
 
 
-  _dcn?: DcnEntity
-
-  // Idiomatic facade: `client.dcn.list()` / `client.dcn.load({ id })`.
-  get dcn(): DcnEntity {
-    return (this._dcn ??= new DcnEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.dcn` instead. */
+  // Entity access: `client.Dcn().list()` / `client.Dcn().load({ id })`.
   Dcn(data?: any) {
     const self = this
     return new DcnEntity(self,data)
   }
 
 
-  _star_war?: StarWarEntity
-
-  // Idiomatic facade: `client.star_war.list()` / `client.star_war.load({ id })`.
-  get star_war(): StarWarEntity {
-    return (this._star_war ??= new StarWarEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.star_war` instead. */
+  // Entity access: `client.StarWar().list()` / `client.StarWar().load({ id })`.
   StarWar(data?: any) {
     const self = this
     return new StarWarEntity(self,data)

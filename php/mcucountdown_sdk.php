@@ -233,10 +233,10 @@ class McuCountdownSDK
 
     private $_api = null;
 
-    // Idiomatic facade: $client->api()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Api() (PHP method
-    // names are case-insensitive).
-    public function api($data = null)
+    // Canonical facade: $client->Api()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->api()
+    // resolves here too.
+    public function Api($data = null)
     {
         require_once __DIR__ . '/entity/api_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class McuCountdownSDK
 
     private $_batman = null;
 
-    // Idiomatic facade: $client->batman()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Batman() (PHP method
-    // names are case-insensitive).
-    public function batman($data = null)
+    // Canonical facade: $client->Batman()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->batman()
+    // resolves here too.
+    public function Batman($data = null)
     {
         require_once __DIR__ . '/entity/batman_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class McuCountdownSDK
 
     private $_dcn = null;
 
-    // Idiomatic facade: $client->dcn()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Dcn() (PHP method
-    // names are case-insensitive).
-    public function dcn($data = null)
+    // Canonical facade: $client->Dcn()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->dcn()
+    // resolves here too.
+    public function Dcn($data = null)
     {
         require_once __DIR__ . '/entity/dcn_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class McuCountdownSDK
 
     private $_star_war = null;
 
-    // Idiomatic facade: $client->star_war()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias StarWar() (PHP method
-    // names are case-insensitive).
-    public function star_war($data = null)
+    // Canonical facade: $client->StarWar()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->star_war()
+    // resolves here too.
+    public function StarWar($data = null)
     {
         require_once __DIR__ . '/entity/star_war_entity.php';
         if ($data === null) {

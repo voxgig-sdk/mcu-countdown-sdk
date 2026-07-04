@@ -33,10 +33,12 @@ client = McuCountdownSDK()
 
 ### 3. Load an api
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.api.load({"id": "example_id"})
-    print(result)
+    api = client.Api().load({"id": "example_id"})
+    print(api)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = McuCountdownSDK.test()
 
-result = client.api.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+api = client.Api().load({"id": "test01"})
+# api contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -161,7 +164,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
-| `Api` | `(data) -> ApiEntity` | Create a Api entity instance. |
+| `Api` | `(data) -> ApiEntity` | Create an Api entity instance. |
 | `Batman` | `(data) -> BatmanEntity` | Create a Batman entity instance. |
 | `Dcn` | `(data) -> DcnEntity` | Create a Dcn entity instance. |
 | `StarWar` | `(data) -> StarWarEntity` | Create a StarWar entity instance. |
@@ -279,7 +282,7 @@ API path: `/star-wars`
 
 ### Api
 
-Create an instance: `const api = client.api`
+Create an instance: `api = client.Api()`
 
 #### Operations
 
@@ -302,14 +305,14 @@ Create an instance: `const api = client.api`
 
 #### Example: Load
 
-```ts
-const api = await client.api.load({ id: 'api_id' })
+```python
+api = client.Api().load({"id": "api_id"})
 ```
 
 
 ### Batman
 
-Create an instance: `const batman = client.batman`
+Create an instance: `batman = client.Batman()`
 
 #### Operations
 
@@ -332,14 +335,14 @@ Create an instance: `const batman = client.batman`
 
 #### Example: Load
 
-```ts
-const batman = await client.batman.load({ id: 'batman_id' })
+```python
+batman = client.Batman().load({"id": "batman_id"})
 ```
 
 
 ### Dcn
 
-Create an instance: `const dcn = client.dcn`
+Create an instance: `dcn = client.Dcn()`
 
 #### Operations
 
@@ -362,14 +365,14 @@ Create an instance: `const dcn = client.dcn`
 
 #### Example: Load
 
-```ts
-const dcn = await client.dcn.load({ id: 'dcn_id' })
+```python
+dcn = client.Dcn().load({"id": "dcn_id"})
 ```
 
 
 ### StarWar
 
-Create an instance: `const star_war = client.star_war`
+Create an instance: `star_war = client.StarWar()`
 
 #### Operations
 
@@ -392,8 +395,8 @@ Create an instance: `const star_war = client.star_war`
 
 #### Example: Load
 
-```ts
-const star_war = await client.star_war.load({ id: 'star_war_id' })
+```python
+star_war = client.StarWar().load({"id": "star_war_id"})
 ```
 
 
@@ -467,7 +470,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-api = client.api
+api = client.Api()
 api.load({"id": "example_id"})
 
 # api.data_get() now returns the loaded api data

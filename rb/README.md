@@ -32,8 +32,9 @@ client = McuCountdownSDK.new
 
 ```ruby
 begin
-  result = client.api.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare Api record (raises on error).
+  api = client.Api.load({ "id" => "example_id" })
+  puts api
 rescue => err
   warn "load failed: #{err}"
 end
@@ -80,13 +81,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = McuCountdownSDK.test
+client = McuCountdownSDK.test({
+  "entity" => { "api" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.api.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+api = client.Api.load({ "id" => "test01" })
+puts api
 ```
 
 ### Use a custom fetch function
@@ -162,7 +167,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
-| `Api` | `(data) -> ApiEntity` | Create a Api entity instance. |
+| `Api` | `(data) -> ApiEntity` | Create an Api entity instance. |
 | `Batman` | `(data) -> BatmanEntity` | Create a Batman entity instance. |
 | `Dcn` | `(data) -> DcnEntity` | Create a Dcn entity instance. |
 | `StarWar` | `(data) -> StarWarEntity` | Create a StarWar entity instance. |
@@ -279,7 +284,7 @@ API path: `/star-wars`
 
 ### Api
 
-Create an instance: `const api = client.api`
+Create an instance: `api = client.Api`
 
 #### Operations
 
@@ -302,14 +307,15 @@ Create an instance: `const api = client.api`
 
 #### Example: Load
 
-```ts
-const api = await client.api.load({ id: 'api_id' })
+```ruby
+# load returns the bare Api record (raises on error).
+api = client.Api.load({ "id" => "api_id" })
 ```
 
 
 ### Batman
 
-Create an instance: `const batman = client.batman`
+Create an instance: `batman = client.Batman`
 
 #### Operations
 
@@ -332,14 +338,15 @@ Create an instance: `const batman = client.batman`
 
 #### Example: Load
 
-```ts
-const batman = await client.batman.load({ id: 'batman_id' })
+```ruby
+# load returns the bare Batman record (raises on error).
+batman = client.Batman.load({ "id" => "batman_id" })
 ```
 
 
 ### Dcn
 
-Create an instance: `const dcn = client.dcn`
+Create an instance: `dcn = client.Dcn`
 
 #### Operations
 
@@ -362,14 +369,15 @@ Create an instance: `const dcn = client.dcn`
 
 #### Example: Load
 
-```ts
-const dcn = await client.dcn.load({ id: 'dcn_id' })
+```ruby
+# load returns the bare Dcn record (raises on error).
+dcn = client.Dcn.load({ "id" => "dcn_id" })
 ```
 
 
 ### StarWar
 
-Create an instance: `const star_war = client.star_war`
+Create an instance: `star_war = client.StarWar`
 
 #### Operations
 
@@ -392,8 +400,9 @@ Create an instance: `const star_war = client.star_war`
 
 #### Example: Load
 
-```ts
-const star_war = await client.star_war.load({ id: 'star_war_id' })
+```ruby
+# load returns the bare StarWar record (raises on error).
+star_war = client.StarWar.load({ "id" => "star_war_id" })
 ```
 
 
@@ -468,7 +477,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-api = client.api
+api = client.Api
 api.load({ "id" => "example_id" })
 
 # api.data_get now returns the loaded api data
