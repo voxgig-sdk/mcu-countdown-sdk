@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  StarWar,
+  StarWarLoadMatch,
+} from '../McuCountdownTypes'
 
 // TODO: needs Entity superclass
-class StarWarEntity extends McuCountdownEntityBase {
+class StarWarEntity extends McuCountdownEntityBase<StarWar> {
 
   constructor(client: McuCountdownSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class StarWarEntity extends McuCountdownEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: StarWarLoadMatch, ctrl?: Control): Promise<StarWar> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class StarWarEntity extends McuCountdownEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<StarWar> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

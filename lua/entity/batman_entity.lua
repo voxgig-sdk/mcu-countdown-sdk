@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch BatmanLoadMatch
+---@param ctrl? table
+---@return Batman
+---@return string? err
 function BatmanEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -244,24 +244,76 @@ end
 
 
 
+-- Idiomatic facade: client:api():list() / client:api():load({ id = ... })
+function McuCountdownSDK:api(data)
+  local EntityMod = require("entity.api_entity")
+  if data == nil then
+    if self._api == nil then
+      self._api = EntityMod.new(self, nil)
+    end
+    return self._api
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:api() instead.
 function McuCountdownSDK:Api(data)
   local EntityMod = require("entity.api_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:batman():list() / client:batman():load({ id = ... })
+function McuCountdownSDK:batman(data)
+  local EntityMod = require("entity.batman_entity")
+  if data == nil then
+    if self._batman == nil then
+      self._batman = EntityMod.new(self, nil)
+    end
+    return self._batman
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:batman() instead.
 function McuCountdownSDK:Batman(data)
   local EntityMod = require("entity.batman_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:dcn():list() / client:dcn():load({ id = ... })
+function McuCountdownSDK:dcn(data)
+  local EntityMod = require("entity.dcn_entity")
+  if data == nil then
+    if self._dcn == nil then
+      self._dcn = EntityMod.new(self, nil)
+    end
+    return self._dcn
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:dcn() instead.
 function McuCountdownSDK:Dcn(data)
   local EntityMod = require("entity.dcn_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:star_war():list() / client:star_war():load({ id = ... })
+function McuCountdownSDK:star_war(data)
+  local EntityMod = require("entity.star_war_entity")
+  if data == nil then
+    if self._star_war == nil then
+      self._star_war = EntityMod.new(self, nil)
+    end
+    return self._star_war
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:star_war() instead.
 function McuCountdownSDK:StarWar(data)
   local EntityMod = require("entity.star_war_entity")
   return EntityMod.new(self, data)

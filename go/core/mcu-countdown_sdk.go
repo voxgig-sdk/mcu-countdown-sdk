@@ -245,21 +245,33 @@ func (sdk *McuCountdownSDK) Direct(fetchargs map[string]any) (map[string]any, er
 }
 
 
+// Api returns a Api entity bound to this client.
+// Idiomatic usage: client.Api(nil).List(nil, nil) or
+// client.Api(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *McuCountdownSDK) Api(data map[string]any) McuCountdownEntity {
 	return NewApiEntityFunc(sdk, data)
 }
 
 
+// Batman returns a Batman entity bound to this client.
+// Idiomatic usage: client.Batman(nil).List(nil, nil) or
+// client.Batman(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *McuCountdownSDK) Batman(data map[string]any) McuCountdownEntity {
 	return NewBatmanEntityFunc(sdk, data)
 }
 
 
+// Dcn returns a Dcn entity bound to this client.
+// Idiomatic usage: client.Dcn(nil).List(nil, nil) or
+// client.Dcn(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *McuCountdownSDK) Dcn(data map[string]any) McuCountdownEntity {
 	return NewDcnEntityFunc(sdk, data)
 }
 
 
+// StarWar returns a StarWar entity bound to this client.
+// Idiomatic usage: client.StarWar(nil).List(nil, nil) or
+// client.StarWar(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *McuCountdownSDK) StarWar(data map[string]any) McuCountdownEntity {
 	return NewStarWarEntityFunc(sdk, data)
 }

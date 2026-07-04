@@ -62,14 +62,12 @@ function batman_direct_setup(mockres)
   local env = runner.env_override({
     ["MCUCOUNTDOWN_TEST_BATMAN_ENTID"] = {},
     ["MCUCOUNTDOWN_TEST_LIVE"] = "FALSE",
-    ["MCUCOUNTDOWN_APIKEY"] = "NONE",
   })
 
   local live = env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["MCUCOUNTDOWN_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

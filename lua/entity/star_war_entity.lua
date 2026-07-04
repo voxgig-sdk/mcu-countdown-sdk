@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch StarWarLoadMatch
+---@param ctrl? table
+---@return StarWar
+---@return string? err
 function StarWarEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

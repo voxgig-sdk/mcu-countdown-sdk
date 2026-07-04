@@ -114,7 +114,6 @@ function basicSetup(extra?: any) {
     'MCU_COUNTDOWN_TEST_STAR_WAR_ENTID': idmap,
     'MCU_COUNTDOWN_TEST_LIVE': 'FALSE',
     'MCU_COUNTDOWN_TEST_EXPLAIN': 'FALSE',
-    'MCU_COUNTDOWN_APIKEY': 'NONE',
   })
 
   idmap = env['MCU_COUNTDOWN_TEST_STAR_WAR_ENTID']
@@ -124,7 +123,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new McuCountdownSDK(merge([
       {
-        apikey: env.MCU_COUNTDOWN_APIKEY,
       },
       extra
     ]))

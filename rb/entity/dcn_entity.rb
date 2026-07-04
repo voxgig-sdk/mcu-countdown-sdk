@@ -45,6 +45,7 @@ class DcnEntity
     end
   end
 
+  # @return [Dcn, Hash] the current Dcn data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class DcnEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Dcn fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Dcn.
+  #
+  # @param reqmatch [DcnLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Dcn, Hash] the loaded Dcn; raises McuCountdownError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

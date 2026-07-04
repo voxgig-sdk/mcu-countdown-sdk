@@ -15,9 +15,6 @@ module McuCountdownConfig
       },
       "options" => {
         "base" => "https://www.whenisthenextmcufilm.com",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

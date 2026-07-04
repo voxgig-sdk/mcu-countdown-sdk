@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Dcn,
+  DcnLoadMatch,
+} from '../McuCountdownTypes'
 
 // TODO: needs Entity superclass
-class DcnEntity extends McuCountdownEntityBase {
+class DcnEntity extends McuCountdownEntityBase<Dcn> {
 
   constructor(client: McuCountdownSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class DcnEntity extends McuCountdownEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: DcnLoadMatch, ctrl?: Control): Promise<Dcn> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class DcnEntity extends McuCountdownEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Dcn> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

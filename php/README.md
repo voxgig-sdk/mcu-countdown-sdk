@@ -9,9 +9,10 @@ The PHP SDK for the McuCountdown API — an entity-oriented client using PHP con
 
 
 ## Install
-```bash
-composer require voxgig-sdk/mcu-countdown
-```
+This package is not yet published to Packagist. Install it from the
+GitHub release tag (`php/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/mcu-countdown-sdk/releases](https://github.com/voxgig-sdk/mcu-countdown-sdk/releases)
 
 
 ## Tutorial: your first API call
@@ -25,17 +26,18 @@ loading a specific record.
 <?php
 require_once 'mcucountdown_sdk.php';
 
-$client = new McuCountdownSDK([
-    "apikey" => getenv("MCU-COUNTDOWN_APIKEY"),
-]);
+$client = new McuCountdownSDK();
 ```
 
-### 3. Load a api
+### 3. Load an api
 
 ```php
-[$result, $err] = $client->Api()->load(["id" => "example_id"]);
-if ($err) { throw new \Exception($err); }
-print_r($result);
+try {
+    $result = $client->api()->load(["id" => "example_id"]);
+    print_r($result);
+} catch (\Exception $err) {
+    echo "Error: " . $err->getMessage();
+}
 ```
 
 
@@ -46,28 +48,31 @@ print_r($result);
 For endpoints not covered by entity methods:
 
 ```php
-[$result, $err] = $client->direct([
+// direct() is the raw-HTTP escape hatch: it returns a result array
+// (it does not throw). Branch on $result["ok"].
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
+} else {
+    echo "Error: " . $result["err"]->getMessage();
 }
 ```
 
 ### Prepare a request without sending it
 
 ```php
-[$fetchdef, $err] = $client->prepare([
+// prepare() throws on error and returns the fetch definition.
+$fetchdef = $client->prepare([
     "path" => "/api/resource/{id}",
     "method" => "DELETE",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 echo $fetchdef["url"];
 echo $fetchdef["method"];
@@ -81,7 +86,7 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = McuCountdownSDK::test();
 
-[$result, $err] = $client->McuCountdown()->load(["id" => "test01"]);
+$result = $client->api()->load(["id" => "test01"]);
 // $result contains mock response data
 ```
 
@@ -115,8 +120,7 @@ $client = new McuCountdownSDK([
 Create a `.env.local` file at the project root:
 
 ```
-MCU-COUNTDOWN_TEST_LIVE=TRUE
-MCU-COUNTDOWN_APIKEY=<your-key>
+MCU_COUNTDOWN_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -139,7 +143,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -188,8 +191,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `[$result, $err]`. The first value is an
-`array` with these keys:
+Entity operations return the bare result data (an `array` for single-entity
+ops, a `list` for `list`) and throw on error. Wrap calls in
+`try`/`catch` to handle failures.
+
+The `direct()` escape hatch never throws — it returns a result `array`
+you branch on via `$result["ok"]`:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -277,7 +284,7 @@ API path: `/star-wars`
 
 ### Api
 
-Create an instance: `const api = client.Api()`
+Create an instance: `const api = client.api`
 
 #### Operations
 
@@ -301,13 +308,13 @@ Create an instance: `const api = client.Api()`
 #### Example: Load
 
 ```ts
-const api = await client.Api().load({ id: 'api_id' })
+const api = await client.api.load({ id: 'api_id' })
 ```
 
 
 ### Batman
 
-Create an instance: `const batman = client.Batman()`
+Create an instance: `const batman = client.batman`
 
 #### Operations
 
@@ -331,13 +338,13 @@ Create an instance: `const batman = client.Batman()`
 #### Example: Load
 
 ```ts
-const batman = await client.Batman().load({ id: 'batman_id' })
+const batman = await client.batman.load({ id: 'batman_id' })
 ```
 
 
 ### Dcn
 
-Create an instance: `const dcn = client.Dcn()`
+Create an instance: `const dcn = client.dcn`
 
 #### Operations
 
@@ -361,13 +368,13 @@ Create an instance: `const dcn = client.Dcn()`
 #### Example: Load
 
 ```ts
-const dcn = await client.Dcn().load({ id: 'dcn_id' })
+const dcn = await client.dcn.load({ id: 'dcn_id' })
 ```
 
 
 ### StarWar
 
-Create an instance: `const star_war = client.StarWar()`
+Create an instance: `const star_war = client.star_war`
 
 #### Operations
 
@@ -391,7 +398,7 @@ Create an instance: `const star_war = client.StarWar()`
 #### Example: Load
 
 ```ts
-const star_war = await client.StarWar().load({ id: 'star_war_id' })
+const star_war = await client.star_war.load({ id: 'star_war_id' })
 ```
 
 
@@ -466,11 +473,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$moon = $client->Moon();
-[$result, $err] = $moon->load(["planet_id" => "earth", "id" => "luna"]);
+$api = $client->api();
+$api->load(["id" => "example_id"]);
 
-// $moon->dataGet() now returns the loaded moon data
-// $moon->matchGet() returns the last match criteria
+// $api->dataGet() now returns the loaded api data
+// $api->matchGet() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

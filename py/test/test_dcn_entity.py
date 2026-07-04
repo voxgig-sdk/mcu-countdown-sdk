@@ -51,8 +51,7 @@ class TestDcnEntity:
         dcn_ref01_match_dt0 = {
             "id": dcn_ref01_data["id"],
         }
-        dcn_ref01_data_dt0_loaded, err = dcn_ref01_ent.load(dcn_ref01_match_dt0, None)
-        assert err is None
+        dcn_ref01_data_dt0_loaded = dcn_ref01_ent.load(dcn_ref01_match_dt0, None)
         dcn_ref01_data_dt0_load_result = helpers.to_map(dcn_ref01_data_dt0_loaded)
         assert dcn_ref01_data_dt0_load_result is not None
         assert dcn_ref01_data_dt0_load_result["id"] == dcn_ref01_data["id"]
@@ -95,7 +94,6 @@ def _dcn_basic_setup(extra):
         "MCUCOUNTDOWN_TEST_DCN_ENTID": idmap,
         "MCUCOUNTDOWN_TEST_LIVE": "FALSE",
         "MCUCOUNTDOWN_TEST_EXPLAIN": "FALSE",
-        "MCUCOUNTDOWN_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -106,7 +104,6 @@ def _dcn_basic_setup(extra):
     if env.get("MCUCOUNTDOWN_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("MCUCOUNTDOWN_APIKEY"),
             },
             extra or {},
         ])

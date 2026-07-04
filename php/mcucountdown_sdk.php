@@ -103,7 +103,7 @@ class McuCountdownSDK
         return $this->_rootctx;
     }
 
-    public function prepare(array $fetchargs = []): array
+    public function prepare(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
         $fetchargs = $fetchargs ?? [];
@@ -149,19 +149,27 @@ class McuCountdownSDK
 
         [$_, $err] = ($utility->prepare_auth)($ctx);
         if ($err) {
-            return [null, $err];
+            return ($utility->make_error)($ctx, $err);
         }
 
-        return ($utility->make_fetch_def)($ctx);
+        [$fetchdef, $fd_err] = ($utility->make_fetch_def)($ctx);
+        if ($fd_err) {
+            return ($utility->make_error)($ctx, $fd_err);
+        }
+        return $fetchdef;
     }
 
-    public function direct(array $fetchargs = []): array
+    public function direct(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
 
-        [$fetchdef, $err] = $this->prepare($fetchargs);
-        if ($err) {
-            return [["ok" => false, "err" => $err], null];
+        // direct() is the raw-HTTP escape hatch: it never throws, it returns
+        // an {ok, err, ...} dict. prepare() now raises on error, so catch it
+        // and surface the failure through the dict instead.
+        try {
+            $fetchdef = $this->prepare($fetchargs);
+        } catch (\Throwable $err) {
+            return ["ok" => false, "err" => $err];
         }
 
         $fetchargs = $fetchargs ?? [];
@@ -176,14 +184,14 @@ class McuCountdownSDK
         [$fetched, $fetch_err] = ($utility->fetcher)($ctx, $url, $fetchdef);
 
         if ($fetch_err) {
-            return [["ok" => false, "err" => $fetch_err], null];
+            return ["ok" => false, "err" => $fetch_err];
         }
 
         if ($fetched === null) {
-            return [[
+            return [
                 "ok" => false,
                 "err" => $ctx->make_error("direct_no_response", "response: undefined"),
-            ], null];
+            ];
         }
 
         if (is_array($fetched)) {
@@ -208,45 +216,89 @@ class McuCountdownSDK
                 }
             }
 
-            return [[
+            return [
                 "ok" => $status >= 200 && $status < 300,
                 "status" => $status,
                 "headers" => Struct::getprop($fetched, "headers"),
                 "data" => $json_data,
-            ], null];
+            ];
         }
 
-        return [[
+        return [
             "ok" => false,
             "err" => $ctx->make_error("direct_invalid", "invalid response type"),
-        ], null];
+        ];
     }
 
 
-    public function Api($data = null)
+    private $_api = null;
+
+    // Idiomatic facade: $client->api()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Api() (PHP method
+    // names are case-insensitive).
+    public function api($data = null)
     {
         require_once __DIR__ . '/entity/api_entity.php';
+        if ($data === null) {
+            if ($this->_api === null) {
+                $this->_api = new ApiEntity($this, null);
+            }
+            return $this->_api;
+        }
         return new ApiEntity($this, $data);
     }
 
 
-    public function Batman($data = null)
+    private $_batman = null;
+
+    // Idiomatic facade: $client->batman()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Batman() (PHP method
+    // names are case-insensitive).
+    public function batman($data = null)
     {
         require_once __DIR__ . '/entity/batman_entity.php';
+        if ($data === null) {
+            if ($this->_batman === null) {
+                $this->_batman = new BatmanEntity($this, null);
+            }
+            return $this->_batman;
+        }
         return new BatmanEntity($this, $data);
     }
 
 
-    public function Dcn($data = null)
+    private $_dcn = null;
+
+    // Idiomatic facade: $client->dcn()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Dcn() (PHP method
+    // names are case-insensitive).
+    public function dcn($data = null)
     {
         require_once __DIR__ . '/entity/dcn_entity.php';
+        if ($data === null) {
+            if ($this->_dcn === null) {
+                $this->_dcn = new DcnEntity($this, null);
+            }
+            return $this->_dcn;
+        }
         return new DcnEntity($this, $data);
     }
 
 
-    public function StarWar($data = null)
+    private $_star_war = null;
+
+    // Idiomatic facade: $client->star_war()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias StarWar() (PHP method
+    // names are case-insensitive).
+    public function star_war($data = null)
     {
         require_once __DIR__ . '/entity/star_war_entity.php';
+        if ($data === null) {
+            if ($this->_star_war === null) {
+                $this->_star_war = new StarWarEntity($this, null);
+            }
+            return $this->_star_war;
+        }
         return new StarWarEntity($this, $data);
     }
 

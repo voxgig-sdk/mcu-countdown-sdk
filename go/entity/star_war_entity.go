@@ -85,6 +85,27 @@ func (e *StarWarEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an StarWar; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *StarWarEntity) DataTyped(data ...StarWar) StarWar {
+	if len(data) > 0 {
+		return typedFrom[StarWar](e.Data(asMap(data[0])))
+	}
+	return typedFrom[StarWar](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through StarWar (all fields
+// optional at the wire level).
+func (e *StarWarEntity) MatchTyped(match ...StarWar) StarWar {
+	if len(match) > 0 {
+		return typedFrom[StarWar](e.Match(asMap(match[0])))
+	}
+	return typedFrom[StarWar](e.Match())
+}
+
 
 func (e *StarWarEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, error) {
 	utility := e.utility
@@ -109,6 +130,17 @@ func (e *StarWarEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any,
 			}
 		}
 	})
+}
+
+// LoadTyped is the statically-typed variant of Load: it takes an
+// StarWarLoadMatch and returns an StarWar. It delegates to the untyped
+// Load (identical runtime) and converts at the typed boundary.
+func (e *StarWarEntity) LoadTyped(reqmatch StarWarLoadMatch, ctrl map[string]any) (StarWar, error) {
+	res, err := e.Load(asMap(reqmatch), ctrl)
+	if err != nil {
+		return StarWar{}, err
+	}
+	return typedFrom[StarWar](res), nil
 }
 
 

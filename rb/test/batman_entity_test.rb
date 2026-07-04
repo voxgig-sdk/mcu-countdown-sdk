@@ -44,8 +44,7 @@ class BatmanEntityTest < Minitest::Test
     batman_ref01_match_dt0 = {
       "id" => batman_ref01_data["id"],
     }
-    batman_ref01_data_dt0_loaded, err = batman_ref01_ent.load(batman_ref01_match_dt0, nil)
-    assert_nil err
+    batman_ref01_data_dt0_loaded = batman_ref01_ent.load(batman_ref01_match_dt0, nil)
     batman_ref01_data_dt0_load_result = Helpers.to_map(batman_ref01_data_dt0_loaded)
     assert !batman_ref01_data_dt0_load_result.nil?
     assert_equal batman_ref01_data_dt0_load_result["id"], batman_ref01_data["id"]
@@ -86,7 +85,6 @@ def batman_basic_setup(extra)
     "MCUCOUNTDOWN_TEST_BATMAN_ENTID" => idmap,
     "MCUCOUNTDOWN_TEST_LIVE" => "FALSE",
     "MCUCOUNTDOWN_TEST_EXPLAIN" => "FALSE",
-    "MCUCOUNTDOWN_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -98,7 +96,6 @@ def batman_basic_setup(extra)
   if env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["MCUCOUNTDOWN_APIKEY"],
       },
       extra || {},
     ])

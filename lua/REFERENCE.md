@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -96,7 +95,7 @@ same parameters as `direct()`.
 ## ApiEntity
 
 ```lua
-local api = client:Api(nil)
+local api = client:api(nil)
 ```
 
 ### Fields
@@ -119,7 +118,7 @@ local api = client:Api(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Api():load({ id = "api_id" })
+local result, err = client:api():load({ id = "api_id" })
 ```
 
 ### Common Methods
@@ -155,7 +154,7 @@ Return the entity name.
 ## BatmanEntity
 
 ```lua
-local batman = client:Batman(nil)
+local batman = client:batman(nil)
 ```
 
 ### Fields
@@ -178,7 +177,7 @@ local batman = client:Batman(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Batman():load({ id = "batman_id" })
+local result, err = client:batman():load({ id = "batman_id" })
 ```
 
 ### Common Methods
@@ -214,7 +213,7 @@ Return the entity name.
 ## DcnEntity
 
 ```lua
-local dcn = client:Dcn(nil)
+local dcn = client:dcn(nil)
 ```
 
 ### Fields
@@ -237,7 +236,7 @@ local dcn = client:Dcn(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Dcn():load({ id = "dcn_id" })
+local result, err = client:dcn():load({ id = "dcn_id" })
 ```
 
 ### Common Methods
@@ -273,7 +272,7 @@ Return the entity name.
 ## StarWarEntity
 
 ```lua
-local star_war = client:StarWar(nil)
+local star_war = client:star_war(nil)
 ```
 
 ### Fields
@@ -296,7 +295,7 @@ local star_war = client:StarWar(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:StarWar():load({ id = "star_war_id" })
+local result, err = client:star_war():load({ id = "star_war_id" })
 ```
 
 ### Common Methods

@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -146,7 +145,7 @@ Alias for `McuCountdownSDK.test()`.
 ## ApiEntity
 
 ```ts
-const api = client.Api()
+const api = client.api
 ```
 
 ### Fields
@@ -169,7 +168,7 @@ const api = client.Api()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Api().load({ id: 'api_id' })
+const result = await client.api.load({ id: 'api_id' })
 ```
 
 ### Common Methods
@@ -203,7 +202,7 @@ Return a copy of the entity options.
 ## BatmanEntity
 
 ```ts
-const batman = client.Batman()
+const batman = client.batman
 ```
 
 ### Fields
@@ -226,7 +225,7 @@ const batman = client.Batman()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Batman().load({ id: 'batman_id' })
+const result = await client.batman.load({ id: 'batman_id' })
 ```
 
 ### Common Methods
@@ -260,7 +259,7 @@ Return a copy of the entity options.
 ## DcnEntity
 
 ```ts
-const dcn = client.Dcn()
+const dcn = client.dcn
 ```
 
 ### Fields
@@ -283,7 +282,7 @@ const dcn = client.Dcn()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Dcn().load({ id: 'dcn_id' })
+const result = await client.dcn.load({ id: 'dcn_id' })
 ```
 
 ### Common Methods
@@ -317,7 +316,7 @@ Return a copy of the entity options.
 ## StarWarEntity
 
 ```ts
-const star_war = client.StarWar()
+const star_war = client.star_war
 ```
 
 ### Fields
@@ -340,7 +339,7 @@ const star_war = client.StarWar()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.StarWar().load({ id: 'star_war_id' })
+const result = await client.star_war.load({ id: 'star_war_id' })
 ```
 
 ### Common Methods

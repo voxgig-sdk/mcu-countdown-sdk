@@ -144,16 +144,23 @@ class McuCountdownSDK:
 
         _, err = utility.prepare_auth(ctx)
         if err is not None:
-            return None, err
+            raise err
 
-        return utility.make_fetch_def(ctx)
+        fetchdef, err = utility.make_fetch_def(ctx)
+        if err is not None:
+            raise err
+
+        return fetchdef
 
     def direct(self, fetchargs=None):
         utility = self._utility
 
-        fetchdef, err = self.prepare(fetchargs)
-        if err is not None:
-            return {"ok": False, "err": err}, None
+        try:
+            fetchdef = self.prepare(fetchargs)
+        except Exception as err:
+            # direct() is the raw-HTTP escape hatch: it never raises, it
+            # returns a result object callers branch on via result["ok"].
+            return {"ok": False, "err": err}
 
         if fetchargs is None:
             fetchargs = {}
@@ -170,13 +177,13 @@ class McuCountdownSDK:
         fetched, fetch_err = utility.fetcher(ctx, url, fetchdef)
 
         if fetch_err is not None:
-            return {"ok": False, "err": fetch_err}, None
+            return {"ok": False, "err": fetch_err}
 
         if fetched is None:
             return {
                 "ok": False,
                 "err": ctx.make_error("direct_no_response", "response: undefined"),
-            }, None
+            }
 
         if isinstance(fetched, dict):
             status = helpers.to_int(vs.getprop(fetched, "status"))
@@ -205,30 +212,74 @@ class McuCountdownSDK:
                 "status": status,
                 "headers": headers,
                 "data": json_data,
-            }, None
+            }
 
         return {
             "ok": False,
             "err": ctx.make_error("direct_invalid", "invalid response type"),
-        }, None
+        }
 
+
+    @property
+    def api(self):
+        """Idiomatic facade: client.api.list() / client.api.load({"id": ...})."""
+        from entity.api_entity import ApiEntity
+        cached = getattr(self, "_api", None)
+        if cached is None:
+            cached = ApiEntity(self, None)
+            self._api = cached
+        return cached
 
     def Api(self, data=None):
+        # Deprecated: use client.api instead.
         from entity.api_entity import ApiEntity
         return ApiEntity(self, data)
 
 
+    @property
+    def batman(self):
+        """Idiomatic facade: client.batman.list() / client.batman.load({"id": ...})."""
+        from entity.batman_entity import BatmanEntity
+        cached = getattr(self, "_batman", None)
+        if cached is None:
+            cached = BatmanEntity(self, None)
+            self._batman = cached
+        return cached
+
     def Batman(self, data=None):
+        # Deprecated: use client.batman instead.
         from entity.batman_entity import BatmanEntity
         return BatmanEntity(self, data)
 
 
+    @property
+    def dcn(self):
+        """Idiomatic facade: client.dcn.list() / client.dcn.load({"id": ...})."""
+        from entity.dcn_entity import DcnEntity
+        cached = getattr(self, "_dcn", None)
+        if cached is None:
+            cached = DcnEntity(self, None)
+            self._dcn = cached
+        return cached
+
     def Dcn(self, data=None):
+        # Deprecated: use client.dcn instead.
         from entity.dcn_entity import DcnEntity
         return DcnEntity(self, data)
 
 
+    @property
+    def star_war(self):
+        """Idiomatic facade: client.star_war.list() / client.star_war.load({"id": ...})."""
+        from entity.star_war_entity import StarWarEntity
+        cached = getattr(self, "_star_war", None)
+        if cached is None:
+            cached = StarWarEntity(self, None)
+            self._star_war = cached
+        return cached
+
     def StarWar(self, data=None):
+        # Deprecated: use client.star_war instead.
         from entity.star_war_entity import StarWarEntity
         return StarWarEntity(self, data)
 

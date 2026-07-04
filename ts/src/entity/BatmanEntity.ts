@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Batman,
+  BatmanLoadMatch,
+} from '../McuCountdownTypes'
 
 // TODO: needs Entity superclass
-class BatmanEntity extends McuCountdownEntityBase {
+class BatmanEntity extends McuCountdownEntityBase<Batman> {
 
   constructor(client: McuCountdownSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class BatmanEntity extends McuCountdownEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: BatmanLoadMatch, ctrl?: Control): Promise<Batman> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class BatmanEntity extends McuCountdownEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Batman> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

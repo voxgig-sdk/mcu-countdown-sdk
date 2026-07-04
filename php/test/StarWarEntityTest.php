@@ -51,8 +51,7 @@ class StarWarEntityTest extends TestCase
         $star_war_ref01_match_dt0 = [
             "id" => $star_war_ref01_data["id"],
         ];
-        [$star_war_ref01_data_dt0_loaded, $err] = $star_war_ref01_ent->load($star_war_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $star_war_ref01_data_dt0_loaded = $star_war_ref01_ent->load($star_war_ref01_match_dt0, null);
         $star_war_ref01_data_dt0_load_result = Helpers::to_map($star_war_ref01_data_dt0_loaded);
         $this->assertNotNull($star_war_ref01_data_dt0_load_result);
         $this->assertEquals($star_war_ref01_data_dt0_load_result["id"], $star_war_ref01_data["id"]);
@@ -89,7 +88,6 @@ function star_war_basic_setup($extra)
         "MCUCOUNTDOWN_TEST_STAR_WAR_ENTID" => $idmap,
         "MCUCOUNTDOWN_TEST_LIVE" => "FALSE",
         "MCUCOUNTDOWN_TEST_EXPLAIN" => "FALSE",
-        "MCUCOUNTDOWN_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -101,7 +99,6 @@ function star_war_basic_setup($extra)
     if ($env["MCUCOUNTDOWN_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["MCUCOUNTDOWN_APIKEY"],
             ],
             $extra ?? [],
         ]);

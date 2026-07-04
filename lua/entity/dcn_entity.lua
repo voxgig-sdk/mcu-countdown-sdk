@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch DcnLoadMatch
+---@param ctrl? table
+---@return Dcn
+---@return string? err
 function DcnEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

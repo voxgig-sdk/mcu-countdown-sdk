@@ -51,8 +51,7 @@ class TestBatmanEntity:
         batman_ref01_match_dt0 = {
             "id": batman_ref01_data["id"],
         }
-        batman_ref01_data_dt0_loaded, err = batman_ref01_ent.load(batman_ref01_match_dt0, None)
-        assert err is None
+        batman_ref01_data_dt0_loaded = batman_ref01_ent.load(batman_ref01_match_dt0, None)
         batman_ref01_data_dt0_load_result = helpers.to_map(batman_ref01_data_dt0_loaded)
         assert batman_ref01_data_dt0_load_result is not None
         assert batman_ref01_data_dt0_load_result["id"] == batman_ref01_data["id"]
@@ -95,7 +94,6 @@ def _batman_basic_setup(extra):
         "MCUCOUNTDOWN_TEST_BATMAN_ENTID": idmap,
         "MCUCOUNTDOWN_TEST_LIVE": "FALSE",
         "MCUCOUNTDOWN_TEST_EXPLAIN": "FALSE",
-        "MCUCOUNTDOWN_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -106,7 +104,6 @@ def _batman_basic_setup(extra):
     if env.get("MCUCOUNTDOWN_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("MCUCOUNTDOWN_APIKEY"),
             },
             extra or {},
         ])

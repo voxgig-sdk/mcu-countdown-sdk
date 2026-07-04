@@ -51,8 +51,7 @@ class TestStarWarEntity:
         star_war_ref01_match_dt0 = {
             "id": star_war_ref01_data["id"],
         }
-        star_war_ref01_data_dt0_loaded, err = star_war_ref01_ent.load(star_war_ref01_match_dt0, None)
-        assert err is None
+        star_war_ref01_data_dt0_loaded = star_war_ref01_ent.load(star_war_ref01_match_dt0, None)
         star_war_ref01_data_dt0_load_result = helpers.to_map(star_war_ref01_data_dt0_loaded)
         assert star_war_ref01_data_dt0_load_result is not None
         assert star_war_ref01_data_dt0_load_result["id"] == star_war_ref01_data["id"]
@@ -95,7 +94,6 @@ def _star_war_basic_setup(extra):
         "MCUCOUNTDOWN_TEST_STAR_WAR_ENTID": idmap,
         "MCUCOUNTDOWN_TEST_LIVE": "FALSE",
         "MCUCOUNTDOWN_TEST_EXPLAIN": "FALSE",
-        "MCUCOUNTDOWN_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -106,7 +104,6 @@ def _star_war_basic_setup(extra):
     if env.get("MCUCOUNTDOWN_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("MCUCOUNTDOWN_APIKEY"),
             },
             extra or {},
         ])

@@ -51,8 +51,7 @@ class DcnEntityTest extends TestCase
         $dcn_ref01_match_dt0 = [
             "id" => $dcn_ref01_data["id"],
         ];
-        [$dcn_ref01_data_dt0_loaded, $err] = $dcn_ref01_ent->load($dcn_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $dcn_ref01_data_dt0_loaded = $dcn_ref01_ent->load($dcn_ref01_match_dt0, null);
         $dcn_ref01_data_dt0_load_result = Helpers::to_map($dcn_ref01_data_dt0_loaded);
         $this->assertNotNull($dcn_ref01_data_dt0_load_result);
         $this->assertEquals($dcn_ref01_data_dt0_load_result["id"], $dcn_ref01_data["id"]);
@@ -89,7 +88,6 @@ function dcn_basic_setup($extra)
         "MCUCOUNTDOWN_TEST_DCN_ENTID" => $idmap,
         "MCUCOUNTDOWN_TEST_LIVE" => "FALSE",
         "MCUCOUNTDOWN_TEST_EXPLAIN" => "FALSE",
-        "MCUCOUNTDOWN_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -101,7 +99,6 @@ function dcn_basic_setup($extra)
     if ($env["MCUCOUNTDOWN_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["MCUCOUNTDOWN_APIKEY"],
             ],
             $extra ?? [],
         ]);
