@@ -20,12 +20,11 @@ type Api struct {
 	Type string `json:"type"`
 }
 
-// ApiLoadMatch mirrors the api fields as an all-optional match
-// filter (Go analog of Partial<Api>).
+// ApiLoadMatch is the typed request payload for Api.LoadTyped.
 type ApiLoadMatch struct {
 	DaysUntil *int `json:"days_until,omitempty"`
 	FollowingProduction *map[string]any `json:"following_production,omitempty"`
-	Id *int `json:"id,omitempty"`
+	Id int `json:"id"`
 	Overview *string `json:"overview,omitempty"`
 	PosterUrl *string `json:"poster_url,omitempty"`
 	ReleaseDate *string `json:"release_date,omitempty"`
@@ -45,12 +44,11 @@ type Batman struct {
 	Type string `json:"type"`
 }
 
-// BatmanLoadMatch mirrors the batman fields as an all-optional match
-// filter (Go analog of Partial<Batman>).
+// BatmanLoadMatch is the typed request payload for Batman.LoadTyped.
 type BatmanLoadMatch struct {
 	DaysUntil *int `json:"days_until,omitempty"`
 	FollowingProduction *map[string]any `json:"following_production,omitempty"`
-	Id *int `json:"id,omitempty"`
+	Id int `json:"id"`
 	Overview *string `json:"overview,omitempty"`
 	PosterUrl *string `json:"poster_url,omitempty"`
 	ReleaseDate *string `json:"release_date,omitempty"`
@@ -70,12 +68,11 @@ type Dcn struct {
 	Type string `json:"type"`
 }
 
-// DcnLoadMatch mirrors the dcn fields as an all-optional match
-// filter (Go analog of Partial<Dcn>).
+// DcnLoadMatch is the typed request payload for Dcn.LoadTyped.
 type DcnLoadMatch struct {
 	DaysUntil *int `json:"days_until,omitempty"`
 	FollowingProduction *map[string]any `json:"following_production,omitempty"`
-	Id *int `json:"id,omitempty"`
+	Id int `json:"id"`
 	Overview *string `json:"overview,omitempty"`
 	PosterUrl *string `json:"poster_url,omitempty"`
 	ReleaseDate *string `json:"release_date,omitempty"`
@@ -95,12 +92,11 @@ type StarWar struct {
 	Type string `json:"type"`
 }
 
-// StarWarLoadMatch mirrors the star_war fields as an all-optional match
-// filter (Go analog of Partial<StarWar>).
+// StarWarLoadMatch is the typed request payload for StarWar.LoadTyped.
 type StarWarLoadMatch struct {
 	DaysUntil *int `json:"days_until,omitempty"`
 	FollowingProduction *map[string]any `json:"following_production,omitempty"`
-	Id *int `json:"id,omitempty"`
+	Id int `json:"id"`
 	Overview *string `json:"overview,omitempty"`
 	PosterUrl *string `json:"poster_url,omitempty"`
 	ReleaseDate *string `json:"release_date,omitempty"`

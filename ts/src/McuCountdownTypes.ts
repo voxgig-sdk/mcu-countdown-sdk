@@ -16,7 +16,16 @@ export interface Api {
   type: string
 }
 
-export type ApiLoadMatch = Partial<Api>
+export interface ApiLoadMatch {
+  days_until?: number
+  following_production?: Record<string, any>
+  id: number
+  overview?: string
+  poster_url?: string
+  release_date?: string
+  title?: string
+  type?: string
+}
 
 export interface Batman {
   days_until: number
@@ -29,7 +38,16 @@ export interface Batman {
   type: string
 }
 
-export type BatmanLoadMatch = Partial<Batman>
+export interface BatmanLoadMatch {
+  days_until?: number
+  following_production?: Record<string, any>
+  id: number
+  overview?: string
+  poster_url?: string
+  release_date?: string
+  title?: string
+  type?: string
+}
 
 export interface Dcn {
   days_until: number
@@ -42,7 +60,16 @@ export interface Dcn {
   type: string
 }
 
-export type DcnLoadMatch = Partial<Dcn>
+export interface DcnLoadMatch {
+  days_until?: number
+  following_production?: Record<string, any>
+  id: number
+  overview?: string
+  poster_url?: string
+  release_date?: string
+  title?: string
+  type?: string
+}
 
 export interface StarWar {
   days_until: number
@@ -55,5 +82,14 @@ export interface StarWar {
   type: string
 }
 
-export type StarWarLoadMatch = Partial<StarWar>
+export interface StarWarLoadMatch {
+  days_until?: number
+  following_production?: Record<string, any>
+  id: number
+  overview?: string
+  poster_url?: string
+  release_date?: string
+  title?: string
+  type?: string
+}
 

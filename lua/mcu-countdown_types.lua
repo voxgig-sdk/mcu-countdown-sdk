@@ -17,6 +17,14 @@
 ---@field type string
 
 ---@class ApiLoadMatch
+---@field days_until? number
+---@field following_production? table
+---@field id number
+---@field overview? string
+---@field poster_url? string
+---@field release_date? string
+---@field title? string
+---@field type? string
 
 ---@class Batman
 ---@field days_until number
@@ -29,6 +37,14 @@
 ---@field type string
 
 ---@class BatmanLoadMatch
+---@field days_until? number
+---@field following_production? table
+---@field id number
+---@field overview? string
+---@field poster_url? string
+---@field release_date? string
+---@field title? string
+---@field type? string
 
 ---@class Dcn
 ---@field days_until number
@@ -41,6 +57,14 @@
 ---@field type string
 
 ---@class DcnLoadMatch
+---@field days_until? number
+---@field following_production? table
+---@field id number
+---@field overview? string
+---@field poster_url? string
+---@field release_date? string
+---@field title? string
+---@field type? string
 
 ---@class StarWar
 ---@field days_until number
@@ -53,6 +77,14 @@
 ---@field type string
 
 ---@class StarWarLoadMatch
+---@field days_until? number
+---@field following_production? table
+---@field id number
+---@field overview? string
+---@field poster_url? string
+---@field release_date? string
+---@field title? string
+---@field type? string
 
 local M = {}
 

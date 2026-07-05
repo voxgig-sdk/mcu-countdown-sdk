@@ -102,14 +102,14 @@ local api = client:Api(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `number` | Yes |  |
+| `following_production` | `table` | Yes |  |
+| `id` | `number` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -161,14 +161,14 @@ local batman = client:Batman(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `number` | Yes |  |
+| `following_production` | `table` | Yes |  |
+| `id` | `number` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -220,14 +220,14 @@ local dcn = client:Dcn(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `number` | Yes |  |
+| `following_production` | `table` | Yes |  |
+| `id` | `number` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -279,14 +279,14 @@ local star_war = client:StarWar(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `number` | Yes |  |
+| `following_production` | `table` | Yes |  |
+| `id` | `number` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 

@@ -152,14 +152,14 @@ const api = client.Api()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `number` | Yes |  |
+| `following_production` | `Record<string, any>` | Yes |  |
+| `id` | `number` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -168,7 +168,7 @@ const api = client.Api()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Api().load({ id: 'api_id' })
+const result = await client.Api().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -209,14 +209,14 @@ const batman = client.Batman()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `number` | Yes |  |
+| `following_production` | `Record<string, any>` | Yes |  |
+| `id` | `number` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -225,7 +225,7 @@ const batman = client.Batman()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Batman().load({ id: 'batman_id' })
+const result = await client.Batman().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -266,14 +266,14 @@ const dcn = client.Dcn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `number` | Yes |  |
+| `following_production` | `Record<string, any>` | Yes |  |
+| `id` | `number` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -282,7 +282,7 @@ const dcn = client.Dcn()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Dcn().load({ id: 'dcn_id' })
+const result = await client.Dcn().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -323,14 +323,14 @@ const star_war = client.StarWar()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `number` | Yes |  |
+| `following_production` | `Record<string, any>` | Yes |  |
+| `id` | `number` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -339,7 +339,7 @@ const star_war = client.StarWar()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.StarWar().load({ id: 'star_war_id' })
+const result = await client.StarWar().load({ id: 1 })
 ```
 
 ### Common Methods

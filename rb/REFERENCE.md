@@ -8,7 +8,7 @@ Complete API reference for the McuCountdown Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'mcu-countdown_sdk'
+require_relative 'McuCountdown_sdk'
 
 client = McuCountdownSDK.new(options)
 ```
@@ -105,14 +105,14 @@ api = client.Api
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `Integer` | Yes |  |
+| `following_production` | `Hash` | Yes |  |
+| `id` | `Integer` | Yes |  |
+| `overview` | `String` | No |  |
+| `poster_url` | `String` | No |  |
+| `release_date` | `String` | Yes |  |
+| `title` | `String` | Yes |  |
+| `type` | `String` | Yes |  |
 
 ### Operations
 
@@ -164,14 +164,14 @@ batman = client.Batman
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `Integer` | Yes |  |
+| `following_production` | `Hash` | Yes |  |
+| `id` | `Integer` | Yes |  |
+| `overview` | `String` | No |  |
+| `poster_url` | `String` | No |  |
+| `release_date` | `String` | Yes |  |
+| `title` | `String` | Yes |  |
+| `type` | `String` | Yes |  |
 
 ### Operations
 
@@ -223,14 +223,14 @@ dcn = client.Dcn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `Integer` | Yes |  |
+| `following_production` | `Hash` | Yes |  |
+| `id` | `Integer` | Yes |  |
+| `overview` | `String` | No |  |
+| `poster_url` | `String` | No |  |
+| `release_date` | `String` | Yes |  |
+| `title` | `String` | Yes |  |
+| `type` | `String` | Yes |  |
 
 ### Operations
 
@@ -282,14 +282,14 @@ star_war = client.StarWar
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `Integer` | Yes |  |
+| `following_production` | `Hash` | Yes |  |
+| `id` | `Integer` | Yes |  |
+| `overview` | `String` | No |  |
+| `poster_url` | `String` | No |  |
+| `release_date` | `String` | Yes |  |
+| `title` | `String` | Yes |  |
+| `type` | `String` | Yes |  |
 
 ### Operations
 

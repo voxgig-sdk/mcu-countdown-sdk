@@ -221,25 +221,25 @@ class McuCountdownSDK:
 
 
     def Api(self, data=None) -> "ApiEntity":
-        """Entity factory: client.Api().list({}) / client.Api().load({"id": ...})."""
+        """Entity factory: client.Api().list() / client.Api().load({"id": ...})."""
         from entity.api_entity import ApiEntity
         return ApiEntity(self, data)
 
 
     def Batman(self, data=None) -> "BatmanEntity":
-        """Entity factory: client.Batman().list({}) / client.Batman().load({"id": ...})."""
+        """Entity factory: client.Batman().list() / client.Batman().load({"id": ...})."""
         from entity.batman_entity import BatmanEntity
         return BatmanEntity(self, data)
 
 
     def Dcn(self, data=None) -> "DcnEntity":
-        """Entity factory: client.Dcn().list({}) / client.Dcn().load({"id": ...})."""
+        """Entity factory: client.Dcn().list() / client.Dcn().load({"id": ...})."""
         from entity.dcn_entity import DcnEntity
         return DcnEntity(self, data)
 
 
     def StarWar(self, data=None) -> "StarWarEntity":
-        """Entity factory: client.StarWar().list({}) / client.StarWar().load({"id": ...})."""
+        """Entity factory: client.StarWar().list() / client.StarWar().load({"id": ...})."""
         from entity.star_war_entity import StarWarEntity
         return StarWarEntity(self, data)
 

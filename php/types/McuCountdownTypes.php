@@ -25,12 +25,12 @@ class Api
     public string $type;
 }
 
-/** Match filter for Api#load (any subset of Api fields). */
+/** Request payload for Api#load. */
 class ApiLoadMatch
 {
     public ?int $days_until = null;
     public ?array $following_production = null;
-    public ?int $id = null;
+    public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
     public ?string $release_date = null;
@@ -51,12 +51,12 @@ class Batman
     public string $type;
 }
 
-/** Match filter for Batman#load (any subset of Batman fields). */
+/** Request payload for Batman#load. */
 class BatmanLoadMatch
 {
     public ?int $days_until = null;
     public ?array $following_production = null;
-    public ?int $id = null;
+    public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
     public ?string $release_date = null;
@@ -77,12 +77,12 @@ class Dcn
     public string $type;
 }
 
-/** Match filter for Dcn#load (any subset of Dcn fields). */
+/** Request payload for Dcn#load. */
 class DcnLoadMatch
 {
     public ?int $days_until = null;
     public ?array $following_production = null;
-    public ?int $id = null;
+    public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
     public ?string $release_date = null;
@@ -103,12 +103,12 @@ class StarWar
     public string $type;
 }
 
-/** Match filter for StarWar#load (any subset of StarWar fields). */
+/** Request payload for StarWar#load. */
 class StarWarLoadMatch
 {
     public ?int $days_until = null;
     public ?array $following_production = null;
-    public ?int $id = null;
+    public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
     public ?string $release_date = null;

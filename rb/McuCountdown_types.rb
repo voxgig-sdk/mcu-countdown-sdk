@@ -45,7 +45,7 @@ Api = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Api#load (any subset of Api fields).
+# Request payload for Api#load.
 #
 # @!attribute [rw] days_until
 #   @return [Integer, nil]
@@ -54,7 +54,7 @@ Api = Struct.new(
 #   @return [Hash, nil]
 #
 # @!attribute [rw] id
-#   @return [Integer, nil]
+#   @return [Integer]
 #
 # @!attribute [rw] overview
 #   @return [String, nil]
@@ -119,7 +119,7 @@ Batman = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Batman#load (any subset of Batman fields).
+# Request payload for Batman#load.
 #
 # @!attribute [rw] days_until
 #   @return [Integer, nil]
@@ -128,7 +128,7 @@ Batman = Struct.new(
 #   @return [Hash, nil]
 #
 # @!attribute [rw] id
-#   @return [Integer, nil]
+#   @return [Integer]
 #
 # @!attribute [rw] overview
 #   @return [String, nil]
@@ -193,7 +193,7 @@ Dcn = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Dcn#load (any subset of Dcn fields).
+# Request payload for Dcn#load.
 #
 # @!attribute [rw] days_until
 #   @return [Integer, nil]
@@ -202,7 +202,7 @@ Dcn = Struct.new(
 #   @return [Hash, nil]
 #
 # @!attribute [rw] id
-#   @return [Integer, nil]
+#   @return [Integer]
 #
 # @!attribute [rw] overview
 #   @return [String, nil]
@@ -267,7 +267,7 @@ StarWar = Struct.new(
   keyword_init: true
 )
 
-# Match filter for StarWar#load (any subset of StarWar fields).
+# Request payload for StarWar#load.
 #
 # @!attribute [rw] days_until
 #   @return [Integer, nil]
@@ -276,7 +276,7 @@ StarWar = Struct.new(
 #   @return [Hash, nil]
 #
 # @!attribute [rw] id
-#   @return [Integer, nil]
+#   @return [Integer]
 #
 # @!attribute [rw] overview
 #   @return [String, nil]

@@ -30,10 +30,13 @@ class Api(ApiRequired, total=False):
     poster_url: str
 
 
-class ApiLoadMatch(TypedDict, total=False):
+class ApiLoadMatchRequired(TypedDict):
+    id: int
+
+
+class ApiLoadMatch(ApiLoadMatchRequired, total=False):
     days_until: int
     following_production: dict
-    id: int
     overview: str
     poster_url: str
     release_date: str
@@ -55,10 +58,13 @@ class Batman(BatmanRequired, total=False):
     poster_url: str
 
 
-class BatmanLoadMatch(TypedDict, total=False):
+class BatmanLoadMatchRequired(TypedDict):
+    id: int
+
+
+class BatmanLoadMatch(BatmanLoadMatchRequired, total=False):
     days_until: int
     following_production: dict
-    id: int
     overview: str
     poster_url: str
     release_date: str
@@ -80,10 +86,13 @@ class Dcn(DcnRequired, total=False):
     poster_url: str
 
 
-class DcnLoadMatch(TypedDict, total=False):
+class DcnLoadMatchRequired(TypedDict):
+    id: int
+
+
+class DcnLoadMatch(DcnLoadMatchRequired, total=False):
     days_until: int
     following_production: dict
-    id: int
     overview: str
     poster_url: str
     release_date: str
@@ -105,10 +114,13 @@ class StarWar(StarWarRequired, total=False):
     poster_url: str
 
 
-class StarWarLoadMatch(TypedDict, total=False):
+class StarWarLoadMatchRequired(TypedDict):
+    id: int
+
+
+class StarWarLoadMatch(StarWarLoadMatchRequired, total=False):
     days_until: int
     following_production: dict
-    id: int
     overview: str
     poster_url: str
     release_date: str

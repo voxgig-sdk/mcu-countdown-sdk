@@ -8,7 +8,7 @@ Complete API reference for the McuCountdown PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/mcu-countdown_sdk.php';
+require_once __DIR__ . '/mcucountdown_sdk.php';
 
 $client = new McuCountdownSDK($options);
 ```
@@ -57,11 +57,11 @@ Create a new `DcnEntity` instance. Pass `null` for no initial data.
 
 Create a new `StarWarEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): McuCountdownUtility`
 
 Return a copy of the SDK utility object.
 
@@ -104,14 +104,14 @@ $api = $client->Api();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `int` | Yes |  |
+| `following_production` | `array` | Yes |  |
+| `id` | `int` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -125,19 +125,19 @@ $result = $client->Api()->load(["id" => "api_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -146,7 +146,7 @@ Set the entity match criteria.
 Create a new `ApiEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -163,14 +163,14 @@ $batman = $client->Batman();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `int` | Yes |  |
+| `following_production` | `array` | Yes |  |
+| `id` | `int` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -184,19 +184,19 @@ $result = $client->Batman()->load(["id" => "batman_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -205,7 +205,7 @@ Set the entity match criteria.
 Create a new `BatmanEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -222,14 +222,14 @@ $dcn = $client->Dcn();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `int` | Yes |  |
+| `following_production` | `array` | Yes |  |
+| `id` | `int` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -243,19 +243,19 @@ $result = $client->Dcn()->load(["id" => "dcn_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -264,7 +264,7 @@ Set the entity match criteria.
 Create a new `DcnEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -281,14 +281,14 @@ $star_war = $client->StarWar();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `int` | Yes |  |
+| `following_production` | `array` | Yes |  |
+| `id` | `int` | Yes |  |
+| `overview` | `string` | No |  |
+| `poster_url` | `string` | No |  |
+| `release_date` | `string` | Yes |  |
+| `title` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
 
 ### Operations
 
@@ -302,19 +302,19 @@ $result = $client->StarWar()->load(["id" => "star_war_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -323,7 +323,7 @@ Set the entity match criteria.
 Create a new `StarWarEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

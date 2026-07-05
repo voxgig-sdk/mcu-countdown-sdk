@@ -8,7 +8,7 @@ Complete API reference for the McuCountdown Python SDK.
 ### Constructor
 
 ```python
-from mcu-countdown_sdk import McuCountdownSDK
+from mcucountdown_sdk import McuCountdownSDK
 
 client = McuCountdownSDK(options)
 ```
@@ -99,14 +99,14 @@ api = client.Api()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `int` | Yes |  |
+| `following_production` | `dict` | Yes |  |
+| `id` | `int` | Yes |  |
+| `overview` | `str` | No |  |
+| `poster_url` | `str` | No |  |
+| `release_date` | `str` | Yes |  |
+| `title` | `str` | Yes |  |
+| `type` | `str` | Yes |  |
 
 ### Operations
 
@@ -157,14 +157,14 @@ batman = client.Batman()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `int` | Yes |  |
+| `following_production` | `dict` | Yes |  |
+| `id` | `int` | Yes |  |
+| `overview` | `str` | No |  |
+| `poster_url` | `str` | No |  |
+| `release_date` | `str` | Yes |  |
+| `title` | `str` | Yes |  |
+| `type` | `str` | Yes |  |
 
 ### Operations
 
@@ -215,14 +215,14 @@ dcn = client.Dcn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `int` | Yes |  |
+| `following_production` | `dict` | Yes |  |
+| `id` | `int` | Yes |  |
+| `overview` | `str` | No |  |
+| `poster_url` | `str` | No |  |
+| `release_date` | `str` | Yes |  |
+| `title` | `str` | Yes |  |
+| `type` | `str` | Yes |  |
 
 ### Operations
 
@@ -273,14 +273,14 @@ star_war = client.StarWar()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | ``$INTEGER`` | Yes |  |
-| `following_production` | ``$OBJECT`` | Yes |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `overview` | ``$STRING`` | No |  |
-| `poster_url` | ``$STRING`` | No |  |
-| `release_date` | ``$STRING`` | Yes |  |
-| `title` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | Yes |  |
+| `days_until` | `int` | Yes |  |
+| `following_production` | `dict` | Yes |  |
+| `id` | `int` | Yes |  |
+| `overview` | `str` | No |  |
+| `poster_url` | `str` | No |  |
+| `release_date` | `str` | Yes |  |
+| `title` | `str` | Yes |  |
+| `type` | `str` | Yes |  |
 
 ### Operations
 
