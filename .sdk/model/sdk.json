@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -618,6 +615,7 @@
           "name": "GPL-3.0",
           "url": "https://github.com/DiljotSG/MCU-Countdown/blob/main/LICENSE"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
@@ -628,8 +626,10 @@
             "url": "http://localhost:5000"
           }
         ],
+        "summary": "API to find out when the next MCU film is releasing.",
         "title": "MCU-Countdown",
-        "version": "2.0.10"
+        "version": "2.0.10",
+        "website": "https://github.com/DiljotSG/MCU-Countdown"
       },
       "option": {},
       "target": {
@@ -682,6 +682,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -732,6 +735,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

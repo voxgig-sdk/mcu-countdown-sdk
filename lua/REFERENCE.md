@@ -118,7 +118,7 @@ local api = client:Api(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Api():load({ id = "api_id" })
+local result, err = client:Api():load({ id = 1 })
 ```
 
 ### Common Methods
@@ -177,7 +177,7 @@ local batman = client:Batman(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Batman():load({ id = "batman_id" })
+local result, err = client:Batman():load({ id = 1 })
 ```
 
 ### Common Methods
@@ -236,7 +236,7 @@ local dcn = client:Dcn(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Dcn():load({ id = "dcn_id" })
+local result, err = client:Dcn():load({ id = 1 })
 ```
 
 ### Common Methods
@@ -295,7 +295,7 @@ local star_war = client:StarWar(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:StarWar():load({ id = "star_war_id" })
+local result, err = client:StarWar():load({ id = 1 })
 ```
 
 ### Common Methods

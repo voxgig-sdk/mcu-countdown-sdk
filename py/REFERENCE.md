@@ -115,7 +115,7 @@ api = client.Api()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Api().load({"id": "api_id"})
+result = client.Api().load({"id": 1})
 ```
 
 ### Common Methods
@@ -173,7 +173,7 @@ batman = client.Batman()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Batman().load({"id": "batman_id"})
+result = client.Batman().load({"id": 1})
 ```
 
 ### Common Methods
@@ -231,7 +231,7 @@ dcn = client.Dcn()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Dcn().load({"id": "dcn_id"})
+result = client.Dcn().load({"id": 1})
 ```
 
 ### Common Methods
@@ -289,7 +289,7 @@ star_war = client.StarWar()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.StarWar().load({"id": "star_war_id"})
+result = client.StarWar().load({"id": 1})
 ```
 
 ### Common Methods

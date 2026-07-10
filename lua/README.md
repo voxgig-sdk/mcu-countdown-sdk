@@ -36,7 +36,7 @@ local client = sdk.new()
 ### 3. Load an api
 
 ```lua
-local api, err = client:Api():load({ id = "example_id" })
+local api, err = client:Api():load({ id = 1 })
 if err then error(err) end
 print(api)
 ```
@@ -323,7 +323,7 @@ Create an instance: `local api = client:Api(nil)`
 #### Example: Load
 
 ```lua
-local api, err = client:Api():load({ id = "api_id" })
+local api, err = client:Api():load({ id = 1 })
 ```
 
 
@@ -353,7 +353,7 @@ Create an instance: `local batman = client:Batman(nil)`
 #### Example: Load
 
 ```lua
-local batman, err = client:Batman():load({ id = "batman_id" })
+local batman, err = client:Batman():load({ id = 1 })
 ```
 
 
@@ -383,7 +383,7 @@ Create an instance: `local dcn = client:Dcn(nil)`
 #### Example: Load
 
 ```lua
-local dcn, err = client:Dcn():load({ id = "dcn_id" })
+local dcn, err = client:Dcn():load({ id = 1 })
 ```
 
 
@@ -413,7 +413,7 @@ Create an instance: `local star_war = client:StarWar(nil)`
 #### Example: Load
 
 ```lua
-local star_war, err = client:StarWar():load({ id = "star_war_id" })
+local star_war, err = client:StarWar():load({ id = 1 })
 ```
 
 

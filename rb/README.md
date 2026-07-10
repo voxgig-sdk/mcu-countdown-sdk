@@ -35,7 +35,7 @@ client = McuCountdownSDK.new
 ```ruby
 begin
   # load returns the bare Api record (raises on error).
-  api = client.Api.load({ "id" => "example_id" })
+  api = client.Api.load({ "id" => 1 })
   puts api
 rescue => err
   warn "load failed: #{err}"
@@ -336,7 +336,7 @@ Create an instance: `api = client.Api`
 
 ```ruby
 # load returns the bare Api record (raises on error).
-api = client.Api.load({ "id" => "api_id" })
+api = client.Api.load({ "id" => 1 })
 ```
 
 
@@ -367,7 +367,7 @@ Create an instance: `batman = client.Batman`
 
 ```ruby
 # load returns the bare Batman record (raises on error).
-batman = client.Batman.load({ "id" => "batman_id" })
+batman = client.Batman.load({ "id" => 1 })
 ```
 
 
@@ -398,7 +398,7 @@ Create an instance: `dcn = client.Dcn`
 
 ```ruby
 # load returns the bare Dcn record (raises on error).
-dcn = client.Dcn.load({ "id" => "dcn_id" })
+dcn = client.Dcn.load({ "id" => 1 })
 ```
 
 
@@ -429,7 +429,7 @@ Create an instance: `star_war = client.StarWar`
 
 ```ruby
 # load returns the bare StarWar record (raises on error).
-star_war = client.StarWar.load({ "id" => "star_war_id" })
+star_war = client.StarWar.load({ "id" => 1 })
 ```
 
 

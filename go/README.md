@@ -356,7 +356,7 @@ Create an instance: `api := client.Api(nil)`
 #### Example: Load
 
 ```go
-api, err := client.Api(nil).Load(map[string]any{"id": "api_id"}, nil)
+api, err := client.Api(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
@@ -390,7 +390,7 @@ Create an instance: `batman := client.Batman(nil)`
 #### Example: Load
 
 ```go
-batman, err := client.Batman(nil).Load(map[string]any{"id": "batman_id"}, nil)
+batman, err := client.Batman(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
@@ -424,7 +424,7 @@ Create an instance: `dcn := client.Dcn(nil)`
 #### Example: Load
 
 ```go
-dcn, err := client.Dcn(nil).Load(map[string]any{"id": "dcn_id"}, nil)
+dcn, err := client.Dcn(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
@@ -434,7 +434,7 @@ fmt.Println(dcn) // the loaded record
 
 ### StarWar
 
-Create an instance: `star_war := client.StarWar(nil)`
+Create an instance: `starWar := client.StarWar(nil)`
 
 #### Operations
 
@@ -458,11 +458,11 @@ Create an instance: `star_war := client.StarWar(nil)`
 #### Example: Load
 
 ```go
-star_war, err := client.StarWar(nil).Load(map[string]any{"id": "star_war_id"}, nil)
+starWar, err := client.StarWar(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(star_war) // the loaded record
+fmt.Println(starWar) // the loaded record
 ```
 
 

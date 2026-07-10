@@ -36,7 +36,7 @@ $client = new McuCountdownSDK();
 ```php
 try {
     // load() returns the bare Api record (throws on error).
-    $api = $client->Api()->load(["id" => "example_id"]);
+    $api = $client->Api()->load(["id" => 1]);
     print_r($api);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -346,7 +346,7 @@ Create an instance: `$api = $client->Api();`
 
 ```php
 // load() returns the bare Api record (throws on error).
-$api = $client->Api()->load(["id" => "api_id"]);
+$api = $client->Api()->load(["id" => 1]);
 ```
 
 
@@ -377,7 +377,7 @@ Create an instance: `$batman = $client->Batman();`
 
 ```php
 // load() returns the bare Batman record (throws on error).
-$batman = $client->Batman()->load(["id" => "batman_id"]);
+$batman = $client->Batman()->load(["id" => 1]);
 ```
 
 
@@ -408,7 +408,7 @@ Create an instance: `$dcn = $client->Dcn();`
 
 ```php
 // load() returns the bare Dcn record (throws on error).
-$dcn = $client->Dcn()->load(["id" => "dcn_id"]);
+$dcn = $client->Dcn()->load(["id" => 1]);
 ```
 
 
@@ -439,7 +439,7 @@ Create an instance: `$star_war = $client->StarWar();`
 
 ```php
 // load() returns the bare StarWar record (throws on error).
-$star_war = $client->StarWar()->load(["id" => "star_war_id"]);
+$star_war = $client->StarWar()->load(["id" => 1]);
 ```
 
 

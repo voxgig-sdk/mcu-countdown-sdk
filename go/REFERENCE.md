@@ -103,6 +103,7 @@ same parameters as `Direct()`.
 
 ```go
 api := client.Api(nil)
+fmt.Println(api.GetName()) // "api"
 ```
 
 ### Fields
@@ -125,7 +126,11 @@ api := client.Api(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Api(nil).Load(map[string]any{"id": "api_id"}, nil)
+result, err := client.Api(nil).Load(map[string]any{"id": 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -156,6 +161,7 @@ Return the entity name.
 
 ```go
 batman := client.Batman(nil)
+fmt.Println(batman.GetName()) // "batman"
 ```
 
 ### Fields
@@ -178,7 +184,11 @@ batman := client.Batman(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Batman(nil).Load(map[string]any{"id": "batman_id"}, nil)
+result, err := client.Batman(nil).Load(map[string]any{"id": 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -209,6 +219,7 @@ Return the entity name.
 
 ```go
 dcn := client.Dcn(nil)
+fmt.Println(dcn.GetName()) // "dcn"
 ```
 
 ### Fields
@@ -231,7 +242,11 @@ dcn := client.Dcn(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Dcn(nil).Load(map[string]any{"id": "dcn_id"}, nil)
+result, err := client.Dcn(nil).Load(map[string]any{"id": 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -261,7 +276,8 @@ Return the entity name.
 ## StarWarEntity
 
 ```go
-star_war := client.StarWar(nil)
+starWar := client.StarWar(nil)
+fmt.Println(starWar.GetName()) // "star_war"
 ```
 
 ### Fields
@@ -284,7 +300,11 @@ star_war := client.StarWar(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.StarWar(nil).Load(map[string]any{"id": "star_war_id"}, nil)
+result, err := client.StarWar(nil).Load(map[string]any{"id": 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

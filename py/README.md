@@ -42,7 +42,7 @@ client = McuCountdownSDK()
 
 ```python
 try:
-    api = client.Api().load({"id": "example_id"})
+    api = client.Api().load({"id": 1})
     print(api)
 except Exception as err:
     print(f"load failed: {err}")
@@ -338,7 +338,7 @@ Create an instance: `api = client.Api()`
 #### Example: Load
 
 ```python
-api = client.Api().load({"id": "api_id"})
+api = client.Api().load({"id": 1})
 ```
 
 
@@ -368,7 +368,7 @@ Create an instance: `batman = client.Batman()`
 #### Example: Load
 
 ```python
-batman = client.Batman().load({"id": "batman_id"})
+batman = client.Batman().load({"id": 1})
 ```
 
 
@@ -398,7 +398,7 @@ Create an instance: `dcn = client.Dcn()`
 #### Example: Load
 
 ```python
-dcn = client.Dcn().load({"id": "dcn_id"})
+dcn = client.Dcn().load({"id": 1})
 ```
 
 
@@ -428,7 +428,7 @@ Create an instance: `star_war = client.StarWar()`
 #### Example: Load
 
 ```python
-star_war = client.StarWar().load({"id": "star_war_id"})
+star_war = client.StarWar().load({"id": 1})
 ```
 
 
