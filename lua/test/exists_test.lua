@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- McuCountdown SDK exists test
 
 local sdk = require("mcu-countdown_sdk")
 
