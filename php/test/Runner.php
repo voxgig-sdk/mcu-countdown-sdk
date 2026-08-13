@@ -43,8 +43,8 @@ class McuCountdownTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('MCUCOUNTDOWN_TEST_LIVE');
-        $override = self::getenv('MCUCOUNTDOWN_TEST_OVERRIDE');
+        $live = self::getenv('MCU_COUNTDOWN_TEST_LIVE');
+        $override = self::getenv('MCU_COUNTDOWN_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class McuCountdownTestRunner
             }
         }
 
-        $explain = self::getenv('MCUCOUNTDOWN_TEST_EXPLAIN');
+        $explain = self::getenv('MCU_COUNTDOWN_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['MCUCOUNTDOWN_TEST_EXPLAIN'] = $explain;
+            $m['MCU_COUNTDOWN_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

@@ -8,7 +8,6 @@
 
 ---@class Api
 ---@field days_until number
----@field following_production table
 ---@field id number
 ---@field overview? string
 ---@field poster_url? string
@@ -18,7 +17,6 @@
 
 ---@class ApiLoadMatch
 ---@field days_until? number
----@field following_production? table
 ---@field id number
 ---@field overview? string
 ---@field poster_url? string
@@ -28,7 +26,6 @@
 
 ---@class Batman
 ---@field days_until number
----@field following_production table
 ---@field id number
 ---@field overview? string
 ---@field poster_url? string
@@ -38,7 +35,6 @@
 
 ---@class BatmanLoadMatch
 ---@field days_until? number
----@field following_production? table
 ---@field id number
 ---@field overview? string
 ---@field poster_url? string
@@ -48,7 +44,6 @@
 
 ---@class Dcn
 ---@field days_until number
----@field following_production table
 ---@field id number
 ---@field overview? string
 ---@field poster_url? string
@@ -58,7 +53,6 @@
 
 ---@class DcnLoadMatch
 ---@field days_until? number
----@field following_production? table
 ---@field id number
 ---@field overview? string
 ---@field poster_url? string
@@ -68,7 +62,6 @@
 
 ---@class StarWar
 ---@field days_until number
----@field following_production table
 ---@field id number
 ---@field overview? string
 ---@field poster_url? string
@@ -78,7 +71,6 @@
 
 ---@class StarWarLoadMatch
 ---@field days_until? number
----@field following_production? table
 ---@field id number
 ---@field overview? string
 ---@field poster_url? string

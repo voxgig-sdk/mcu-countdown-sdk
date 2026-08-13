@@ -105,7 +105,6 @@ $api = $client->Api();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `int` | Yes |  |
-| `following_production` | `array` | Yes |  |
 | `id` | `int` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -164,7 +163,6 @@ $batman = $client->Batman();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `int` | Yes |  |
-| `following_production` | `array` | Yes |  |
 | `id` | `int` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -223,7 +221,6 @@ $dcn = $client->Dcn();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `int` | Yes |  |
-| `following_production` | `array` | Yes |  |
 | `id` | `int` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -282,7 +279,6 @@ $star_war = $client->StarWar();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `int` | Yes |  |
-| `following_production` | `array` | Yes |  |
 | `id` | `int` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |

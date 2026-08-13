@@ -35,7 +35,7 @@ $client = new McuCountdownSDK();
 
 ```php
 try {
-    // load() returns the bare Api record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Api record (throws on error).
     $api = $client->Api()->load(["id" => 1]);
     print_r($api);
 } catch (\Throwable $err) {
@@ -126,7 +126,8 @@ $client = McuCountdownSDK::test([
     "entity" => ["api" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $api = $client->Api()->load(["id" => "test01"]);
 print_r($api);
 ```
@@ -228,7 +229,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -251,7 +252,6 @@ On error, `ok` is `false` and `$err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -268,7 +268,6 @@ API path: `/api`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -285,7 +284,6 @@ API path: `/batman`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -302,7 +300,6 @@ API path: `/dc`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -334,7 +331,6 @@ Create an instance: `$api = $client->Api();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `int` |  |
-| `following_production` | `array` |  |
 | `id` | `int` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -345,7 +341,7 @@ Create an instance: `$api = $client->Api();`
 #### Example: Load
 
 ```php
-// load() returns the bare Api record (throws on error).
+// load() returns the ENTITY — call data_get() for the Api record (throws on error).
 $api = $client->Api()->load(["id" => 1]);
 ```
 
@@ -365,7 +361,6 @@ Create an instance: `$batman = $client->Batman();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `int` |  |
-| `following_production` | `array` |  |
 | `id` | `int` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -376,7 +371,7 @@ Create an instance: `$batman = $client->Batman();`
 #### Example: Load
 
 ```php
-// load() returns the bare Batman record (throws on error).
+// load() returns the ENTITY — call data_get() for the Batman record (throws on error).
 $batman = $client->Batman()->load(["id" => 1]);
 ```
 
@@ -396,7 +391,6 @@ Create an instance: `$dcn = $client->Dcn();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `int` |  |
-| `following_production` | `array` |  |
 | `id` | `int` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -407,7 +401,7 @@ Create an instance: `$dcn = $client->Dcn();`
 #### Example: Load
 
 ```php
-// load() returns the bare Dcn record (throws on error).
+// load() returns the ENTITY — call data_get() for the Dcn record (throws on error).
 $dcn = $client->Dcn()->load(["id" => 1]);
 ```
 
@@ -427,7 +421,6 @@ Create an instance: `$star_war = $client->StarWar();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `int` |  |
-| `following_production` | `array` |  |
 | `id` | `int` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -438,7 +431,7 @@ Create an instance: `$star_war = $client->StarWar();`
 #### Example: Load
 
 ```php
-// load() returns the bare StarWar record (throws on error).
+// load() returns the ENTITY — call data_get() for the StarWar record (throws on error).
 $star_war = $client->StarWar()->load(["id" => 1]);
 ```
 

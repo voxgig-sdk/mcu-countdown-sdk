@@ -262,7 +262,6 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"days_until"` |  |
-| `"following_production"` |  |
 | `"id"` |  |
 | `"overview"` |  |
 | `"poster_url"` |  |
@@ -279,7 +278,6 @@ API path: `/api`
 | Field | Description |
 | --- | --- |
 | `"days_until"` |  |
-| `"following_production"` |  |
 | `"id"` |  |
 | `"overview"` |  |
 | `"poster_url"` |  |
@@ -296,7 +294,6 @@ API path: `/batman`
 | Field | Description |
 | --- | --- |
 | `"days_until"` |  |
-| `"following_production"` |  |
 | `"id"` |  |
 | `"overview"` |  |
 | `"poster_url"` |  |
@@ -313,7 +310,6 @@ API path: `/dc`
 | Field | Description |
 | --- | --- |
 | `"days_until"` |  |
-| `"following_production"` |  |
 | `"id"` |  |
 | `"overview"` |  |
 | `"poster_url"` |  |
@@ -345,7 +341,6 @@ Create an instance: `api := client.Api(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `int` |  |
-| `following_production` | `map[string]any` |  |
 | `id` | `int` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -379,7 +374,6 @@ Create an instance: `batman := client.Batman(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `int` |  |
-| `following_production` | `map[string]any` |  |
 | `id` | `int` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -413,7 +407,6 @@ Create an instance: `dcn := client.Dcn(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `int` |  |
-| `following_production` | `map[string]any` |  |
 | `id` | `int` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -447,7 +440,6 @@ Create an instance: `starWar := client.StarWar(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `int` |  |
-| `following_production` | `map[string]any` |  |
 | `id` | `int` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |

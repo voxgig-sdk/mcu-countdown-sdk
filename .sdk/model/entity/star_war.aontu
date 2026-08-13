@@ -11,11 +11,6 @@ main: kit: entity: star_war: {
       type: "`$INTEGER`"
     }
     {
-      name: "following_production"
-      req: true
-      type: "`$OBJECT`"
-    }
-    {
       name: "id"
       req: true
       type: "`$INTEGER`"
@@ -65,7 +60,7 @@ main: kit: entity: star_war: {
           ]
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.following_production`"
           }
         }
       ]

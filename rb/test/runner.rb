@@ -23,8 +23,8 @@ module McuCountdownTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("MCUCOUNTDOWN_TEST_LIVE")
-    override = getenv("MCUCOUNTDOWN_TEST_OVERRIDE")
+    live = getenv("MCU_COUNTDOWN_TEST_LIVE")
+    override = getenv("MCU_COUNTDOWN_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module McuCountdownTestRunner
       end
     end
 
-    explain = getenv("MCUCOUNTDOWN_TEST_EXPLAIN")
-    m["MCUCOUNTDOWN_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("MCU_COUNTDOWN_TEST_EXPLAIN")
+    m["MCU_COUNTDOWN_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

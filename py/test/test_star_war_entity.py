@@ -6,9 +6,9 @@ import time
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from mcucountdown_sdk.utility.voxgig_struct import voxgig_struct as vs
 from mcucountdown_sdk import McuCountdownSDK
-from core import helpers
+from mcucountdown_sdk.core import helpers
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 from test import runner
@@ -36,7 +36,7 @@ class TestStarWarEntity:
         # without an *_ENTID env override, those IDs hit the live API and 4xx.
         if setup.get("synthetic_only"):
             pytest.skip("live entity test uses synthetic IDs from fixture — "
-                        "set MCUCOUNTDOWN_TEST_STAR_WAR_ENTID JSON to run live")
+                        "set MCU_COUNTDOWN_TEST_STAR_WAR_ENTID JSON to run live")
         client = setup["client"]
 
         # Bootstrap entity data from existing test data.
@@ -52,7 +52,7 @@ class TestStarWarEntity:
             "id": star_war_ref01_data["id"],
         }
         star_war_ref01_data_dt0_loaded = star_war_ref01_ent.load(star_war_ref01_match_dt0, None)
-        star_war_ref01_data_dt0_load_result = helpers.to_map(star_war_ref01_data_dt0_loaded)
+        star_war_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(star_war_ref01_data_dt0_loaded))
         assert star_war_ref01_data_dt0_load_result is not None
         assert star_war_ref01_data_dt0_load_result["id"] == star_war_ref01_data["id"]
 
@@ -87,21 +87,21 @@ def _star_war_basic_setup(extra):
     # mode is on without a real override, the basic test runs against synthetic
     # IDs from the fixture and 4xx's. We surface this so the test can skip.
     _entid_env_raw = os.environ.get(
-        "MCUCOUNTDOWN_TEST_STAR_WAR_ENTID")
+        "MCU_COUNTDOWN_TEST_STAR_WAR_ENTID")
     _idmap_overridden = _entid_env_raw is not None and _entid_env_raw.strip().startswith("{")
 
     env = runner.env_override({
-        "MCUCOUNTDOWN_TEST_STAR_WAR_ENTID": idmap,
-        "MCUCOUNTDOWN_TEST_LIVE": "FALSE",
-        "MCUCOUNTDOWN_TEST_EXPLAIN": "FALSE",
+        "MCU_COUNTDOWN_TEST_STAR_WAR_ENTID": idmap,
+        "MCU_COUNTDOWN_TEST_LIVE": "FALSE",
+        "MCU_COUNTDOWN_TEST_EXPLAIN": "FALSE",
     })
 
     idmap_resolved = helpers.to_map(
-        env.get("MCUCOUNTDOWN_TEST_STAR_WAR_ENTID"))
+        env.get("MCU_COUNTDOWN_TEST_STAR_WAR_ENTID"))
     if idmap_resolved is None:
         idmap_resolved = helpers.to_map(idmap)
 
-    if env.get("MCUCOUNTDOWN_TEST_LIVE") == "TRUE":
+    if env.get("MCU_COUNTDOWN_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
             },
@@ -109,13 +109,13 @@ def _star_war_basic_setup(extra):
         ])
         client = McuCountdownSDK(helpers.to_map(merged_opts))
 
-    _live = env.get("MCUCOUNTDOWN_TEST_LIVE") == "TRUE"
+    _live = env.get("MCU_COUNTDOWN_TEST_LIVE") == "TRUE"
     return {
         "client": client,
         "data": entity_data,
         "idmap": idmap_resolved,
         "env": env,
-        "explain": env.get("MCUCOUNTDOWN_TEST_EXPLAIN") == "TRUE",
+        "explain": env.get("MCU_COUNTDOWN_TEST_EXPLAIN") == "TRUE",
         "live": _live,
         "synthetic_only": _live and not _idmap_overridden,
         "now": int(time.time() * 1000),

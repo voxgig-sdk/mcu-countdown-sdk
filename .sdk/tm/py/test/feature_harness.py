@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import McuCountdownControl
-from core.error import McuCountdownError
-from core.result import McuCountdownResult
-from core.spec import McuCountdownSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import McuCountdownControl
+from projectname_sdk.core.error import McuCountdownError
+from projectname_sdk.core.result import McuCountdownResult
+from projectname_sdk.core.spec import McuCountdownSpec
 
 
 # True when this SDK was generated with the named feature.

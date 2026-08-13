@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ McuCountdownUtility::setRegistrar(function (McuCountdownUtility $u): void {
     $u->prepare_params = [McuCountdownPrepareParams::class, 'call'];
     $u->prepare_path = [McuCountdownPreparePath::class, 'call'];
     $u->prepare_query = [McuCountdownPrepareQuery::class, 'call'];
+    $u->graphql_body = [McuCountdownGraphql::class, 'body'];
+    $u->graphql_errors = [McuCountdownGraphql::class, 'errors'];
     $u->result_basic = [McuCountdownResultBasic::class, 'call'];
     $u->result_body = [McuCountdownResultBody::class, 'call'];
     $u->result_headers = [McuCountdownResultHeaders::class, 'call'];

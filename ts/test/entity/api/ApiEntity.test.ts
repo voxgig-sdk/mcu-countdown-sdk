@@ -26,8 +26,8 @@ import {
 describe('ApiEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when MCUCOUNTDOWN_TEST_LIVE=TRUE.
-  afterEach(liveDelay('MCUCOUNTDOWN_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when MCU_COUNTDOWN_TEST_LIVE=TRUE.
+  afterEach(liveDelay('MCU_COUNTDOWN_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = McuCountdownSDK.test()
@@ -63,7 +63,7 @@ describe('ApiEntity', async () => {
     const api_ref01_ent = client.Api()
     const api_ref01_match_dt0: any = {}
     api_ref01_match_dt0.id = api_ref01_data.id
-    const api_ref01_data_dt0 = await api_ref01_ent.load(api_ref01_match_dt0)
+    const api_ref01_data_dt0 = (await api_ref01_ent.load(api_ref01_match_dt0)).data()
     assert(api_ref01_data_dt0.id === api_ref01_data.id)
 
 

@@ -103,7 +103,6 @@ local api = client:Api(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `number` | Yes |  |
-| `following_production` | `table` | Yes |  |
 | `id` | `number` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -162,7 +161,6 @@ local batman = client:Batman(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `number` | Yes |  |
-| `following_production` | `table` | Yes |  |
 | `id` | `number` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -221,7 +219,6 @@ local dcn = client:Dcn(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `number` | Yes |  |
-| `following_production` | `table` | Yes |  |
 | `id` | `number` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -280,7 +277,6 @@ local star_war = client:StarWar(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `number` | Yes |  |
-| `following_production` | `table` | Yes |  |
 | `id` | `number` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |

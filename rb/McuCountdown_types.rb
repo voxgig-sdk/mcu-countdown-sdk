@@ -13,9 +13,6 @@
 # @!attribute [rw] days_until
 #   @return [Integer]
 #
-# @!attribute [rw] following_production
-#   @return [Hash]
-#
 # @!attribute [rw] id
 #   @return [Integer]
 #
@@ -35,7 +32,6 @@
 #   @return [String]
 Api = Struct.new(
   :days_until,
-  :following_production,
   :id,
   :overview,
   :poster_url,
@@ -49,9 +45,6 @@ Api = Struct.new(
 #
 # @!attribute [rw] days_until
 #   @return [Integer, nil]
-#
-# @!attribute [rw] following_production
-#   @return [Hash, nil]
 #
 # @!attribute [rw] id
 #   @return [Integer]
@@ -72,7 +65,6 @@ Api = Struct.new(
 #   @return [String, nil]
 ApiLoadMatch = Struct.new(
   :days_until,
-  :following_production,
   :id,
   :overview,
   :poster_url,
@@ -86,9 +78,6 @@ ApiLoadMatch = Struct.new(
 #
 # @!attribute [rw] days_until
 #   @return [Integer]
-#
-# @!attribute [rw] following_production
-#   @return [Hash]
 #
 # @!attribute [rw] id
 #   @return [Integer]
@@ -109,7 +98,6 @@ ApiLoadMatch = Struct.new(
 #   @return [String]
 Batman = Struct.new(
   :days_until,
-  :following_production,
   :id,
   :overview,
   :poster_url,
@@ -123,9 +111,6 @@ Batman = Struct.new(
 #
 # @!attribute [rw] days_until
 #   @return [Integer, nil]
-#
-# @!attribute [rw] following_production
-#   @return [Hash, nil]
 #
 # @!attribute [rw] id
 #   @return [Integer]
@@ -146,7 +131,6 @@ Batman = Struct.new(
 #   @return [String, nil]
 BatmanLoadMatch = Struct.new(
   :days_until,
-  :following_production,
   :id,
   :overview,
   :poster_url,
@@ -160,9 +144,6 @@ BatmanLoadMatch = Struct.new(
 #
 # @!attribute [rw] days_until
 #   @return [Integer]
-#
-# @!attribute [rw] following_production
-#   @return [Hash]
 #
 # @!attribute [rw] id
 #   @return [Integer]
@@ -183,7 +164,6 @@ BatmanLoadMatch = Struct.new(
 #   @return [String]
 Dcn = Struct.new(
   :days_until,
-  :following_production,
   :id,
   :overview,
   :poster_url,
@@ -197,9 +177,6 @@ Dcn = Struct.new(
 #
 # @!attribute [rw] days_until
 #   @return [Integer, nil]
-#
-# @!attribute [rw] following_production
-#   @return [Hash, nil]
 #
 # @!attribute [rw] id
 #   @return [Integer]
@@ -220,7 +197,6 @@ Dcn = Struct.new(
 #   @return [String, nil]
 DcnLoadMatch = Struct.new(
   :days_until,
-  :following_production,
   :id,
   :overview,
   :poster_url,
@@ -234,9 +210,6 @@ DcnLoadMatch = Struct.new(
 #
 # @!attribute [rw] days_until
 #   @return [Integer]
-#
-# @!attribute [rw] following_production
-#   @return [Hash]
 #
 # @!attribute [rw] id
 #   @return [Integer]
@@ -257,7 +230,6 @@ DcnLoadMatch = Struct.new(
 #   @return [String]
 StarWar = Struct.new(
   :days_until,
-  :following_production,
   :id,
   :overview,
   :poster_url,
@@ -271,9 +243,6 @@ StarWar = Struct.new(
 #
 # @!attribute [rw] days_until
 #   @return [Integer, nil]
-#
-# @!attribute [rw] following_production
-#   @return [Hash, nil]
 #
 # @!attribute [rw] id
 #   @return [Integer]
@@ -294,7 +263,6 @@ StarWar = Struct.new(
 #   @return [String, nil]
 StarWarLoadMatch = Struct.new(
   :days_until,
-  :following_production,
   :id,
   :overview,
   :poster_url,

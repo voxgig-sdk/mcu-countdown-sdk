@@ -7,7 +7,6 @@
 
 export interface Api {
   days_until: number
-  following_production: Record<string, any>
   id: number
   overview?: string
   poster_url?: string
@@ -18,7 +17,6 @@ export interface Api {
 
 export interface ApiLoadMatch {
   days_until?: number
-  following_production?: Record<string, any>
   id: number
   overview?: string
   poster_url?: string
@@ -29,7 +27,6 @@ export interface ApiLoadMatch {
 
 export interface Batman {
   days_until: number
-  following_production: Record<string, any>
   id: number
   overview?: string
   poster_url?: string
@@ -40,7 +37,6 @@ export interface Batman {
 
 export interface BatmanLoadMatch {
   days_until?: number
-  following_production?: Record<string, any>
   id: number
   overview?: string
   poster_url?: string
@@ -51,7 +47,6 @@ export interface BatmanLoadMatch {
 
 export interface Dcn {
   days_until: number
-  following_production: Record<string, any>
   id: number
   overview?: string
   poster_url?: string
@@ -62,7 +57,6 @@ export interface Dcn {
 
 export interface DcnLoadMatch {
   days_until?: number
-  following_production?: Record<string, any>
   id: number
   overview?: string
   poster_url?: string
@@ -73,7 +67,6 @@ export interface DcnLoadMatch {
 
 export interface StarWar {
   days_until: number
-  following_production: Record<string, any>
   id: number
   overview?: string
   poster_url?: string
@@ -84,7 +77,6 @@ export interface StarWar {
 
 export interface StarWarLoadMatch {
   days_until?: number
-  following_production?: Record<string, any>
   id: number
   overview?: string
   poster_url?: string

@@ -60,11 +60,11 @@ function star_war_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["MCUCOUNTDOWN_TEST_STAR_WAR_ENTID"] = {},
-    ["MCUCOUNTDOWN_TEST_LIVE"] = "FALSE",
+    ["MCU_COUNTDOWN_TEST_STAR_WAR_ENTID"] = {},
+    ["MCU_COUNTDOWN_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE"
+  local live = env["MCU_COUNTDOWN_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

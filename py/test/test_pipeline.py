@@ -16,11 +16,11 @@
 import pytest
 
 from mcucountdown_sdk import McuCountdownSDK
-from core.error import McuCountdownError
-from core.result import McuCountdownResult
-from core.response import McuCountdownResponse
-from core.spec import McuCountdownSpec
-from feature.base_feature import McuCountdownBaseFeature
+from mcucountdown_sdk.core.error import McuCountdownError
+from mcucountdown_sdk.core.result import McuCountdownResult
+from mcucountdown_sdk.core.response import McuCountdownResponse
+from mcucountdown_sdk.core.spec import McuCountdownSpec
+from mcucountdown_sdk.feature.base_feature import McuCountdownBaseFeature
 
 
 def _client():

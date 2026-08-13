@@ -16,7 +16,6 @@ declare(strict_types=1);
 class Api
 {
     public int $days_until;
-    public array $following_production;
     public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
@@ -29,7 +28,6 @@ class Api
 class ApiLoadMatch
 {
     public ?int $days_until = null;
-    public ?array $following_production = null;
     public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
@@ -42,7 +40,6 @@ class ApiLoadMatch
 class Batman
 {
     public int $days_until;
-    public array $following_production;
     public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
@@ -55,7 +52,6 @@ class Batman
 class BatmanLoadMatch
 {
     public ?int $days_until = null;
-    public ?array $following_production = null;
     public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
@@ -68,7 +64,6 @@ class BatmanLoadMatch
 class Dcn
 {
     public int $days_until;
-    public array $following_production;
     public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
@@ -81,7 +76,6 @@ class Dcn
 class DcnLoadMatch
 {
     public ?int $days_until = null;
-    public ?array $following_production = null;
     public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
@@ -94,7 +88,6 @@ class DcnLoadMatch
 class StarWar
 {
     public int $days_until;
-    public array $following_production;
     public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;
@@ -107,7 +100,6 @@ class StarWar
 class StarWarLoadMatch
 {
     public ?int $days_until = null;
-    public ?array $following_production = null;
     public int $id;
     public ?string $overview = null;
     public ?string $poster_url = null;

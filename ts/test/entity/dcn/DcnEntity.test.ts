@@ -26,8 +26,8 @@ import {
 describe('DcnEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when MCUCOUNTDOWN_TEST_LIVE=TRUE.
-  afterEach(liveDelay('MCUCOUNTDOWN_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when MCU_COUNTDOWN_TEST_LIVE=TRUE.
+  afterEach(liveDelay('MCU_COUNTDOWN_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = McuCountdownSDK.test()
@@ -63,7 +63,7 @@ describe('DcnEntity', async () => {
     const dcn_ref01_ent = client.Dcn()
     const dcn_ref01_match_dt0: any = {}
     dcn_ref01_match_dt0.id = dcn_ref01_data.id
-    const dcn_ref01_data_dt0 = await dcn_ref01_ent.load(dcn_ref01_match_dt0)
+    const dcn_ref01_data_dt0 = (await dcn_ref01_ent.load(dcn_ref01_match_dt0)).data()
     assert(dcn_ref01_data_dt0.id === dcn_ref01_data.id)
 
 

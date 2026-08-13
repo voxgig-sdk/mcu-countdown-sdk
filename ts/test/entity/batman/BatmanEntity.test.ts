@@ -26,8 +26,8 @@ import {
 describe('BatmanEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when MCUCOUNTDOWN_TEST_LIVE=TRUE.
-  afterEach(liveDelay('MCUCOUNTDOWN_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when MCU_COUNTDOWN_TEST_LIVE=TRUE.
+  afterEach(liveDelay('MCU_COUNTDOWN_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = McuCountdownSDK.test()
@@ -63,7 +63,7 @@ describe('BatmanEntity', async () => {
     const batman_ref01_ent = client.Batman()
     const batman_ref01_match_dt0: any = {}
     batman_ref01_match_dt0.id = batman_ref01_data.id
-    const batman_ref01_data_dt0 = await batman_ref01_ent.load(batman_ref01_match_dt0)
+    const batman_ref01_data_dt0 = (await batman_ref01_ent.load(batman_ref01_match_dt0)).data()
     assert(batman_ref01_data_dt0.id === batman_ref01_data.id)
 
 

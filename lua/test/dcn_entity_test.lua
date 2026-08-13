@@ -29,7 +29,7 @@ describe("DcnEntity", function()
     -- The basic flow consumes synthetic IDs from the fixture. In live mode
     -- without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup.synthetic_only then
-      pending("live entity test uses synthetic IDs from fixture — set MCUCOUNTDOWN_TEST_DCN_ENTID JSON to run live")
+      pending("live entity test uses synthetic IDs from fixture — set MCU_COUNTDOWN_TEST_DCN_ENTID JSON to run live")
       return
     end
     local client = setup.client
@@ -49,7 +49,7 @@ describe("DcnEntity", function()
     }
     local dcn_ref01_data_dt0_loaded, err = dcn_ref01_ent:load(dcn_ref01_match_dt0, nil)
     assert.is_nil(err)
-    local dcn_ref01_data_dt0_load_result = helpers.to_map(dcn_ref01_data_dt0_loaded)
+    local dcn_ref01_data_dt0_load_result = helpers.to_map(type(dcn_ref01_data_dt0_loaded) == 'table' and dcn_ref01_data_dt0_loaded.data_get and dcn_ref01_data_dt0_loaded:data_get() or dcn_ref01_data_dt0_loaded)
     assert.is_not_nil(dcn_ref01_data_dt0_load_result)
     assert.are.equal(dcn_ref01_data_dt0_load_result["id"], dcn_ref01_data["id"])
 
@@ -88,22 +88,22 @@ function dcn_basic_setup(extra)
   -- Detect ENTID env override before envOverride consumes it. When live
   -- mode is on without a real override, the basic test runs against synthetic
   -- IDs from the fixture and 4xx's. Surface this so the test can skip.
-  local entid_env_raw = os.getenv("MCUCOUNTDOWN_TEST_DCN_ENTID")
+  local entid_env_raw = os.getenv("MCU_COUNTDOWN_TEST_DCN_ENTID")
   local idmap_overridden = entid_env_raw ~= nil and entid_env_raw:match("^%s*{") ~= nil
 
   local env = runner.env_override({
-    ["MCUCOUNTDOWN_TEST_DCN_ENTID"] = idmap,
-    ["MCUCOUNTDOWN_TEST_LIVE"] = "FALSE",
-    ["MCUCOUNTDOWN_TEST_EXPLAIN"] = "FALSE",
+    ["MCU_COUNTDOWN_TEST_DCN_ENTID"] = idmap,
+    ["MCU_COUNTDOWN_TEST_LIVE"] = "FALSE",
+    ["MCU_COUNTDOWN_TEST_EXPLAIN"] = "FALSE",
   })
 
   local idmap_resolved = helpers.to_map(
-    env["MCUCOUNTDOWN_TEST_DCN_ENTID"])
+    env["MCU_COUNTDOWN_TEST_DCN_ENTID"])
   if idmap_resolved == nil then
     idmap_resolved = helpers.to_map(idmap)
   end
 
-  if env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE" then
+  if env["MCU_COUNTDOWN_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
       },
@@ -112,13 +112,13 @@ function dcn_basic_setup(extra)
     client = sdk.new(helpers.to_map(merged_opts))
   end
 
-  local live = env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE"
+  local live = env["MCU_COUNTDOWN_TEST_LIVE"] == "TRUE"
   return {
     client = client,
     data = entity_data,
     idmap = idmap_resolved,
     env = env,
-    explain = env["MCUCOUNTDOWN_TEST_EXPLAIN"] == "TRUE",
+    explain = env["MCU_COUNTDOWN_TEST_EXPLAIN"] == "TRUE",
     live = live,
     synthetic_only = live and not idmap_overridden,
     now = os.time() * 1000,

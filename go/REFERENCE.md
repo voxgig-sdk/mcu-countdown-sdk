@@ -111,7 +111,6 @@ fmt.Println(api.GetName()) // "api"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `int` | Yes |  |
-| `following_production` | `map[string]any` | Yes |  |
 | `id` | `int` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -169,7 +168,6 @@ fmt.Println(batman.GetName()) // "batman"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `int` | Yes |  |
-| `following_production` | `map[string]any` | Yes |  |
 | `id` | `int` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -227,7 +225,6 @@ fmt.Println(dcn.GetName()) // "dcn"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `int` | Yes |  |
-| `following_production` | `map[string]any` | Yes |  |
 | `id` | `int` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -285,7 +282,6 @@ fmt.Println(starWar.GetName()) // "star_war"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `int` | Yes |  |
-| `following_production` | `map[string]any` | Yes |  |
 | `id` | `int` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |

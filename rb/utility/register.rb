@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ McuCountdownUtility.registrar = ->(u) {
   u.prepare_params = McuCountdownUtilities::PrepareParams
   u.prepare_path = McuCountdownUtilities::PreparePath
   u.prepare_query = McuCountdownUtilities::PrepareQuery
+  u.graphql_body = McuCountdownUtilities::GraphqlBody
+  u.graphql_errors = McuCountdownUtilities::GraphqlErrors
   u.result_basic = McuCountdownUtilities::ResultBasic
   u.result_body = McuCountdownUtilities::ResultBody
   u.result_headers = McuCountdownUtilities::ResultHeaders

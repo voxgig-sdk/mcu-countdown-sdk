@@ -229,7 +229,6 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -246,7 +245,6 @@ API path: `/api`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -263,7 +261,6 @@ API path: `/batman`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -280,7 +277,6 @@ API path: `/dc`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -312,7 +308,6 @@ Create an instance: `local api = client:Api(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `number` |  |
-| `following_production` | `table` |  |
 | `id` | `number` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -342,7 +337,6 @@ Create an instance: `local batman = client:Batman(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `number` |  |
-| `following_production` | `table` |  |
 | `id` | `number` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -372,7 +366,6 @@ Create an instance: `local dcn = client:Dcn(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `number` |  |
-| `following_production` | `table` |  |
 | `id` | `number` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -402,7 +395,6 @@ Create an instance: `local star_war = client:StarWar(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `number` |  |
-| `following_production` | `table` |  |
 | `id` | `number` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |

@@ -26,7 +26,7 @@ class ApiEntityTest < Minitest::Test
     # The basic flow consumes synthetic IDs from the fixture. In live mode
     # without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup[:synthetic_only]
-      skip "live entity test uses synthetic IDs from fixture — set MCUCOUNTDOWN_TEST_API_ENTID JSON to run live"
+      skip "live entity test uses synthetic IDs from fixture — set MCU_COUNTDOWN_TEST_API_ENTID JSON to run live"
       return
     end
     client = setup[:client]
@@ -45,7 +45,7 @@ class ApiEntityTest < Minitest::Test
       "id" => api_ref01_data["id"],
     }
     api_ref01_data_dt0_loaded = api_ref01_ent.load(api_ref01_match_dt0, nil)
-    api_ref01_data_dt0_load_result = Helpers.to_map(api_ref01_data_dt0_loaded)
+    api_ref01_data_dt0_load_result = Helpers.to_map(api_ref01_data_dt0_loaded.respond_to?(:data_get) ? api_ref01_data_dt0_loaded.data_get : api_ref01_data_dt0_loaded)
     assert !api_ref01_data_dt0_load_result.nil?
     assert_equal api_ref01_data_dt0_load_result["id"], api_ref01_data["id"]
 
@@ -78,22 +78,22 @@ def api_basic_setup(extra)
   # Detect ENTID env override before envOverride consumes it. When live
   # mode is on without a real override, the basic test runs against synthetic
   # IDs from the fixture and 4xx's. Surface this so the test can skip.
-  entid_env_raw = ENV["MCUCOUNTDOWN_TEST_API_ENTID"]
+  entid_env_raw = ENV["MCU_COUNTDOWN_TEST_API_ENTID"]
   idmap_overridden = !entid_env_raw.nil? && entid_env_raw.strip.start_with?("{")
 
   env = Runner.env_override({
-    "MCUCOUNTDOWN_TEST_API_ENTID" => idmap,
-    "MCUCOUNTDOWN_TEST_LIVE" => "FALSE",
-    "MCUCOUNTDOWN_TEST_EXPLAIN" => "FALSE",
+    "MCU_COUNTDOWN_TEST_API_ENTID" => idmap,
+    "MCU_COUNTDOWN_TEST_LIVE" => "FALSE",
+    "MCU_COUNTDOWN_TEST_EXPLAIN" => "FALSE",
   })
 
   idmap_resolved = Helpers.to_map(
-    env["MCUCOUNTDOWN_TEST_API_ENTID"])
+    env["MCU_COUNTDOWN_TEST_API_ENTID"])
   if idmap_resolved.nil?
     idmap_resolved = Helpers.to_map(idmap)
   end
 
-  if env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE"
+  if env["MCU_COUNTDOWN_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
       },
@@ -102,13 +102,13 @@ def api_basic_setup(extra)
     client = McuCountdownSDK.new(Helpers.to_map(merged_opts))
   end
 
-  live = env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE"
+  live = env["MCU_COUNTDOWN_TEST_LIVE"] == "TRUE"
   {
     client: client,
     data: entity_data,
     idmap: idmap_resolved,
     env: env,
-    explain: env["MCUCOUNTDOWN_TEST_EXPLAIN"] == "TRUE",
+    explain: env["MCU_COUNTDOWN_TEST_EXPLAIN"] == "TRUE",
     live: live,
     synthetic_only: live && !idmap_overridden,
     now: (Time.now.to_f * 1000).to_i,

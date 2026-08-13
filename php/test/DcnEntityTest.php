@@ -33,7 +33,7 @@ class DcnEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set MCUCOUNTDOWN_TEST_DCN_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set MCU_COUNTDOWN_TEST_DCN_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -52,7 +52,7 @@ class DcnEntityTest extends TestCase
             "id" => $dcn_ref01_data["id"],
         ];
         $dcn_ref01_data_dt0_loaded = $dcn_ref01_ent->load($dcn_ref01_match_dt0, null);
-        $dcn_ref01_data_dt0_load_result = Helpers::to_map($dcn_ref01_data_dt0_loaded);
+        $dcn_ref01_data_dt0_load_result = Helpers::to_map(is_object($dcn_ref01_data_dt0_loaded) && method_exists($dcn_ref01_data_dt0_loaded, 'data_get') ? $dcn_ref01_data_dt0_loaded->data_get() : $dcn_ref01_data_dt0_loaded);
         $this->assertNotNull($dcn_ref01_data_dt0_load_result);
         $this->assertEquals($dcn_ref01_data_dt0_load_result["id"], $dcn_ref01_data["id"]);
 
@@ -81,22 +81,22 @@ function dcn_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("MCUCOUNTDOWN_TEST_DCN_ENTID");
+    $entid_env_raw = getenv("MCU_COUNTDOWN_TEST_DCN_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "MCUCOUNTDOWN_TEST_DCN_ENTID" => $idmap,
-        "MCUCOUNTDOWN_TEST_LIVE" => "FALSE",
-        "MCUCOUNTDOWN_TEST_EXPLAIN" => "FALSE",
+        "MCU_COUNTDOWN_TEST_DCN_ENTID" => $idmap,
+        "MCU_COUNTDOWN_TEST_LIVE" => "FALSE",
+        "MCU_COUNTDOWN_TEST_EXPLAIN" => "FALSE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["MCUCOUNTDOWN_TEST_DCN_ENTID"]);
+        $env["MCU_COUNTDOWN_TEST_DCN_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["MCUCOUNTDOWN_TEST_LIVE"] === "TRUE") {
+    if ($env["MCU_COUNTDOWN_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
             ],
@@ -105,13 +105,13 @@ function dcn_basic_setup($extra)
         $client = new McuCountdownSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["MCUCOUNTDOWN_TEST_LIVE"] === "TRUE";
+    $live = $env["MCU_COUNTDOWN_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["MCUCOUNTDOWN_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["MCU_COUNTDOWN_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

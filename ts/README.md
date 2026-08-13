@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = McuCountdownSDK.test()
 
 const api = await client.Api().load({ id: 1 })
-// api is a bare entity populated with mock response data
+// api is the entity, populated with mock response data
+// — call api.data() for the record itself
 console.log(api)
 ```
 
@@ -288,7 +289,6 @@ The `prepare()` method returns:
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -305,7 +305,6 @@ API path: `/api`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -322,7 +321,6 @@ API path: `/batman`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -339,7 +337,6 @@ API path: `/dc`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -371,7 +368,6 @@ Create an instance: `const api = client.Api()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `number` |  |
-| `following_production` | `Record<string, any>` |  |
 | `id` | `number` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -401,7 +397,6 @@ Create an instance: `const batman = client.Batman()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `number` |  |
-| `following_production` | `Record<string, any>` |  |
 | `id` | `number` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -431,7 +426,6 @@ Create an instance: `const dcn = client.Dcn()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `number` |  |
-| `following_production` | `Record<string, any>` |  |
 | `id` | `number` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |
@@ -461,7 +455,6 @@ Create an instance: `const star_war = client.StarWar()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `number` |  |
-| `following_production` | `Record<string, any>` |  |
 | `id` | `number` |  |
 | `overview` | `string` |  |
 | `poster_url` | `string` |  |

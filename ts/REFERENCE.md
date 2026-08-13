@@ -153,7 +153,6 @@ const api = client.Api()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `number` | Yes |  |
-| `following_production` | `Record<string, any>` | Yes |  |
 | `id` | `number` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -210,7 +209,6 @@ const batman = client.Batman()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `number` | Yes |  |
-| `following_production` | `Record<string, any>` | Yes |  |
 | `id` | `number` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -267,7 +265,6 @@ const dcn = client.Dcn()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `number` | Yes |  |
-| `following_production` | `Record<string, any>` | Yes |  |
 | `id` | `number` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |
@@ -324,7 +321,6 @@ const star_war = client.StarWar()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `number` | Yes |  |
-| `following_production` | `Record<string, any>` | Yes |  |
 | `id` | `number` | Yes |  |
 | `overview` | `string` | No |  |
 | `poster_url` | `string` | No |  |

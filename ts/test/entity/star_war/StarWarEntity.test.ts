@@ -26,8 +26,8 @@ import {
 describe('StarWarEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when MCUCOUNTDOWN_TEST_LIVE=TRUE.
-  afterEach(liveDelay('MCUCOUNTDOWN_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when MCU_COUNTDOWN_TEST_LIVE=TRUE.
+  afterEach(liveDelay('MCU_COUNTDOWN_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = McuCountdownSDK.test()
@@ -63,7 +63,7 @@ describe('StarWarEntity', async () => {
     const star_war_ref01_ent = client.StarWar()
     const star_war_ref01_match_dt0: any = {}
     star_war_ref01_match_dt0.id = star_war_ref01_data.id
-    const star_war_ref01_data_dt0 = await star_war_ref01_ent.load(star_war_ref01_match_dt0)
+    const star_war_ref01_data_dt0 = (await star_war_ref01_ent.load(star_war_ref01_match_dt0)).data()
     assert(star_war_ref01_data_dt0.id === star_war_ref01_data.id)
 
 

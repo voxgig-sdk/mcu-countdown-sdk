@@ -11,11 +11,6 @@ main: kit: entity: api: {
       type: "`$INTEGER`"
     }
     {
-      name: "following_production"
-      req: true
-      type: "`$OBJECT`"
-    }
-    {
       name: "id"
       req: true
       type: "`$INTEGER`"
@@ -91,7 +86,7 @@ main: kit: entity: api: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.following_production`"
           }
         }
       ]

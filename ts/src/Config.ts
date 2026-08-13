@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'McuCountdown',
   }
 
 
@@ -72,52 +72,45 @@ class Config {
         },
         {
           "active": true,
-          "name": "following_production",
-          "req": true,
-          "type": "`$OBJECT`",
-          "index$": 1
-        },
-        {
-          "active": true,
           "name": "id",
           "req": true,
           "type": "`$INTEGER`",
-          "index$": 2
+          "index$": 1
         },
         {
           "active": true,
           "name": "overview",
           "req": false,
           "type": "`$STRING`",
-          "index$": 3
+          "index$": 2
         },
         {
           "active": true,
           "name": "poster_url",
           "req": false,
           "type": "`$STRING`",
-          "index$": 4
+          "index$": 3
         },
         {
           "active": true,
           "name": "release_date",
           "req": true,
           "type": "`$STRING`",
-          "index$": 5
+          "index$": 4
         },
         {
           "active": true,
           "name": "title",
           "req": true,
           "type": "`$STRING`",
-          "index$": 6
+          "index$": 5
         },
         {
           "active": true,
           "name": "type",
           "req": true,
           "type": "`$STRING`",
-          "index$": 7
+          "index$": 6
         }
       ],
       "name": "api",
@@ -150,6 +143,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api",
               "parts": [
@@ -163,7 +157,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.following_production`"
               },
               "index$": 0
             }
@@ -186,52 +180,45 @@ class Config {
         },
         {
           "active": true,
-          "name": "following_production",
-          "req": true,
-          "type": "`$OBJECT`",
-          "index$": 1
-        },
-        {
-          "active": true,
           "name": "id",
           "req": true,
           "type": "`$INTEGER`",
-          "index$": 2
+          "index$": 1
         },
         {
           "active": true,
           "name": "overview",
           "req": false,
           "type": "`$STRING`",
-          "index$": 3
+          "index$": 2
         },
         {
           "active": true,
           "name": "poster_url",
           "req": false,
           "type": "`$STRING`",
-          "index$": 4
+          "index$": 3
         },
         {
           "active": true,
           "name": "release_date",
           "req": true,
           "type": "`$STRING`",
-          "index$": 5
+          "index$": 4
         },
         {
           "active": true,
           "name": "title",
           "req": true,
           "type": "`$STRING`",
-          "index$": 6
+          "index$": 5
         },
         {
           "active": true,
           "name": "type",
           "req": true,
           "type": "`$STRING`",
-          "index$": 7
+          "index$": 6
         }
       ],
       "name": "batman",
@@ -243,6 +230,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/batman",
               "parts": [
@@ -251,7 +239,7 @@ class Config {
               "select": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.following_production`"
               },
               "index$": 0
             }
@@ -274,52 +262,45 @@ class Config {
         },
         {
           "active": true,
-          "name": "following_production",
-          "req": true,
-          "type": "`$OBJECT`",
-          "index$": 1
-        },
-        {
-          "active": true,
           "name": "id",
           "req": true,
           "type": "`$INTEGER`",
-          "index$": 2
+          "index$": 1
         },
         {
           "active": true,
           "name": "overview",
           "req": false,
           "type": "`$STRING`",
-          "index$": 3
+          "index$": 2
         },
         {
           "active": true,
           "name": "poster_url",
           "req": false,
           "type": "`$STRING`",
-          "index$": 4
+          "index$": 3
         },
         {
           "active": true,
           "name": "release_date",
           "req": true,
           "type": "`$STRING`",
-          "index$": 5
+          "index$": 4
         },
         {
           "active": true,
           "name": "title",
           "req": true,
           "type": "`$STRING`",
-          "index$": 6
+          "index$": 5
         },
         {
           "active": true,
           "name": "type",
           "req": true,
           "type": "`$STRING`",
-          "index$": 7
+          "index$": 6
         }
       ],
       "name": "dcn",
@@ -331,6 +312,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/dc",
               "parts": [
@@ -339,7 +321,7 @@ class Config {
               "select": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.following_production`"
               },
               "index$": 0
             }
@@ -362,52 +344,45 @@ class Config {
         },
         {
           "active": true,
-          "name": "following_production",
-          "req": true,
-          "type": "`$OBJECT`",
-          "index$": 1
-        },
-        {
-          "active": true,
           "name": "id",
           "req": true,
           "type": "`$INTEGER`",
-          "index$": 2
+          "index$": 1
         },
         {
           "active": true,
           "name": "overview",
           "req": false,
           "type": "`$STRING`",
-          "index$": 3
+          "index$": 2
         },
         {
           "active": true,
           "name": "poster_url",
           "req": false,
           "type": "`$STRING`",
-          "index$": 4
+          "index$": 3
         },
         {
           "active": true,
           "name": "release_date",
           "req": true,
           "type": "`$STRING`",
-          "index$": 5
+          "index$": 4
         },
         {
           "active": true,
           "name": "title",
           "req": true,
           "type": "`$STRING`",
-          "index$": 6
+          "index$": 5
         },
         {
           "active": true,
           "name": "type",
           "req": true,
           "type": "`$STRING`",
-          "index$": 7
+          "index$": 6
         }
       ],
       "name": "star_war",
@@ -419,6 +394,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/star-wars",
               "parts": [
@@ -427,7 +403,7 @@ class Config {
               "select": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.following_production`"
               },
               "index$": 0
             }

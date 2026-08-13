@@ -34,7 +34,7 @@ client = McuCountdownSDK.new
 
 ```ruby
 begin
-  # load returns the bare Api record (raises on error).
+  # load returns the ENTITY — call data_get for the Api record (raises on error).
   api = client.Api.load({ "id" => 1 })
   puts api
 rescue => err
@@ -120,7 +120,8 @@ client = McuCountdownSDK.test({
   "entity" => { "api" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 api = client.Api.load({ "id" => "test01" })
 puts api
 ```
@@ -241,7 +242,6 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -258,7 +258,6 @@ API path: `/api`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -275,7 +274,6 @@ API path: `/batman`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -292,7 +290,6 @@ API path: `/dc`
 | Field | Description |
 | --- | --- |
 | `days_until` |  |
-| `following_production` |  |
 | `id` |  |
 | `overview` |  |
 | `poster_url` |  |
@@ -324,7 +321,6 @@ Create an instance: `api = client.Api`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `Integer` |  |
-| `following_production` | `Hash` |  |
 | `id` | `Integer` |  |
 | `overview` | `String` |  |
 | `poster_url` | `String` |  |
@@ -335,7 +331,7 @@ Create an instance: `api = client.Api`
 #### Example: Load
 
 ```ruby
-# load returns the bare Api record (raises on error).
+# load returns the ENTITY — call data_get for the Api record (raises on error).
 api = client.Api.load({ "id" => 1 })
 ```
 
@@ -355,7 +351,6 @@ Create an instance: `batman = client.Batman`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `Integer` |  |
-| `following_production` | `Hash` |  |
 | `id` | `Integer` |  |
 | `overview` | `String` |  |
 | `poster_url` | `String` |  |
@@ -366,7 +361,7 @@ Create an instance: `batman = client.Batman`
 #### Example: Load
 
 ```ruby
-# load returns the bare Batman record (raises on error).
+# load returns the ENTITY — call data_get for the Batman record (raises on error).
 batman = client.Batman.load({ "id" => 1 })
 ```
 
@@ -386,7 +381,6 @@ Create an instance: `dcn = client.Dcn`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `Integer` |  |
-| `following_production` | `Hash` |  |
 | `id` | `Integer` |  |
 | `overview` | `String` |  |
 | `poster_url` | `String` |  |
@@ -397,7 +391,7 @@ Create an instance: `dcn = client.Dcn`
 #### Example: Load
 
 ```ruby
-# load returns the bare Dcn record (raises on error).
+# load returns the ENTITY — call data_get for the Dcn record (raises on error).
 dcn = client.Dcn.load({ "id" => 1 })
 ```
 
@@ -417,7 +411,6 @@ Create an instance: `star_war = client.StarWar`
 | Field | Type | Description |
 | --- | --- | --- |
 | `days_until` | `Integer` |  |
-| `following_production` | `Hash` |  |
 | `id` | `Integer` |  |
 | `overview` | `String` |  |
 | `poster_url` | `String` |  |
@@ -428,7 +421,7 @@ Create an instance: `star_war = client.StarWar`
 #### Example: Load
 
 ```ruby
-# load returns the bare StarWar record (raises on error).
+# load returns the ENTITY — call data_get for the StarWar record (raises on error).
 star_war = client.StarWar.load({ "id" => 1 })
 ```
 

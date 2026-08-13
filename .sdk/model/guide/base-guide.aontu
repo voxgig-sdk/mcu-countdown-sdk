@@ -8,24 +8,28 @@ guide: {
   entity: api: {
     path: "/api": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.following_production`")|top
     }
   }
 
   entity: batman: {
     path: "/batman": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.following_production`")|top
     }
   }
 
   entity: dcn: {
     path: "/dc": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.following_production`")|top
     }
   }
 
   entity: star_war: {
     path: "/star-wars": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.following_production`")|top
     }
   }
 

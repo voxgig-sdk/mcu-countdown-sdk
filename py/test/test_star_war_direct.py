@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from mcucountdown_sdk.utility.voxgig_struct import voxgig_struct as vs
 from mcucountdown_sdk import McuCountdownSDK
-from core import helpers
+from mcucountdown_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _star_war_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "MCUCOUNTDOWN_TEST_STAR_WAR_ENTID": {},
-        "MCUCOUNTDOWN_TEST_LIVE": "FALSE",
+        "MCU_COUNTDOWN_TEST_STAR_WAR_ENTID": {},
+        "MCU_COUNTDOWN_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("MCUCOUNTDOWN_TEST_LIVE") == "TRUE"
+    live = env.get("MCU_COUNTDOWN_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# McuCountdown SDK exists test
 
 import pytest
 from mcucountdown_sdk import McuCountdownSDK

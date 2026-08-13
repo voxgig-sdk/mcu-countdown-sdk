@@ -59,11 +59,11 @@ def batman_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "MCUCOUNTDOWN_TEST_BATMAN_ENTID" => {},
-    "MCUCOUNTDOWN_TEST_LIVE" => "FALSE",
+    "MCU_COUNTDOWN_TEST_BATMAN_ENTID" => {},
+    "MCU_COUNTDOWN_TEST_LIVE" => "FALSE",
   })
 
-  live = env["MCUCOUNTDOWN_TEST_LIVE"] == "TRUE"
+  live = env["MCU_COUNTDOWN_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

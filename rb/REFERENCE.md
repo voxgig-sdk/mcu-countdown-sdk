@@ -106,7 +106,6 @@ api = client.Api
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `Integer` | Yes |  |
-| `following_production` | `Hash` | Yes |  |
 | `id` | `Integer` | Yes |  |
 | `overview` | `String` | No |  |
 | `poster_url` | `String` | No |  |
@@ -165,7 +164,6 @@ batman = client.Batman
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `Integer` | Yes |  |
-| `following_production` | `Hash` | Yes |  |
 | `id` | `Integer` | Yes |  |
 | `overview` | `String` | No |  |
 | `poster_url` | `String` | No |  |
@@ -224,7 +222,6 @@ dcn = client.Dcn
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `Integer` | Yes |  |
-| `following_production` | `Hash` | Yes |  |
 | `id` | `Integer` | Yes |  |
 | `overview` | `String` | No |  |
 | `poster_url` | `String` | No |  |
@@ -283,7 +280,6 @@ star_war = client.StarWar
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `days_until` | `Integer` | Yes |  |
-| `following_production` | `Hash` | Yes |  |
 | `id` | `Integer` | Yes |  |
 | `overview` | `String` | No |  |
 | `poster_url` | `String` | No |  |
