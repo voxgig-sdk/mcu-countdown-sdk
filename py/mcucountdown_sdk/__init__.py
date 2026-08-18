@@ -23,8 +23,8 @@ class McuCountdownSDK:
         utility = McuCountdownUtility()
         self._utility = utility
 
-        from mcucountdown_sdk.config import make_config
-        config = make_config()
+        from mcucountdown_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

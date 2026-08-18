@@ -23,7 +23,7 @@ func NewMcuCountdownSDK(options map[string]any) *McuCountdownSDK {
 
 	sdk.utility = NewUtility()
 
-	config := MakeConfig()
+	config := SharedConfig()
 
 	sdk.rootctx = sdk.utility.MakeContext(map[string]any{
 		"client":  sdk,

@@ -28,7 +28,7 @@ class McuCountdownSDK
     utility = McuCountdownUtility.new
     @_utility = utility
 
-    config = McuCountdownConfig.make_config
+    config = McuCountdownConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

@@ -40,7 +40,7 @@ class McuCountdownSDK
         $utility = new McuCountdownUtility();
         $this->_utility = $utility;
 
-        $config = McuCountdownConfig::make_config();
+        $config = McuCountdownConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
