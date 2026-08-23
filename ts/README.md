@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -288,13 +288,13 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: load.
 
@@ -304,13 +304,13 @@ API path: `/api`
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: load.
 
@@ -320,13 +320,13 @@ API path: `/batman`
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: load.
 
@@ -336,13 +336,13 @@ API path: `/dc`
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: load.
 
@@ -367,13 +367,13 @@ Create an instance: `const api = client.Api()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `number` |  |
-| `id` | `number` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `number` | Number of days until release |
+| `id` | `number` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -396,13 +396,13 @@ Create an instance: `const batman = client.Batman()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `number` |  |
-| `id` | `number` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `number` | Number of days until release |
+| `id` | `number` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -425,13 +425,13 @@ Create an instance: `const dcn = client.Dcn()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `number` |  |
-| `id` | `number` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `number` | Number of days until release |
+| `id` | `number` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -454,13 +454,13 @@ Create an instance: `const star_war = client.StarWar()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `number` |  |
-| `id` | `number` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `number` | Number of days until release |
+| `id` | `number` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 

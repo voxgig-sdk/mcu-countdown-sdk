@@ -152,13 +152,13 @@ const api = client.Api()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `number` | Yes |  |
-| `id` | `number` | Yes |  |
-| `overview` | `string` | No |  |
-| `poster_url` | `string` | No |  |
-| `release_date` | `string` | Yes |  |
-| `title` | `string` | Yes |  |
-| `type` | `string` | Yes |  |
+| `days_until` | `number` | Yes | Number of days until release |
+| `id` | `number` | Yes | TMDB ID of the following production |
+| `overview` | `string` | No | Brief overview/synopsis of the production |
+| `poster_url` | `string` | No | URL to the poster image from TMDB |
+| `release_date` | `string` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `string` | Yes | Title of the following production |
+| `type` | `string` | Yes | Type of production |
 
 ### Operations
 
@@ -208,13 +208,13 @@ const batman = client.Batman()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `number` | Yes |  |
-| `id` | `number` | Yes |  |
-| `overview` | `string` | No |  |
-| `poster_url` | `string` | No |  |
-| `release_date` | `string` | Yes |  |
-| `title` | `string` | Yes |  |
-| `type` | `string` | Yes |  |
+| `days_until` | `number` | Yes | Number of days until release |
+| `id` | `number` | Yes | TMDB ID of the following production |
+| `overview` | `string` | No | Brief overview/synopsis of the production |
+| `poster_url` | `string` | No | URL to the poster image from TMDB |
+| `release_date` | `string` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `string` | Yes | Title of the following production |
+| `type` | `string` | Yes | Type of production |
 
 ### Operations
 
@@ -264,13 +264,13 @@ const dcn = client.Dcn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `number` | Yes |  |
-| `id` | `number` | Yes |  |
-| `overview` | `string` | No |  |
-| `poster_url` | `string` | No |  |
-| `release_date` | `string` | Yes |  |
-| `title` | `string` | Yes |  |
-| `type` | `string` | Yes |  |
+| `days_until` | `number` | Yes | Number of days until release |
+| `id` | `number` | Yes | TMDB ID of the following production |
+| `overview` | `string` | No | Brief overview/synopsis of the production |
+| `poster_url` | `string` | No | URL to the poster image from TMDB |
+| `release_date` | `string` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `string` | Yes | Title of the following production |
+| `type` | `string` | Yes | Type of production |
 
 ### Operations
 
@@ -320,13 +320,13 @@ const star_war = client.StarWar()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `number` | Yes |  |
-| `id` | `number` | Yes |  |
-| `overview` | `string` | No |  |
-| `poster_url` | `string` | No |  |
-| `release_date` | `string` | Yes |  |
-| `title` | `string` | Yes |  |
-| `type` | `string` | Yes |  |
+| `days_until` | `number` | Yes | Number of days until release |
+| `id` | `number` | Yes | TMDB ID of the following production |
+| `overview` | `string` | No | Brief overview/synopsis of the production |
+| `poster_url` | `string` | No | URL to the poster image from TMDB |
+| `release_date` | `string` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `string` | Yes | Title of the following production |
+| `type` | `string` | Yes | Type of production |
 
 ### Operations
 

@@ -1,0 +1,105 @@
+# Entity: api
+
+main: kit: entity: api: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "days_until"
+      req: true
+      short: "Number of days until release"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "id"
+      req: true
+      short: "TMDB ID of the following production"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "overview"
+      req: false
+      short: "Brief overview/synopsis of the production"
+      type: "`$STRING`"
+    }
+    {
+      name: "poster_url"
+      req: false
+      short: "URL to the poster image from TMDB"
+      type: "`$STRING`"
+    }
+    {
+      name: "release_date"
+      req: true
+      short: "Release date in YYYY-MM-DD format"
+      type: "`$STRING`"
+    }
+    {
+      name: "title"
+      req: true
+      short: "Title of the following production"
+      type: "`$STRING`"
+    }
+    {
+      name: "type"
+      req: true
+      short: "Type of production"
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "api"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "2025-01-01"
+                kind: "query"
+                name: "date"
+                orig: "date"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "1"
+                kind: "query"
+                name: "list_id"
+                orig: "list_id"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/api"
+          parts: [
+            "api"
+          ]
+          select: {
+            exist: [
+              "date"
+              "list_id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.following_production`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

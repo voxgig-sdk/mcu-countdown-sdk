@@ -110,13 +110,13 @@ fmt.Println(api.GetName()) // "api"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `int` | Yes |  |
-| `id` | `int` | Yes |  |
-| `overview` | `string` | No |  |
-| `poster_url` | `string` | No |  |
-| `release_date` | `string` | Yes |  |
-| `title` | `string` | Yes |  |
-| `type` | `string` | Yes |  |
+| `days_until` | `int` | Yes | Number of days until release |
+| `id` | `int` | Yes | TMDB ID of the following production |
+| `overview` | `string` | No | Brief overview/synopsis of the production |
+| `poster_url` | `string` | No | URL to the poster image from TMDB |
+| `release_date` | `string` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `string` | Yes | Title of the following production |
+| `type` | `string` | Yes | Type of production |
 
 ### Operations
 
@@ -167,13 +167,13 @@ fmt.Println(batman.GetName()) // "batman"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `int` | Yes |  |
-| `id` | `int` | Yes |  |
-| `overview` | `string` | No |  |
-| `poster_url` | `string` | No |  |
-| `release_date` | `string` | Yes |  |
-| `title` | `string` | Yes |  |
-| `type` | `string` | Yes |  |
+| `days_until` | `int` | Yes | Number of days until release |
+| `id` | `int` | Yes | TMDB ID of the following production |
+| `overview` | `string` | No | Brief overview/synopsis of the production |
+| `poster_url` | `string` | No | URL to the poster image from TMDB |
+| `release_date` | `string` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `string` | Yes | Title of the following production |
+| `type` | `string` | Yes | Type of production |
 
 ### Operations
 
@@ -224,13 +224,13 @@ fmt.Println(dcn.GetName()) // "dcn"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `int` | Yes |  |
-| `id` | `int` | Yes |  |
-| `overview` | `string` | No |  |
-| `poster_url` | `string` | No |  |
-| `release_date` | `string` | Yes |  |
-| `title` | `string` | Yes |  |
-| `type` | `string` | Yes |  |
+| `days_until` | `int` | Yes | Number of days until release |
+| `id` | `int` | Yes | TMDB ID of the following production |
+| `overview` | `string` | No | Brief overview/synopsis of the production |
+| `poster_url` | `string` | No | URL to the poster image from TMDB |
+| `release_date` | `string` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `string` | Yes | Title of the following production |
+| `type` | `string` | Yes | Type of production |
 
 ### Operations
 
@@ -281,13 +281,13 @@ fmt.Println(starWar.GetName()) // "star_war"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `int` | Yes |  |
-| `id` | `int` | Yes |  |
-| `overview` | `string` | No |  |
-| `poster_url` | `string` | No |  |
-| `release_date` | `string` | Yes |  |
-| `title` | `string` | Yes |  |
-| `type` | `string` | Yes |  |
+| `days_until` | `int` | Yes | Number of days until release |
+| `id` | `int` | Yes | TMDB ID of the following production |
+| `overview` | `string` | No | Brief overview/synopsis of the production |
+| `poster_url` | `string` | No | URL to the poster image from TMDB |
+| `release_date` | `string` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `string` | Yes | Title of the following production |
+| `type` | `string` | Yes | Type of production |
 
 ### Operations
 

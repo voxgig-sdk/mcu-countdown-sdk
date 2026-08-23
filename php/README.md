@@ -251,13 +251,13 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: Load.
 
@@ -267,13 +267,13 @@ API path: `/api`
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: Load.
 
@@ -283,13 +283,13 @@ API path: `/batman`
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: Load.
 
@@ -299,13 +299,13 @@ API path: `/dc`
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: Load.
 
@@ -330,13 +330,13 @@ Create an instance: `$api = $client->Api();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `int` |  |
-| `id` | `int` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `int` | Number of days until release |
+| `id` | `int` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -360,13 +360,13 @@ Create an instance: `$batman = $client->Batman();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `int` |  |
-| `id` | `int` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `int` | Number of days until release |
+| `id` | `int` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -390,13 +390,13 @@ Create an instance: `$dcn = $client->Dcn();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `int` |  |
-| `id` | `int` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `int` | Number of days until release |
+| `id` | `int` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -420,13 +420,13 @@ Create an instance: `$star_war = $client->StarWar();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `int` |  |
-| `id` | `int` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `int` | Number of days until release |
+| `id` | `int` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 

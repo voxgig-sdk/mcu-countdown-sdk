@@ -19,6 +19,9 @@ module McuCountdownConfig
     {
       "main" => {
         "name" => "McuCountdown",
+        "slug" => "mcu-countdown",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -45,34 +48,41 @@ module McuCountdownConfig
             {
               "name" => "days_until",
               "req" => true,
+              "short" => "Number of days until release",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "id",
               "req" => true,
+              "short" => "TMDB ID of the following production",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "overview",
+              "short" => "Brief overview/synopsis of the production",
               "type" => "`$STRING`",
             },
             {
               "name" => "poster_url",
+              "short" => "URL to the poster image from TMDB",
               "type" => "`$STRING`",
             },
             {
               "name" => "release_date",
               "req" => true,
+              "short" => "Release date in YYYY-MM-DD format",
               "type" => "`$STRING`",
             },
             {
               "name" => "title",
               "req" => true,
+              "short" => "Title of the following production",
               "type" => "`$STRING`",
             },
             {
               "name" => "type",
               "req" => true,
+              "short" => "Type of production",
               "type" => "`$STRING`",
             },
           ],
@@ -130,34 +140,41 @@ module McuCountdownConfig
             {
               "name" => "days_until",
               "req" => true,
+              "short" => "Number of days until release",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "id",
               "req" => true,
+              "short" => "TMDB ID of the following production",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "overview",
+              "short" => "Brief overview/synopsis of the production",
               "type" => "`$STRING`",
             },
             {
               "name" => "poster_url",
+              "short" => "URL to the poster image from TMDB",
               "type" => "`$STRING`",
             },
             {
               "name" => "release_date",
               "req" => true,
+              "short" => "Release date in YYYY-MM-DD format",
               "type" => "`$STRING`",
             },
             {
               "name" => "title",
               "req" => true,
+              "short" => "Title of the following production",
               "type" => "`$STRING`",
             },
             {
               "name" => "type",
               "req" => true,
+              "short" => "Type of production",
               "type" => "`$STRING`",
             },
           ],
@@ -193,34 +210,41 @@ module McuCountdownConfig
             {
               "name" => "days_until",
               "req" => true,
+              "short" => "Number of days until release",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "id",
               "req" => true,
+              "short" => "TMDB ID of the following production",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "overview",
+              "short" => "Brief overview/synopsis of the production",
               "type" => "`$STRING`",
             },
             {
               "name" => "poster_url",
+              "short" => "URL to the poster image from TMDB",
               "type" => "`$STRING`",
             },
             {
               "name" => "release_date",
               "req" => true,
+              "short" => "Release date in YYYY-MM-DD format",
               "type" => "`$STRING`",
             },
             {
               "name" => "title",
               "req" => true,
+              "short" => "Title of the following production",
               "type" => "`$STRING`",
             },
             {
               "name" => "type",
               "req" => true,
+              "short" => "Type of production",
               "type" => "`$STRING`",
             },
           ],
@@ -256,34 +280,41 @@ module McuCountdownConfig
             {
               "name" => "days_until",
               "req" => true,
+              "short" => "Number of days until release",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "id",
               "req" => true,
+              "short" => "TMDB ID of the following production",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "overview",
+              "short" => "Brief overview/synopsis of the production",
               "type" => "`$STRING`",
             },
             {
               "name" => "poster_url",
+              "short" => "URL to the poster image from TMDB",
               "type" => "`$STRING`",
             },
             {
               "name" => "release_date",
               "req" => true,
+              "short" => "Release date in YYYY-MM-DD format",
               "type" => "`$STRING`",
             },
             {
               "name" => "title",
               "req" => true,
+              "short" => "Title of the following production",
               "type" => "`$STRING`",
             },
             {
               "name" => "type",
               "req" => true,
+              "short" => "Type of production",
               "type" => "`$STRING`",
             },
           ],

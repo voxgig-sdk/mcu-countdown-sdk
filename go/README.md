@@ -6,7 +6,7 @@ The Golang SDK for the McuCountdown API — an entity-oriented client using stan
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Api(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -261,13 +261,13 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"days_until"` |  |
-| `"id"` |  |
-| `"overview"` |  |
-| `"poster_url"` |  |
-| `"release_date"` |  |
-| `"title"` |  |
-| `"type"` |  |
+| `"days_until"` | Number of days until release |
+| `"id"` | TMDB ID of the following production |
+| `"overview"` | Brief overview/synopsis of the production |
+| `"poster_url"` | URL to the poster image from TMDB |
+| `"release_date"` | Release date in YYYY-MM-DD format |
+| `"title"` | Title of the following production |
+| `"type"` | Type of production |
 
 Operations: Load.
 
@@ -277,13 +277,13 @@ API path: `/api`
 
 | Field | Description |
 | --- | --- |
-| `"days_until"` |  |
-| `"id"` |  |
-| `"overview"` |  |
-| `"poster_url"` |  |
-| `"release_date"` |  |
-| `"title"` |  |
-| `"type"` |  |
+| `"days_until"` | Number of days until release |
+| `"id"` | TMDB ID of the following production |
+| `"overview"` | Brief overview/synopsis of the production |
+| `"poster_url"` | URL to the poster image from TMDB |
+| `"release_date"` | Release date in YYYY-MM-DD format |
+| `"title"` | Title of the following production |
+| `"type"` | Type of production |
 
 Operations: Load.
 
@@ -293,13 +293,13 @@ API path: `/batman`
 
 | Field | Description |
 | --- | --- |
-| `"days_until"` |  |
-| `"id"` |  |
-| `"overview"` |  |
-| `"poster_url"` |  |
-| `"release_date"` |  |
-| `"title"` |  |
-| `"type"` |  |
+| `"days_until"` | Number of days until release |
+| `"id"` | TMDB ID of the following production |
+| `"overview"` | Brief overview/synopsis of the production |
+| `"poster_url"` | URL to the poster image from TMDB |
+| `"release_date"` | Release date in YYYY-MM-DD format |
+| `"title"` | Title of the following production |
+| `"type"` | Type of production |
 
 Operations: Load.
 
@@ -309,13 +309,13 @@ API path: `/dc`
 
 | Field | Description |
 | --- | --- |
-| `"days_until"` |  |
-| `"id"` |  |
-| `"overview"` |  |
-| `"poster_url"` |  |
-| `"release_date"` |  |
-| `"title"` |  |
-| `"type"` |  |
+| `"days_until"` | Number of days until release |
+| `"id"` | TMDB ID of the following production |
+| `"overview"` | Brief overview/synopsis of the production |
+| `"poster_url"` | URL to the poster image from TMDB |
+| `"release_date"` | Release date in YYYY-MM-DD format |
+| `"title"` | Title of the following production |
+| `"type"` | Type of production |
 
 Operations: Load.
 
@@ -340,13 +340,13 @@ Create an instance: `api := client.Api(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `int` |  |
-| `id` | `int` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `int` | Number of days until release |
+| `id` | `int` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -373,13 +373,13 @@ Create an instance: `batman := client.Batman(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `int` |  |
-| `id` | `int` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `int` | Number of days until release |
+| `id` | `int` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -406,13 +406,13 @@ Create an instance: `dcn := client.Dcn(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `int` |  |
-| `id` | `int` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `int` | Number of days until release |
+| `id` | `int` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -439,13 +439,13 @@ Create an instance: `starWar := client.StarWar(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `int` |  |
-| `id` | `int` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `int` | Number of days until release |
+| `id` | `int` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 

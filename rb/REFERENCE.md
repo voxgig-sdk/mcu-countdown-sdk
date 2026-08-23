@@ -105,13 +105,13 @@ api = client.Api
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `Integer` | Yes |  |
-| `id` | `Integer` | Yes |  |
-| `overview` | `String` | No |  |
-| `poster_url` | `String` | No |  |
-| `release_date` | `String` | Yes |  |
-| `title` | `String` | Yes |  |
-| `type` | `String` | Yes |  |
+| `days_until` | `Integer` | Yes | Number of days until release |
+| `id` | `Integer` | Yes | TMDB ID of the following production |
+| `overview` | `String` | No | Brief overview/synopsis of the production |
+| `poster_url` | `String` | No | URL to the poster image from TMDB |
+| `release_date` | `String` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `String` | Yes | Title of the following production |
+| `type` | `String` | Yes | Type of production |
 
 ### Operations
 
@@ -163,13 +163,13 @@ batman = client.Batman
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `Integer` | Yes |  |
-| `id` | `Integer` | Yes |  |
-| `overview` | `String` | No |  |
-| `poster_url` | `String` | No |  |
-| `release_date` | `String` | Yes |  |
-| `title` | `String` | Yes |  |
-| `type` | `String` | Yes |  |
+| `days_until` | `Integer` | Yes | Number of days until release |
+| `id` | `Integer` | Yes | TMDB ID of the following production |
+| `overview` | `String` | No | Brief overview/synopsis of the production |
+| `poster_url` | `String` | No | URL to the poster image from TMDB |
+| `release_date` | `String` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `String` | Yes | Title of the following production |
+| `type` | `String` | Yes | Type of production |
 
 ### Operations
 
@@ -221,13 +221,13 @@ dcn = client.Dcn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `Integer` | Yes |  |
-| `id` | `Integer` | Yes |  |
-| `overview` | `String` | No |  |
-| `poster_url` | `String` | No |  |
-| `release_date` | `String` | Yes |  |
-| `title` | `String` | Yes |  |
-| `type` | `String` | Yes |  |
+| `days_until` | `Integer` | Yes | Number of days until release |
+| `id` | `Integer` | Yes | TMDB ID of the following production |
+| `overview` | `String` | No | Brief overview/synopsis of the production |
+| `poster_url` | `String` | No | URL to the poster image from TMDB |
+| `release_date` | `String` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `String` | Yes | Title of the following production |
+| `type` | `String` | Yes | Type of production |
 
 ### Operations
 
@@ -279,13 +279,13 @@ star_war = client.StarWar
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `days_until` | `Integer` | Yes |  |
-| `id` | `Integer` | Yes |  |
-| `overview` | `String` | No |  |
-| `poster_url` | `String` | No |  |
-| `release_date` | `String` | Yes |  |
-| `title` | `String` | Yes |  |
-| `type` | `String` | Yes |  |
+| `days_until` | `Integer` | Yes | Number of days until release |
+| `id` | `Integer` | Yes | TMDB ID of the following production |
+| `overview` | `String` | No | Brief overview/synopsis of the production |
+| `poster_url` | `String` | No | URL to the poster image from TMDB |
+| `release_date` | `String` | Yes | Release date in YYYY-MM-DD format |
+| `title` | `String` | Yes | Title of the following production |
+| `type` | `String` | Yes | Type of production |
 
 ### Operations
 

@@ -36,42 +36,49 @@
               "active": true,
               "name": "days_until",
               "req": true,
+              "short": "Number of days until release",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "id",
               "req": true,
+              "short": "TMDB ID of the following production",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "overview",
               "req": false,
+              "short": "Brief overview/synopsis of the production",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "poster_url",
               "req": false,
+              "short": "URL to the poster image from TMDB",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "release_date",
               "req": true,
+              "short": "Release date in YYYY-MM-DD format",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": true,
+              "short": "Title of the following production",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": true,
+              "short": "Type of production",
               "type": "`$STRING`"
             }
           ],
@@ -143,42 +150,49 @@
               "active": true,
               "name": "days_until",
               "req": true,
+              "short": "Number of days until release",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "id",
               "req": true,
+              "short": "TMDB ID of the following production",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "overview",
               "req": false,
+              "short": "Brief overview/synopsis of the production",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "poster_url",
               "req": false,
+              "short": "URL to the poster image from TMDB",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "release_date",
               "req": true,
+              "short": "Release date in YYYY-MM-DD format",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": true,
+              "short": "Title of the following production",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": true,
+              "short": "Type of production",
               "type": "`$STRING`"
             }
           ],
@@ -224,42 +238,49 @@
               "active": true,
               "name": "days_until",
               "req": true,
+              "short": "Number of days until release",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "id",
               "req": true,
+              "short": "TMDB ID of the following production",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "overview",
               "req": false,
+              "short": "Brief overview/synopsis of the production",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "poster_url",
               "req": false,
+              "short": "URL to the poster image from TMDB",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "release_date",
               "req": true,
+              "short": "Release date in YYYY-MM-DD format",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": true,
+              "short": "Title of the following production",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": true,
+              "short": "Type of production",
               "type": "`$STRING`"
             }
           ],
@@ -305,42 +326,49 @@
               "active": true,
               "name": "days_until",
               "req": true,
+              "short": "Number of days until release",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "id",
               "req": true,
+              "short": "TMDB ID of the following production",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "overview",
               "req": false,
+              "short": "Brief overview/synopsis of the production",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "poster_url",
               "req": false,
+              "short": "URL to the poster image from TMDB",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "release_date",
               "req": true,
+              "short": "Release date in YYYY-MM-DD format",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": true,
+              "short": "Title of the following production",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": true,
+              "short": "Type of production",
               "type": "`$STRING`"
             }
           ],

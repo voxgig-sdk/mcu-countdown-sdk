@@ -228,13 +228,13 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: Load.
 
@@ -244,13 +244,13 @@ API path: `/api`
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: Load.
 
@@ -260,13 +260,13 @@ API path: `/batman`
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: Load.
 
@@ -276,13 +276,13 @@ API path: `/dc`
 
 | Field | Description |
 | --- | --- |
-| `days_until` |  |
-| `id` |  |
-| `overview` |  |
-| `poster_url` |  |
-| `release_date` |  |
-| `title` |  |
-| `type` |  |
+| `days_until` | Number of days until release |
+| `id` | TMDB ID of the following production |
+| `overview` | Brief overview/synopsis of the production |
+| `poster_url` | URL to the poster image from TMDB |
+| `release_date` | Release date in YYYY-MM-DD format |
+| `title` | Title of the following production |
+| `type` | Type of production |
 
 Operations: Load.
 
@@ -307,13 +307,13 @@ Create an instance: `local api = client:Api(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `number` |  |
-| `id` | `number` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `number` | Number of days until release |
+| `id` | `number` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -336,13 +336,13 @@ Create an instance: `local batman = client:Batman(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `number` |  |
-| `id` | `number` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `number` | Number of days until release |
+| `id` | `number` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -365,13 +365,13 @@ Create an instance: `local dcn = client:Dcn(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `number` |  |
-| `id` | `number` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `number` | Number of days until release |
+| `id` | `number` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
@@ -394,13 +394,13 @@ Create an instance: `local star_war = client:StarWar(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `days_until` | `number` |  |
-| `id` | `number` |  |
-| `overview` | `string` |  |
-| `poster_url` | `string` |  |
-| `release_date` | `string` |  |
-| `title` | `string` |  |
-| `type` | `string` |  |
+| `days_until` | `number` | Number of days until release |
+| `id` | `number` | TMDB ID of the following production |
+| `overview` | `string` | Brief overview/synopsis of the production |
+| `poster_url` | `string` | URL to the poster image from TMDB |
+| `release_date` | `string` | Release date in YYYY-MM-DD format |
+| `title` | `string` | Title of the following production |
+| `type` | `string` | Type of production |
 
 #### Example: Load
 
