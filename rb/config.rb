@@ -28,6 +28,7 @@ module McuCountdownConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
