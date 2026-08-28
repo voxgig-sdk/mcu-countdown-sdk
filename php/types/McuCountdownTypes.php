@@ -27,13 +27,8 @@ class Api
 /** Request payload for Api#load. */
 class ApiLoadMatch
 {
-    public ?int $days_until = null;
-    public int $id;
-    public ?string $overview = null;
-    public ?string $poster_url = null;
-    public ?string $release_date = null;
-    public ?string $title = null;
-    public ?string $type = null;
+    public ?string $date = null;
+    public ?string $list_id = null;
 }
 
 /** Batman entity data model. */

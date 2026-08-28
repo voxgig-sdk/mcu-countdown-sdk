@@ -29,17 +29,9 @@ class Api(ApiRequired, total=False):
     poster_url: str
 
 
-class ApiLoadMatchRequired(TypedDict):
-    id: int
-
-
-class ApiLoadMatch(ApiLoadMatchRequired, total=False):
-    days_until: int
-    overview: str
-    poster_url: str
-    release_date: str
-    title: str
-    type: str
+class ApiLoadMatch(TypedDict, total=False):
+    date: str
+    list_id: str
 
 
 class BatmanRequired(TypedDict):

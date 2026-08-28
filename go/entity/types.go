@@ -25,13 +25,8 @@ type Api struct {
 
 // ApiLoadMatch is the typed request payload for Api.LoadTyped.
 type ApiLoadMatch struct {
-	DaysUntil *int `json:"days_until,omitempty"`
-	Id int `json:"id"`
-	Overview *string `json:"overview,omitempty"`
-	PosterUrl *string `json:"poster_url,omitempty"`
-	ReleaseDate *string `json:"release_date,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Type *string `json:"type,omitempty"`
+	Date *string `json:"date,omitempty"`
+	ListId *string `json:"list_id,omitempty"`
 }
 
 // Batman is the typed data model for the batman entity.

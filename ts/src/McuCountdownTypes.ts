@@ -16,13 +16,8 @@ export interface Api {
 }
 
 export interface ApiLoadMatch {
-  days_until?: number
-  id: number
-  overview?: string
-  poster_url?: string
-  release_date?: string
-  title?: string
-  type?: string
+  date?: string
+  list_id?: string
 }
 
 export interface Batman {

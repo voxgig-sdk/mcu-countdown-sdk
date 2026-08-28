@@ -14,6 +14,10 @@ Metadata kindly supplied by [www.freepublicapis.com](https://www.freepublicapis.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
+> **Features:** `test` — opt-in,
+> inactive until switched on, and configured per client. See the Features
+> section of any SDK README below for what each one does.
+
 ## Entities, not endpoints
 
 This SDK exposes the API as a small set of **semantic entities** — Api, Batman, Dcn and StarWar — that you
@@ -23,7 +27,7 @@ support (`load`):
 
 ```ts
 const client = new McuCountdownSDK()
-const api = await client.Api().load({ id: 1 })
+const api = await client.Api().load()
 ```
 
 Thinking in entities keeps the mental model small — for people and AI agents alike —
@@ -47,7 +51,7 @@ const client = McuCountdownSDK.test({
     },
   },
 })
-const api = await client.Api().load({ id: 1 })
+const api = await client.Api().load()
 // api is the Api entity, populated with mock data
 // — call api.data() for the record itself
 console.log(api)
@@ -57,7 +61,7 @@ console.log(api)
 
 ```python
 client = McuCountdownSDK.test()
-api = client.Api().load({"id": "test01"})
+api = client.Api().load()
 print(api)
 ```
 
@@ -66,9 +70,9 @@ print(api)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = McuCountdownSDK::test([
-    "entity" => ["api" => ["test01" => ["id" => "test01"]]],
+    "entity" => ["api" => ["test01" => []]],
 ]);
-$api = $client->Api()->load(["id" => "test01"]);
+$api = $client->Api()->load();
 ```
 
 ### Golang
@@ -76,7 +80,7 @@ $api = $client->Api()->load(["id" => "test01"]);
 ```go
 client := sdk.Test()
 result, err := client.Api(nil).Load(
-    map[string]any{"id": "test01"}, nil,
+    nil, nil,
 )
 ```
 
@@ -85,16 +89,16 @@ result, err := client.Api(nil).Load(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = McuCountdownSDK.test({
-  "entity" => { "api" => { "test01" => { "id" => "test01" } } },
+  "entity" => { "api" => { "test01" => {} } },
 })
-api = client.Api.load({ "id" => "test01" })
+api = client.Api.load()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:Api():load({ id = "test01" })
+local result, err = client:Api():load()
 ```
 
 ## Packages
@@ -181,7 +185,7 @@ client = McuCountdownSDK()
 
 
 # Load a specific api (returns the record, raises on error)
-api = client.Api().load({"id": 1})
+api = client.Api().load()
 print(api)
 ```
 
@@ -195,7 +199,7 @@ $client = new McuCountdownSDK();
 
 
 // Load a specific api (returns the ENTITY; call data_get() for the record; throws on error)
-$api = $client->Api()->load(["id" => 1]);
+$api = $client->Api()->load();
 print_r($api);
 ```
 
@@ -207,7 +211,7 @@ import sdk "github.com/voxgig-sdk/mcu-countdown-sdk/go"
 client := sdk.New()
 
 // Load api data
-api, err := client.Api(nil).Load(map[string]any{"id": 1}, nil)
+api, err := client.Api(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
@@ -223,7 +227,7 @@ client = McuCountdownSDK.new
 
 
 # Load a specific api (returns the ENTITY; call data_get for the record)
-api = client.Api.load({ "id" => 1 })
+api = client.Api.load()
 puts api
 ```
 
@@ -236,7 +240,7 @@ local client = sdk.new()
 
 
 -- Load a specific api
-local api, err = client:Api():load({ id = 1 })
+local api, err = client:Api():load()
 print(api)
 ```
 
@@ -342,6 +346,32 @@ forking the SDK.
 | **TestFeature** | In-memory mock transport for testing without a live server |
 
 Pass custom features via the `extend` option at construction time.
+
+## Customizing this SDK
+
+This repository contains its own generator (`.sdk/`), so the SDK is
+customizable without forking any upstream tool:
+
+- **The model** (`.sdk/model/`) declares everything this project owns:
+  package names, versions, active features, per-target settings. It is
+  written in [aontu](https://github.com/aontu-lang/aontu), a JSON-based
+  specification language designed for building ontologies: easy to edit
+  by hand, and files unify rather than override, so small declarations
+  compose into one model. Regeneration re-reads it every time.
+- **Templates** (`.sdk/tm/`) and **components** (`.sdk/src/cmp/`) are
+  the two layers of generation, copied into this repo: templates are the
+  literal per-language source, components generate the API-shaped parts.
+- **Regeneration merges.** By default, newly generated content is
+  three-way merged into existing files, so generator updates and local
+  edits usually converge without manual conflict handling. A project can
+  opt for plain overwrite instead.
+- **Custom features and entire custom targets** arrive through sdkgen
+  packages (`voxgig-sdkgen package add`), on the same rails as the
+  bundled languages, and `voxgig-sdkgen doctor` reports any drift from
+  what a resync would write.
+
+How-to: [customize and propagate templates](https://github.com/voxgig/sdkgen/blob/main/docs/how-to/customize-and-propagate-templates.md).
+The full story: [voxgig.com/sdk/custom](https://voxgig.com/sdk/custom).
 
 ## Per-language documentation
 

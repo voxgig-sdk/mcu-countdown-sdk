@@ -16,13 +16,8 @@
 ---@field type string
 
 ---@class ApiLoadMatch
----@field days_until? number
----@field id number
----@field overview? string
----@field poster_url? string
----@field release_date? string
----@field title? string
----@field type? string
+---@field date? string
+---@field list_id? string
 
 ---@class Batman
 ---@field days_until number

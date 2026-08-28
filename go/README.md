@@ -51,7 +51,7 @@ func main() {
     client := sdk.New()
 
     // Load a single api — the value is the loaded record.
-    api, err := client.Api(nil).Load(map[string]any{"id": 1}, nil)
+    api, err := client.Api(nil).Load(nil, nil)
     if err != nil {
         panic(err)
     }
@@ -66,7 +66,7 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-api, err := client.Api(nil).Load(map[string]any{"id": 1}, nil)
+api, err := client.Api(nil).Load(nil, nil)
 if err != nil {
     // handle err
     return
@@ -136,7 +136,7 @@ Create a mock client for unit testing — no server required:
 client := sdk.Test()
 
 api, err := client.Api(nil).Load(
-    map[string]any{"id": "test01"}, nil,
+    nil, nil,
 )
 if err != nil {
     panic(err)
@@ -248,7 +248,7 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    api, err := client.Api(nil).Load(map[string]any{"id": "example_id"}, nil)
+    api, err := client.Api(nil).Load(nil, nil)
     if err != nil { /* handle */ }
     // api is the returned record
 
@@ -351,7 +351,7 @@ Create an instance: `api := client.Api(nil)`
 #### Example: Load
 
 ```go
-api, err := client.Api(nil).Load(map[string]any{"id": 1}, nil)
+api, err := client.Api(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
@@ -457,6 +457,29 @@ if err != nil {
 fmt.Println(starWar) // the loaded record
 ```
 
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
+
 
 ## Advanced
 
@@ -532,7 +555,7 @@ stores the returned data and match criteria internally.
 
 ```go
 api := client.Api(nil)
-api.Load(map[string]any{"id": 1}, nil)
+api.Load(nil, nil)
 
 // api.Data() now returns the api data from the last load
 // api.Match() returns the last match criteria

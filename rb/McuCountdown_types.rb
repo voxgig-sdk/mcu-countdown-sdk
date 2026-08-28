@@ -43,34 +43,14 @@ Api = Struct.new(
 
 # Request payload for Api#load.
 #
-# @!attribute [rw] days_until
-#   @return [Integer, nil]
-#
-# @!attribute [rw] id
-#   @return [Integer]
-#
-# @!attribute [rw] overview
+# @!attribute [rw] date
 #   @return [String, nil]
 #
-# @!attribute [rw] poster_url
-#   @return [String, nil]
-#
-# @!attribute [rw] release_date
-#   @return [String, nil]
-#
-# @!attribute [rw] title
-#   @return [String, nil]
-#
-# @!attribute [rw] type
+# @!attribute [rw] list_id
 #   @return [String, nil]
 ApiLoadMatch = Struct.new(
-  :days_until,
-  :id,
-  :overview,
-  :poster_url,
-  :release_date,
-  :title,
-  :type,
+  :date,
+  :list_id,
   keyword_init: true
 )
 
