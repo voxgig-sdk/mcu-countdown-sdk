@@ -56,11 +56,13 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "poster_url",
 						"short": "URL to the poster image from TMDB",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date",
 						"name": "release_date",
 						"req": true,
 						"short": "Release date in YYYY-MM-DD format",
@@ -78,6 +80,10 @@ func MakeConfig() map[string]any {
 						"short": "Type of production",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "api",
 				"op": map[string]any{
@@ -107,8 +113,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api",
-								"parts": []any{
-									"api",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -119,6 +127,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.following_production`",
+								},
+								"parts": []any{
+									"api",
 								},
 							},
 						},
@@ -148,11 +159,13 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "poster_url",
 						"short": "URL to the poster image from TMDB",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date",
 						"name": "release_date",
 						"req": true,
 						"short": "Release date in YYYY-MM-DD format",
@@ -171,6 +184,10 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
+				},
 				"name": "batman",
 				"op": map[string]any{
 					"load": map[string]any{
@@ -182,13 +199,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/batman",
-								"parts": []any{
-									"batman",
+								"segments": []any{
+									map[string]any{
+										"lit": "batman",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.following_production`",
+								},
+								"parts": []any{
+									"batman",
 								},
 							},
 						},
@@ -218,11 +240,13 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "poster_url",
 						"short": "URL to the poster image from TMDB",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date",
 						"name": "release_date",
 						"req": true,
 						"short": "Release date in YYYY-MM-DD format",
@@ -241,6 +265,10 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
+				},
 				"name": "dcn",
 				"op": map[string]any{
 					"load": map[string]any{
@@ -252,13 +280,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/dc",
-								"parts": []any{
-									"dc",
+								"segments": []any{
+									map[string]any{
+										"lit": "dc",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.following_production`",
+								},
+								"parts": []any{
+									"dc",
 								},
 							},
 						},
@@ -288,11 +321,13 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "poster_url",
 						"short": "URL to the poster image from TMDB",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date",
 						"name": "release_date",
 						"req": true,
 						"short": "Release date in YYYY-MM-DD format",
@@ -311,6 +346,10 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
+				},
 				"name": "star_war",
 				"op": map[string]any{
 					"load": map[string]any{
@@ -322,13 +361,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/star-wars",
-								"parts": []any{
-									"star-wars",
+								"segments": []any{
+									map[string]any{
+										"lit": "star-wars",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.following_production`",
+								},
+								"parts": []any{
+									"star-wars",
 								},
 							},
 						},
@@ -340,6 +384,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

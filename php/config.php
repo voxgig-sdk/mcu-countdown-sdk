@@ -78,11 +78,13 @@ class McuCountdownConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'poster_url',
               'short' => 'URL to the poster image from TMDB',
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'date',
               'name' => 'release_date',
               'req' => true,
               'short' => 'Release date in YYYY-MM-DD format',
@@ -100,6 +102,10 @@ class McuCountdownConfig
               'short' => 'Type of production',
               'type' => '`$STRING`',
             ],
+          ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
           ],
           'name' => 'api',
           'op' => [
@@ -129,8 +135,10 @@ class McuCountdownConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api',
-                  'parts' => [
-                    'api',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -141,6 +149,9 @@ class McuCountdownConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.following_production`',
+                  ],
+                  'parts' => [
+                    'api',
                   ],
                 ],
               ],
@@ -170,11 +181,13 @@ class McuCountdownConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'poster_url',
               'short' => 'URL to the poster image from TMDB',
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'date',
               'name' => 'release_date',
               'req' => true,
               'short' => 'Release date in YYYY-MM-DD format',
@@ -193,6 +206,10 @@ class McuCountdownConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'batman',
           'op' => [
             'load' => [
@@ -204,13 +221,18 @@ class McuCountdownConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/batman',
-                  'parts' => [
-                    'batman',
+                  'segments' => [
+                    [
+                      'lit' => 'batman',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.following_production`',
+                  ],
+                  'parts' => [
+                    'batman',
                   ],
                 ],
               ],
@@ -240,11 +262,13 @@ class McuCountdownConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'poster_url',
               'short' => 'URL to the poster image from TMDB',
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'date',
               'name' => 'release_date',
               'req' => true,
               'short' => 'Release date in YYYY-MM-DD format',
@@ -263,6 +287,10 @@ class McuCountdownConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'dcn',
           'op' => [
             'load' => [
@@ -274,13 +302,18 @@ class McuCountdownConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/dc',
-                  'parts' => [
-                    'dc',
+                  'segments' => [
+                    [
+                      'lit' => 'dc',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.following_production`',
+                  ],
+                  'parts' => [
+                    'dc',
                   ],
                 ],
               ],
@@ -310,11 +343,13 @@ class McuCountdownConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'poster_url',
               'short' => 'URL to the poster image from TMDB',
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'date',
               'name' => 'release_date',
               'req' => true,
               'short' => 'Release date in YYYY-MM-DD format',
@@ -333,6 +368,10 @@ class McuCountdownConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'star_war',
           'op' => [
             'load' => [
@@ -344,13 +383,18 @@ class McuCountdownConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/star-wars',
-                  'parts' => [
-                    'star-wars',
+                  'segments' => [
+                    [
+                      'lit' => 'star-wars',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.following_production`',
+                  ],
+                  'parts' => [
+                    'star-wars',
                   ],
                 ],
               ],

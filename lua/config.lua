@@ -52,11 +52,13 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "poster_url",
             ["short"] = "URL to the poster image from TMDB",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date",
             ["name"] = "release_date",
             ["req"] = true,
             ["short"] = "Release date in YYYY-MM-DD format",
@@ -74,6 +76,10 @@ local function make_config()
             ["short"] = "Type of production",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "api",
         ["op"] = {
@@ -103,8 +109,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api",
-                ["parts"] = {
-                  "api",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -115,6 +123,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.following_production`",
+                },
+                ["parts"] = {
+                  "api",
                 },
               },
             },
@@ -144,11 +155,13 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "poster_url",
             ["short"] = "URL to the poster image from TMDB",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date",
             ["name"] = "release_date",
             ["req"] = true,
             ["short"] = "Release date in YYYY-MM-DD format",
@@ -167,6 +180,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "batman",
         ["op"] = {
           ["load"] = {
@@ -178,13 +195,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/batman",
-                ["parts"] = {
-                  "batman",
+                ["segments"] = {
+                  {
+                    ["lit"] = "batman",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.following_production`",
+                },
+                ["parts"] = {
+                  "batman",
                 },
               },
             },
@@ -214,11 +236,13 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "poster_url",
             ["short"] = "URL to the poster image from TMDB",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date",
             ["name"] = "release_date",
             ["req"] = true,
             ["short"] = "Release date in YYYY-MM-DD format",
@@ -237,6 +261,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "dcn",
         ["op"] = {
           ["load"] = {
@@ -248,13 +276,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/dc",
-                ["parts"] = {
-                  "dc",
+                ["segments"] = {
+                  {
+                    ["lit"] = "dc",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.following_production`",
+                },
+                ["parts"] = {
+                  "dc",
                 },
               },
             },
@@ -284,11 +317,13 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "poster_url",
             ["short"] = "URL to the poster image from TMDB",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date",
             ["name"] = "release_date",
             ["req"] = true,
             ["short"] = "Release date in YYYY-MM-DD format",
@@ -307,6 +342,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "star_war",
         ["op"] = {
           ["load"] = {
@@ -318,13 +357,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/star-wars",
-                ["parts"] = {
-                  "star-wars",
+                ["segments"] = {
+                  {
+                    ["lit"] = "star-wars",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.following_production`",
+                },
+                ["parts"] = {
+                  "star-wars",
                 },
               },
             },

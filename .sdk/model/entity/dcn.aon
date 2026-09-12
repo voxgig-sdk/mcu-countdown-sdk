@@ -24,12 +24,14 @@ main: kit: entity: dcn: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "poster_url"
       req: false
       short: "URL to the poster image from TMDB"
       type: "`$STRING`"
     }
     {
+      format: "date"
       name: "release_date"
       req: true
       short: "Release date in YYYY-MM-DD format"
@@ -62,8 +64,10 @@ main: kit: entity: dcn: {
         {
           method: "GET"
           orig: "/dc"
-          parts: [
-            "dc"
+          segments: [
+            {
+              lit: "dc"
+            }
           ]
           transform: {
             req: "`reqdata`"

@@ -1,0 +1,406 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FEATURE_PLUGINS = exports.config = void 0;
+const TestFeature_1 = require("./feature/test/TestFeature");
+const FEATURE_CLASS = {
+    test: TestFeature_1.TestFeature,
+};
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS = {};
+exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
+class Config {
+    makeFeature(fn) {
+        const fc = FEATURE_CLASS[fn];
+        const fi = new fc();
+        // TODO: errors etc
+        return fi;
+    }
+    // False for a feature added at runtime via options.extend (station's
+    // adopt path) - the constructor uses this to skip makeFeature for names
+    // no generated class backs.
+    hasFeature(fn) {
+        return null != FEATURE_CLASS[fn];
+    }
+    main = {
+        name: 'McuCountdown',
+        slug: "mcu-countdown",
+        version: "0.0.1",
+        target: "ts",
+    };
+    feature = {
+        test: {
+            "options": {
+                "active": false
+            },
+            "transport": "base"
+        },
+    };
+    options = {
+        base: "https://www.whenisthenextmcufilm.com",
+        headers: {
+            "content-type": "application/json"
+        },
+        entity: {
+            api: {},
+            batman: {},
+            dcn: {},
+            star_war: {},
+        }
+    };
+    entity = {
+        "api": {
+            "fields": [
+                {
+                    "name": "days_until",
+                    "req": true,
+                    "short": "Number of days until release",
+                    "type": "`$INTEGER`"
+                },
+                {
+                    "name": "id",
+                    "req": true,
+                    "short": "TMDB ID of the following production",
+                    "type": "`$INTEGER`"
+                },
+                {
+                    "name": "overview",
+                    "short": "Brief overview/synopsis of the production",
+                    "type": "`$STRING`"
+                },
+                {
+                    "format": "uri",
+                    "name": "poster_url",
+                    "short": "URL to the poster image from TMDB",
+                    "type": "`$STRING`"
+                },
+                {
+                    "format": "date",
+                    "name": "release_date",
+                    "req": true,
+                    "short": "Release date in YYYY-MM-DD format",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "title",
+                    "req": true,
+                    "short": "Title of the following production",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "type",
+                    "req": true,
+                    "short": "Type of production",
+                    "type": "`$STRING`"
+                }
+            ],
+            "id": {
+                "field": "id",
+                "name": "id"
+            },
+            "name": "api",
+            "op": {
+                "load": {
+                    "input": "data",
+                    "name": "load",
+                    "points": [
+                        {
+                            "args": {
+                                "query": [
+                                    {
+                                        "example": "2025-01-01",
+                                        "kind": "query",
+                                        "name": "date",
+                                        "orig": "date",
+                                        "type": "`$STRING`"
+                                    },
+                                    {
+                                        "example": "1",
+                                        "kind": "query",
+                                        "name": "list_id",
+                                        "orig": "list_id",
+                                        "type": "`$STRING`"
+                                    }
+                                ]
+                            },
+                            "kind": "http",
+                            "method": "GET",
+                            "orig": "/api",
+                            "segments": [
+                                {
+                                    "lit": "api"
+                                }
+                            ],
+                            "select": {
+                                "exist": [
+                                    "date",
+                                    "list_id"
+                                ]
+                            },
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.following_production`"
+                            },
+                            "parts": [
+                                "api"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "relations": {
+                "ancestors": []
+            }
+        },
+        "batman": {
+            "fields": [
+                {
+                    "name": "days_until",
+                    "req": true,
+                    "short": "Number of days until release",
+                    "type": "`$INTEGER`"
+                },
+                {
+                    "name": "id",
+                    "req": true,
+                    "short": "TMDB ID of the following production",
+                    "type": "`$INTEGER`"
+                },
+                {
+                    "name": "overview",
+                    "short": "Brief overview/synopsis of the production",
+                    "type": "`$STRING`"
+                },
+                {
+                    "format": "uri",
+                    "name": "poster_url",
+                    "short": "URL to the poster image from TMDB",
+                    "type": "`$STRING`"
+                },
+                {
+                    "format": "date",
+                    "name": "release_date",
+                    "req": true,
+                    "short": "Release date in YYYY-MM-DD format",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "title",
+                    "req": true,
+                    "short": "Title of the following production",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "type",
+                    "req": true,
+                    "short": "Type of production",
+                    "type": "`$STRING`"
+                }
+            ],
+            "id": {
+                "field": "id",
+                "name": "id"
+            },
+            "name": "batman",
+            "op": {
+                "load": {
+                    "input": "data",
+                    "name": "load",
+                    "points": [
+                        {
+                            "args": {},
+                            "kind": "http",
+                            "method": "GET",
+                            "orig": "/batman",
+                            "segments": [
+                                {
+                                    "lit": "batman"
+                                }
+                            ],
+                            "select": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.following_production`"
+                            },
+                            "parts": [
+                                "batman"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "relations": {
+                "ancestors": []
+            }
+        },
+        "dcn": {
+            "fields": [
+                {
+                    "name": "days_until",
+                    "req": true,
+                    "short": "Number of days until release",
+                    "type": "`$INTEGER`"
+                },
+                {
+                    "name": "id",
+                    "req": true,
+                    "short": "TMDB ID of the following production",
+                    "type": "`$INTEGER`"
+                },
+                {
+                    "name": "overview",
+                    "short": "Brief overview/synopsis of the production",
+                    "type": "`$STRING`"
+                },
+                {
+                    "format": "uri",
+                    "name": "poster_url",
+                    "short": "URL to the poster image from TMDB",
+                    "type": "`$STRING`"
+                },
+                {
+                    "format": "date",
+                    "name": "release_date",
+                    "req": true,
+                    "short": "Release date in YYYY-MM-DD format",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "title",
+                    "req": true,
+                    "short": "Title of the following production",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "type",
+                    "req": true,
+                    "short": "Type of production",
+                    "type": "`$STRING`"
+                }
+            ],
+            "id": {
+                "field": "id",
+                "name": "id"
+            },
+            "name": "dcn",
+            "op": {
+                "load": {
+                    "input": "data",
+                    "name": "load",
+                    "points": [
+                        {
+                            "args": {},
+                            "kind": "http",
+                            "method": "GET",
+                            "orig": "/dc",
+                            "segments": [
+                                {
+                                    "lit": "dc"
+                                }
+                            ],
+                            "select": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.following_production`"
+                            },
+                            "parts": [
+                                "dc"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "relations": {
+                "ancestors": []
+            }
+        },
+        "star_war": {
+            "fields": [
+                {
+                    "name": "days_until",
+                    "req": true,
+                    "short": "Number of days until release",
+                    "type": "`$INTEGER`"
+                },
+                {
+                    "name": "id",
+                    "req": true,
+                    "short": "TMDB ID of the following production",
+                    "type": "`$INTEGER`"
+                },
+                {
+                    "name": "overview",
+                    "short": "Brief overview/synopsis of the production",
+                    "type": "`$STRING`"
+                },
+                {
+                    "format": "uri",
+                    "name": "poster_url",
+                    "short": "URL to the poster image from TMDB",
+                    "type": "`$STRING`"
+                },
+                {
+                    "format": "date",
+                    "name": "release_date",
+                    "req": true,
+                    "short": "Release date in YYYY-MM-DD format",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "title",
+                    "req": true,
+                    "short": "Title of the following production",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "type",
+                    "req": true,
+                    "short": "Type of production",
+                    "type": "`$STRING`"
+                }
+            ],
+            "id": {
+                "field": "id",
+                "name": "id"
+            },
+            "name": "star_war",
+            "op": {
+                "load": {
+                    "input": "data",
+                    "name": "load",
+                    "points": [
+                        {
+                            "args": {},
+                            "kind": "http",
+                            "method": "GET",
+                            "orig": "/star-wars",
+                            "segments": [
+                                {
+                                    "lit": "star-wars"
+                                }
+                            ],
+                            "select": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.following_production`"
+                            },
+                            "parts": [
+                                "star-wars"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "relations": {
+                "ancestors": []
+            }
+        }
+    };
+}
+const config = new Config();
+exports.config = config;
+//# sourceMappingURL=Config.js.map

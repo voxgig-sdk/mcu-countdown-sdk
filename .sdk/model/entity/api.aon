@@ -24,12 +24,14 @@ main: kit: entity: api: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "poster_url"
       req: false
       short: "URL to the poster image from TMDB"
       type: "`$STRING`"
     }
     {
+      format: "date"
       name: "release_date"
       req: true
       short: "Release date in YYYY-MM-DD format"
@@ -82,8 +84,10 @@ main: kit: entity: api: {
           }
           method: "GET"
           orig: "/api"
-          parts: [
-            "api"
+          segments: [
+            {
+              lit: "api"
+            }
           ]
           select: {
             exist: [

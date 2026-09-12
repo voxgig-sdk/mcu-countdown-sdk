@@ -24,12 +24,14 @@ main: kit: entity: batman: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "poster_url"
       req: false
       short: "URL to the poster image from TMDB"
       type: "`$STRING`"
     }
     {
+      format: "date"
       name: "release_date"
       req: true
       short: "Release date in YYYY-MM-DD format"
@@ -62,8 +64,10 @@ main: kit: entity: batman: {
         {
           method: "GET"
           orig: "/batman"
-          parts: [
-            "batman"
+          segments: [
+            {
+              lit: "batman"
+            }
           ]
           transform: {
             req: "`reqdata`"
