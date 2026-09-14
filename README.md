@@ -105,7 +105,7 @@ local result, err = client:Api():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/releases) |
+| TypeScript | `@voxgig-sdk/mcu-countdown-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/releases) |
 | Python | `voxgig-sdk-mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/releases) |
 | PHP | `voxgig-sdk/mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/mcu-countdown-sdk/go` | `go get github.com/voxgig-sdk/mcu-countdown-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Api():load()
 ### TypeScript
 
 ```ts
-import { McuCountdownSDK } from '@voxgig-sdk/mcu-countdown'
+import { McuCountdownSDK } from '@voxgig-sdk/mcu-countdown-sdk'
 
 const client = new McuCountdownSDK()
 

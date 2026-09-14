@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { McuCountdownSDK } from '@voxgig-sdk/mcu-countdown'
+import { McuCountdownSDK } from '@voxgig-sdk/mcu-countdown-sdk'
 
 const client = new McuCountdownSDK()
 ```
@@ -551,7 +551,7 @@ mcu-countdown/
 Import the SDK from the package root:
 
 ```ts
-import { McuCountdownSDK } from '@voxgig-sdk/mcu-countdown'
+import { McuCountdownSDK } from '@voxgig-sdk/mcu-countdown-sdk'
 ```
 
 ### Entity state
