@@ -1,12 +1,18 @@
 # McuCountdown SDK feature factory
 
 from mcucountdown_sdk.feature.base_feature import McuCountdownBaseFeature
+from mcucountdown_sdk.feature.ratelimit_feature import McuCountdownRatelimitFeature
+from mcucountdown_sdk.feature.retry_feature import McuCountdownRetryFeature
 from mcucountdown_sdk.feature.test_feature import McuCountdownTestFeature
+from mcucountdown_sdk.feature.timeout_feature import McuCountdownTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: McuCountdownBaseFeature(),
+    "ratelimit": lambda: McuCountdownRatelimitFeature(),
+    "retry": lambda: McuCountdownRetryFeature(),
     "test": lambda: McuCountdownTestFeature(),
+    "timeout": lambda: McuCountdownTimeoutFeature(),
 }
 
 

@@ -40,6 +40,8 @@ const node_path_1 = __importDefault(require("node:path"));
 const Fs = __importStar(require("node:fs"));
 const node_test_1 = require("node:test");
 const node_assert_1 = __importDefault(require("node:assert"));
+const live_runner_1 = require("../../live-runner");
+const live_entity_1 = require("../../live-entity");
 const __1 = require("../../..");
 const utility_1 = require("../../utility");
 // AFTER the imports on purpose: TypeScript hoists `import` above any
@@ -59,16 +61,12 @@ const utility_1 = require("../../utility");
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.MCU_COUNTDOWN_TEST_LIVE;
         for (const op of ['load']) {
-            if ((0, utility_1.maybeSkipControl)(t, 'entityOp', 'api.' + op, live))
+            if (!live && (0, utility_1.maybeSkipControl)(t, 'entityOp', 'api.' + op, live))
                 return;
         }
         const setup = basicSetup();
-        // The basic flow consumes synthetic IDs and field values from the
-        // fixture (entity TestData.json). Those don't exist on the live API.
-        // Skip live runs unless the user provided a real ENTID env override.
-        if (setup.syntheticOnly) {
-            t.skip('live entity test uses synthetic IDs from fixture — set MCU_COUNTDOWN_TEST_API_ENTID JSON to run live');
-            return;
+        if (setup.live) {
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": [{ "active": true, "name": "days_until", "req": true, "short": "Number of days until release", "type": "`$INTEGER`", "index$": 0 }, { "active": true, "name": "id", "req": true, "short": "TMDB ID of the following production", "type": "`$INTEGER`", "index$": 1 }, { "active": true, "name": "overview", "req": false, "short": "Brief overview/synopsis of the production", "type": "`$STRING`", "index$": 2 }, { "active": true, "format": "uri", "name": "poster_url", "req": false, "short": "URL to the poster image from TMDB", "type": "`$STRING`", "index$": 3 }, { "active": true, "format": "date", "name": "release_date", "req": true, "short": "Release date in YYYY-MM-DD format", "type": "`$STRING`", "index$": 4 }, { "active": true, "name": "title", "req": true, "short": "Title of the following production", "type": "`$STRING`", "index$": 5 }, { "active": true, "name": "type", "req": true, "short": "Type of production", "type": "`$STRING`", "index$": 6 }], "id": { "field": "id", "name": "id" }, "name": "api", "op": { "load": { "input": "data", "name": "load", "points": [{ "active": true, "args": { "query": [{ "active": true, "example": "2025-01-01", "kind": "query", "name": "date", "orig": "date", "reqd": false, "type": "`$STRING`", "index$": 0 }, { "active": true, "example": "1", "kind": "query", "name": "list_id", "orig": "list_id", "reqd": false, "type": "`$STRING`", "index$": 1 }] }, "contract": { "id": "GET /api", "json": "{\"operationId\":\"getNextProduction\",\"parameters\":[{\"description\":\"TMDB list ID to query. If not provided, defaults to the MCU list. You can view any TMDB list at: https://www.themoviedb.org/list/YOUR_LIST_ID\",\"example\":\"1\",\"in\":\"query\",\"name\":\"list_id\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Get the next production after a specific date in YYYY-MM-DD format\",\"example\":\"2025-01-01\",\"in\":\"query\",\"name\":\"date\",\"required\":false,\"schema\":{\"format\":\"date\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"days_until\":289,\"following_production\":{\"days_until\":379,\"id\":912649,\"overview\":\"Eddie and Venom are on the run...\",\"poster_url\":\"https://image.tmdb.org/t/p/w500/...\",\"release_date\":\"2024-10-22\",\"title\":\"Venom: The Last Dance\",\"type\":\"Movie\"},\"id\":533535,\"overview\":\"A listless Wade Wilson toils away in civilian life...\",\"poster_url\":\"https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg\",\"release_date\":\"2024-07-24\",\"title\":\"Deadpool & Wolverine\",\"type\":\"Movie\"},\"schema\":{\"properties\":{\"days_until\":{\"description\":\"Number of days until release (negative if already released)\",\"example\":289,\"type\":\"integer\"},\"following_production\":{\"description\":\"Information about the production following the next one\",\"properties\":{\"days_until\":{\"description\":\"Number of days until release\",\"example\":379,\"type\":\"integer\"},\"id\":{\"description\":\"TMDB ID of the following production\",\"example\":912649,\"type\":\"integer\"},\"overview\":{\"description\":\"Brief overview/synopsis of the production\",\"example\":\"Eddie and Venom are on the run...\",\"type\":\"string\"},\"poster_url\":{\"description\":\"URL to the poster image from TMDB\",\"example\":\"https://image.tmdb.org/t/p/w500/...\",\"format\":\"uri\",\"type\":\"string\"},\"release_date\":{\"description\":\"Release date in YYYY-MM-DD format\",\"example\":\"2024-10-22\",\"format\":\"date\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the following production\",\"example\":\"Venom: The Last Dance\",\"type\":\"string\"},\"type\":{\"description\":\"Type of production\",\"example\":\"Movie\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"type\",\"release_date\",\"days_until\"],\"type\":\"object\"},\"id\":{\"description\":\"TMDB ID of the production\",\"example\":533535,\"type\":\"integer\"},\"overview\":{\"description\":\"Brief overview/synopsis of the production\",\"example\":\"A listless Wade Wilson toils away in civilian life...\",\"type\":\"string\"},\"poster_url\":{\"description\":\"URL to the poster image from TMDB\",\"example\":\"https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg\",\"format\":\"uri\",\"type\":\"string\"},\"release_date\":{\"description\":\"Release date in YYYY-MM-DD format\",\"example\":\"2024-07-24\",\"format\":\"date\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the production\",\"example\":\"Deadpool & Wolverine\",\"type\":\"string\"},\"type\":{\"description\":\"Type of production\",\"example\":\"Movie\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"type\",\"release_date\",\"days_until\"],\"type\":\"object\"}}},\"description\":\"Successful response with next production details\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Bad request - Invalid parameters\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"No productions found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}", "source": "openapi3", "version": 1 }, "kind": "http", "method": "GET", "orig": "/api", "segments": [{ "lit": "api" }], "select": { "exist": ["date", "list_id"] }, "transform": { "req": "`reqdata`", "res": "`body.following_production`" }, "index$": 0 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "api", "name__orig": "api", "Name": "Api", "name_": "api", "name-": "api", "NAME": "API", "index$": 0 }, { "active": true, "entity": "api", "key$": "BasicApiFlow", "kind": "basic", "name": "BasicApiFlow", "param": {}, "step": [{ "active": true, "data": {}, "input": { "ref": "api_ref01", "srcdatavar": "api_ref01_data", "suffix": "_dt0" }, "match": {}, "op": "load", "spec": [], "valid": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-api_ref01" } }], "index$": 0 }] }, 'Api');
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -103,12 +101,6 @@ function basicSetup(extra) {
                 '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
             }]
     });
-    // Detect whether the user provided a real ENTID JSON via env var. The
-    // basic flow consumes synthetic IDs from the fixture file; without an
-    // override those synthetic IDs reach the live API and 4xx. Surface this
-    // to the test so it can skip rather than fail.
-    const idmapEnvVal = process.env['MCU_COUNTDOWN_TEST_API_ENTID'];
-    const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{');
     const env = (0, utility_1.envOverride)({
         'MCU_COUNTDOWN_TEST_API_ENTID': idmap,
         'MCU_COUNTDOWN_TEST_LIVE': 'FALSE',
@@ -116,7 +108,13 @@ function basicSetup(extra) {
     });
     idmap = env['MCU_COUNTDOWN_TEST_API_ENTID'];
     const live = 'TRUE' === env.MCU_COUNTDOWN_TEST_LIVE;
+    const transport = (0, live_runner_1.createLiveTransport)();
     if (live) {
+        const rawIds = process.env['MCU_COUNTDOWN_TEST_API_ENTID'];
+        idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {};
+        if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+            throw new Error('Live ENTID must be a JSON object');
+        }
         client = new __1.McuCountdownSDK(merge([
             // FIRST, so the generated fields below win: sdk-test-control.json's
             // test.client.options adds to the live client, it does not redirect it.
@@ -127,7 +125,8 @@ function basicSetup(extra) {
             // argument at all - so a bare 'extra' silently discarded the apikey
             // and server values above and handed the SDK undefined. Harmless
             // while there was nothing in that object; not harmless now.
-            extra || {}
+            extra || {},
+            { system: { fetch: transport.fetch } }
         ]));
     }
     const setup = {
@@ -139,7 +138,7 @@ function basicSetup(extra) {
         data: entityData,
         explain: 'TRUE' === env.MCU_COUNTDOWN_TEST_EXPLAIN,
         live,
-        syntheticOnly: live && !idmapOverridden,
+        transport,
         now: Date.now(),
     };
     return setup;
