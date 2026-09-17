@@ -127,18 +127,18 @@ class Config {
 
     entity: {
       
-      api: {
-      },
-
-      batman: {
-      },
-
-      dcn: {
-      },
-
-      star_war: {
-      },
-
+        api: {
+        },
+  
+        batman: {
+        },
+  
+        dcn: {
+        },
+  
+        star_war: {
+        },
+  
     }
   }
 

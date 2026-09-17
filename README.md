@@ -105,12 +105,12 @@ local result, err = client:Api():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/mcu-countdown-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/releases) |
-| Python | `voxgig-sdk-mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/releases) |
-| PHP | `voxgig-sdk/mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/releases) |
+| TypeScript | `@voxgig-sdk/mcu-countdown-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/tags) |
+| Python | `voxgig-sdk-mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/tags) |
+| PHP | `voxgig-sdk/mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/mcu-countdown-sdk/go` | `go get github.com/voxgig-sdk/mcu-countdown-sdk/go@latest` |
-| Ruby | `voxgig-sdk-mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/releases) |
-| Lua | `voxgig-sdk-mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/releases) |
+| Ruby | `voxgig-sdk-mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/tags) |
+| Lua | `voxgig-sdk-mcu-countdown` | publish pending — [install from git tag](https://github.com/voxgig-sdk/mcu-countdown-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/mcu-countdown-sdk/go-cli` | `go install github.com/voxgig-sdk/mcu-countdown-sdk/go-cli/cmd/mcu-countdown@latest` |
 | Go MCP server | `github.com/voxgig-sdk/mcu-countdown-sdk/go-mcp` | `go get github.com/voxgig-sdk/mcu-countdown-sdk/go-mcp@latest` |
 
