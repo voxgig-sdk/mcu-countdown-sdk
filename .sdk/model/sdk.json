@@ -24,65 +24,138 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "api": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "days_until",
-              "req": true,
-              "short": "Number of days until release",
-              "type": "`$INTEGER`"
+          "fields": {
+            "days_until": {
+              "a": true,
+              "h": "Days Until",
+              "n": "days_until",
+              "r": true,
+              "sh": "Number of days until release",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": true,
-              "short": "TMDB ID of the following production",
-              "type": "`$INTEGER`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "TMDB ID of the following production",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "overview",
-              "req": false,
-              "short": "Brief overview/synopsis of the production",
-              "type": "`$STRING`"
+            "overview": {
+              "a": true,
+              "h": "Overview",
+              "n": "overview",
+              "r": false,
+              "sh": "Brief overview/synopsis of the production",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "poster_url",
-              "req": false,
-              "short": "URL to the poster image from TMDB",
-              "type": "`$STRING`"
+            "poster_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Poster Url",
+              "n": "poster_url",
+              "r": false,
+              "sh": "URL to the poster image from TMDB",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "date",
-              "name": "release_date",
-              "req": true,
-              "short": "Release date in YYYY-MM-DD format",
-              "type": "`$STRING`"
+            "release_date": {
+              "a": true,
+              "fo": "date",
+              "h": "Release Date",
+              "n": "release_date",
+              "r": true,
+              "sh": "Release date in YYYY-MM-DD format",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": true,
-              "short": "Title of the following production",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": true,
+              "sh": "Title of the following production",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "type",
-              "req": true,
-              "short": "Type of production",
-              "type": "`$STRING`"
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": true,
+              "sh": "Type of production",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -94,50 +167,50 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": "2025-01-01",
-                        "kind": "query",
-                        "name": "date",
-                        "orig": "date",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "2025-01-01",
+                        "k": "query",
+                        "n": "date",
+                        "or": "date",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "1",
-                        "kind": "query",
-                        "name": "list_id",
-                        "orig": "list_id",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "1",
+                        "k": "query",
+                        "n": "list_id",
+                        "or": "list_id",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /api",
-                    "json": "{\"operationId\":\"getNextProduction\",\"parameters\":[{\"description\":\"TMDB list ID to query. If not provided, defaults to the MCU list. You can view any TMDB list at: https://www.themoviedb.org/list/YOUR_LIST_ID\",\"example\":\"1\",\"in\":\"query\",\"name\":\"list_id\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Get the next production after a specific date in YYYY-MM-DD format\",\"example\":\"2025-01-01\",\"in\":\"query\",\"name\":\"date\",\"required\":false,\"schema\":{\"format\":\"date\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"days_until\":289,\"following_production\":{\"days_until\":379,\"id\":912649,\"overview\":\"Eddie and Venom are on the run...\",\"poster_url\":\"https://image.tmdb.org/t/p/w500/...\",\"release_date\":\"2024-10-22\",\"title\":\"Venom: The Last Dance\",\"type\":\"Movie\"},\"id\":533535,\"overview\":\"A listless Wade Wilson toils away in civilian life...\",\"poster_url\":\"https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg\",\"release_date\":\"2024-07-24\",\"title\":\"Deadpool & Wolverine\",\"type\":\"Movie\"},\"schema\":{\"properties\":{\"days_until\":{\"description\":\"Number of days until release (negative if already released)\",\"example\":289,\"type\":\"integer\"},\"following_production\":{\"description\":\"Information about the production following the next one\",\"properties\":{\"days_until\":{\"description\":\"Number of days until release\",\"example\":379,\"type\":\"integer\"},\"id\":{\"description\":\"TMDB ID of the following production\",\"example\":912649,\"type\":\"integer\"},\"overview\":{\"description\":\"Brief overview/synopsis of the production\",\"example\":\"Eddie and Venom are on the run...\",\"type\":\"string\"},\"poster_url\":{\"description\":\"URL to the poster image from TMDB\",\"example\":\"https://image.tmdb.org/t/p/w500/...\",\"format\":\"uri\",\"type\":\"string\"},\"release_date\":{\"description\":\"Release date in YYYY-MM-DD format\",\"example\":\"2024-10-22\",\"format\":\"date\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the following production\",\"example\":\"Venom: The Last Dance\",\"type\":\"string\"},\"type\":{\"description\":\"Type of production\",\"example\":\"Movie\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"type\",\"release_date\",\"days_until\"],\"type\":\"object\"},\"id\":{\"description\":\"TMDB ID of the production\",\"example\":533535,\"type\":\"integer\"},\"overview\":{\"description\":\"Brief overview/synopsis of the production\",\"example\":\"A listless Wade Wilson toils away in civilian life...\",\"type\":\"string\"},\"poster_url\":{\"description\":\"URL to the poster image from TMDB\",\"example\":\"https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg\",\"format\":\"uri\",\"type\":\"string\"},\"release_date\":{\"description\":\"Release date in YYYY-MM-DD format\",\"example\":\"2024-07-24\",\"format\":\"date\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the production\",\"example\":\"Deadpool & Wolverine\",\"type\":\"string\"},\"type\":{\"description\":\"Type of production\",\"example\":\"Movie\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"type\",\"release_date\",\"days_until\"],\"type\":\"object\"}}},\"description\":\"Successful response with next production details\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Bad request - Invalid parameters\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"No productions found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api",
-                  "segments": [
-                    {
-                      "lit": "api"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api",
+                  "q": {
                     "exist": [
                       "date",
                       "list_id"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "api"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.following_production`"
                   }
@@ -154,59 +227,66 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "days_until",
-              "req": true,
-              "short": "Number of days until release",
-              "type": "`$INTEGER`"
+          "fields": {
+            "days_until": {
+              "a": true,
+              "h": "Days Until",
+              "n": "days_until",
+              "r": true,
+              "sh": "Number of days until release",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": true,
-              "short": "TMDB ID of the following production",
-              "type": "`$INTEGER`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "TMDB ID of the following production",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "overview",
-              "req": false,
-              "short": "Brief overview/synopsis of the production",
-              "type": "`$STRING`"
+            "overview": {
+              "a": true,
+              "h": "Overview",
+              "n": "overview",
+              "r": false,
+              "sh": "Brief overview/synopsis of the production",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "poster_url",
-              "req": false,
-              "short": "URL to the poster image from TMDB",
-              "type": "`$STRING`"
+            "poster_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Poster Url",
+              "n": "poster_url",
+              "r": false,
+              "sh": "URL to the poster image from TMDB",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "date",
-              "name": "release_date",
-              "req": true,
-              "short": "Release date in YYYY-MM-DD format",
-              "type": "`$STRING`"
+            "release_date": {
+              "a": true,
+              "fo": "date",
+              "h": "Release Date",
+              "n": "release_date",
+              "r": true,
+              "sh": "Release date in YYYY-MM-DD format",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": true,
-              "short": "Title of the following production",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": true,
+              "sh": "Title of the following production",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "type",
-              "req": true,
-              "short": "Type of production",
-              "type": "`$STRING`"
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": true,
+              "sh": "Type of production",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -218,24 +298,24 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /batman",
-                    "json": "{\"operationId\":\"getNextBatman\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"days_until\":{\"description\":\"Number of days until release (negative if already released)\",\"example\":289,\"type\":\"integer\"},\"following_production\":{\"description\":\"Information about the production following the next one\",\"properties\":{\"days_until\":{\"description\":\"Number of days until release\",\"example\":379,\"type\":\"integer\"},\"id\":{\"description\":\"TMDB ID of the following production\",\"example\":912649,\"type\":\"integer\"},\"overview\":{\"description\":\"Brief overview/synopsis of the production\",\"example\":\"Eddie and Venom are on the run...\",\"type\":\"string\"},\"poster_url\":{\"description\":\"URL to the poster image from TMDB\",\"example\":\"https://image.tmdb.org/t/p/w500/...\",\"format\":\"uri\",\"type\":\"string\"},\"release_date\":{\"description\":\"Release date in YYYY-MM-DD format\",\"example\":\"2024-10-22\",\"format\":\"date\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the following production\",\"example\":\"Venom: The Last Dance\",\"type\":\"string\"},\"type\":{\"description\":\"Type of production\",\"example\":\"Movie\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"type\",\"release_date\",\"days_until\"],\"type\":\"object\"},\"id\":{\"description\":\"TMDB ID of the production\",\"example\":533535,\"type\":\"integer\"},\"overview\":{\"description\":\"Brief overview/synopsis of the production\",\"example\":\"A listless Wade Wilson toils away in civilian life...\",\"type\":\"string\"},\"poster_url\":{\"description\":\"URL to the poster image from TMDB\",\"example\":\"https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg\",\"format\":\"uri\",\"type\":\"string\"},\"release_date\":{\"description\":\"Release date in YYYY-MM-DD format\",\"example\":\"2024-07-24\",\"format\":\"date\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the production\",\"example\":\"Deadpool & Wolverine\",\"type\":\"string\"},\"type\":{\"description\":\"Type of production\",\"example\":\"Movie\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"type\",\"release_date\",\"days_until\"],\"type\":\"object\"}}},\"description\":\"Successful response with next Batman production details\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"No productions found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/batman",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/batman",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "batman"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.following_production`"
                   }
@@ -252,59 +332,66 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "days_until",
-              "req": true,
-              "short": "Number of days until release",
-              "type": "`$INTEGER`"
+          "fields": {
+            "days_until": {
+              "a": true,
+              "h": "Days Until",
+              "n": "days_until",
+              "r": true,
+              "sh": "Number of days until release",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": true,
-              "short": "TMDB ID of the following production",
-              "type": "`$INTEGER`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "TMDB ID of the following production",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "overview",
-              "req": false,
-              "short": "Brief overview/synopsis of the production",
-              "type": "`$STRING`"
+            "overview": {
+              "a": true,
+              "h": "Overview",
+              "n": "overview",
+              "r": false,
+              "sh": "Brief overview/synopsis of the production",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "poster_url",
-              "req": false,
-              "short": "URL to the poster image from TMDB",
-              "type": "`$STRING`"
+            "poster_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Poster Url",
+              "n": "poster_url",
+              "r": false,
+              "sh": "URL to the poster image from TMDB",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "date",
-              "name": "release_date",
-              "req": true,
-              "short": "Release date in YYYY-MM-DD format",
-              "type": "`$STRING`"
+            "release_date": {
+              "a": true,
+              "fo": "date",
+              "h": "Release Date",
+              "n": "release_date",
+              "r": true,
+              "sh": "Release date in YYYY-MM-DD format",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": true,
-              "short": "Title of the following production",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": true,
+              "sh": "Title of the following production",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "type",
-              "req": true,
-              "short": "Type of production",
-              "type": "`$STRING`"
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": true,
+              "sh": "Type of production",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -316,24 +403,24 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /dc",
-                    "json": "{\"operationId\":\"getNextDC\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"days_until\":{\"description\":\"Number of days until release (negative if already released)\",\"example\":289,\"type\":\"integer\"},\"following_production\":{\"description\":\"Information about the production following the next one\",\"properties\":{\"days_until\":{\"description\":\"Number of days until release\",\"example\":379,\"type\":\"integer\"},\"id\":{\"description\":\"TMDB ID of the following production\",\"example\":912649,\"type\":\"integer\"},\"overview\":{\"description\":\"Brief overview/synopsis of the production\",\"example\":\"Eddie and Venom are on the run...\",\"type\":\"string\"},\"poster_url\":{\"description\":\"URL to the poster image from TMDB\",\"example\":\"https://image.tmdb.org/t/p/w500/...\",\"format\":\"uri\",\"type\":\"string\"},\"release_date\":{\"description\":\"Release date in YYYY-MM-DD format\",\"example\":\"2024-10-22\",\"format\":\"date\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the following production\",\"example\":\"Venom: The Last Dance\",\"type\":\"string\"},\"type\":{\"description\":\"Type of production\",\"example\":\"Movie\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"type\",\"release_date\",\"days_until\"],\"type\":\"object\"},\"id\":{\"description\":\"TMDB ID of the production\",\"example\":533535,\"type\":\"integer\"},\"overview\":{\"description\":\"Brief overview/synopsis of the production\",\"example\":\"A listless Wade Wilson toils away in civilian life...\",\"type\":\"string\"},\"poster_url\":{\"description\":\"URL to the poster image from TMDB\",\"example\":\"https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg\",\"format\":\"uri\",\"type\":\"string\"},\"release_date\":{\"description\":\"Release date in YYYY-MM-DD format\",\"example\":\"2024-07-24\",\"format\":\"date\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the production\",\"example\":\"Deadpool & Wolverine\",\"type\":\"string\"},\"type\":{\"description\":\"Type of production\",\"example\":\"Movie\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"type\",\"release_date\",\"days_until\"],\"type\":\"object\"}}},\"description\":\"Successful response with next DC production details\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"No productions found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/dc",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/dc",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "dc"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.following_production`"
                   }
@@ -350,59 +437,66 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "days_until",
-              "req": true,
-              "short": "Number of days until release",
-              "type": "`$INTEGER`"
+          "fields": {
+            "days_until": {
+              "a": true,
+              "h": "Days Until",
+              "n": "days_until",
+              "r": true,
+              "sh": "Number of days until release",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": true,
-              "short": "TMDB ID of the following production",
-              "type": "`$INTEGER`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "TMDB ID of the following production",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "overview",
-              "req": false,
-              "short": "Brief overview/synopsis of the production",
-              "type": "`$STRING`"
+            "overview": {
+              "a": true,
+              "h": "Overview",
+              "n": "overview",
+              "r": false,
+              "sh": "Brief overview/synopsis of the production",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "poster_url",
-              "req": false,
-              "short": "URL to the poster image from TMDB",
-              "type": "`$STRING`"
+            "poster_url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Poster Url",
+              "n": "poster_url",
+              "r": false,
+              "sh": "URL to the poster image from TMDB",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "date",
-              "name": "release_date",
-              "req": true,
-              "short": "Release date in YYYY-MM-DD format",
-              "type": "`$STRING`"
+            "release_date": {
+              "a": true,
+              "fo": "date",
+              "h": "Release Date",
+              "n": "release_date",
+              "r": true,
+              "sh": "Release date in YYYY-MM-DD format",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": true,
-              "short": "Title of the following production",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": true,
+              "sh": "Title of the following production",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "type",
-              "req": true,
-              "short": "Type of production",
-              "type": "`$STRING`"
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": true,
+              "sh": "Type of production",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -414,24 +508,24 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /star-wars",
-                    "json": "{\"operationId\":\"getNextStarWars\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"days_until\":{\"description\":\"Number of days until release (negative if already released)\",\"example\":289,\"type\":\"integer\"},\"following_production\":{\"description\":\"Information about the production following the next one\",\"properties\":{\"days_until\":{\"description\":\"Number of days until release\",\"example\":379,\"type\":\"integer\"},\"id\":{\"description\":\"TMDB ID of the following production\",\"example\":912649,\"type\":\"integer\"},\"overview\":{\"description\":\"Brief overview/synopsis of the production\",\"example\":\"Eddie and Venom are on the run...\",\"type\":\"string\"},\"poster_url\":{\"description\":\"URL to the poster image from TMDB\",\"example\":\"https://image.tmdb.org/t/p/w500/...\",\"format\":\"uri\",\"type\":\"string\"},\"release_date\":{\"description\":\"Release date in YYYY-MM-DD format\",\"example\":\"2024-10-22\",\"format\":\"date\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the following production\",\"example\":\"Venom: The Last Dance\",\"type\":\"string\"},\"type\":{\"description\":\"Type of production\",\"example\":\"Movie\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"type\",\"release_date\",\"days_until\"],\"type\":\"object\"},\"id\":{\"description\":\"TMDB ID of the production\",\"example\":533535,\"type\":\"integer\"},\"overview\":{\"description\":\"Brief overview/synopsis of the production\",\"example\":\"A listless Wade Wilson toils away in civilian life...\",\"type\":\"string\"},\"poster_url\":{\"description\":\"URL to the poster image from TMDB\",\"example\":\"https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg\",\"format\":\"uri\",\"type\":\"string\"},\"release_date\":{\"description\":\"Release date in YYYY-MM-DD format\",\"example\":\"2024-07-24\",\"format\":\"date\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the production\",\"example\":\"Deadpool & Wolverine\",\"type\":\"string\"},\"type\":{\"description\":\"Type of production\",\"example\":\"Movie\",\"type\":\"string\"}},\"required\":[\"id\",\"title\",\"type\",\"release_date\",\"days_until\"],\"type\":\"object\"}}},\"description\":\"Successful response with next Star Wars production details\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"No productions found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"message\":{\"description\":\"Additional details about the error\",\"type\":\"string\"}},\"required\":[\"error\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/star-wars",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/star-wars",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "star-wars"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.following_production`"
                   }
@@ -860,17 +954,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "api_ref01",
                 "srcdatavar": "api_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -890,17 +984,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "batman_ref01",
                 "srcdatavar": "batman_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -920,17 +1014,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "dcn_ref01",
                 "srcdatavar": "dcn_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -950,17 +1044,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "star_war_ref01",
                 "srcdatavar": "star_war_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {

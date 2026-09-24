@@ -1,0 +1,95 @@
+# Entity: dcn
+
+main: kit: entity: dcn: {
+
+  alias: field: {}
+
+  fields: {
+    days_until: {
+      h: "Days Until"
+      n: "days_until"
+      r: true
+      sh: "Number of days until release"
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "TMDB ID of the following production"
+      t: "`$INTEGER`"
+    }
+    overview: {
+      h: "Overview"
+      n: "overview"
+      r: false
+      sh: "Brief overview/synopsis of the production"
+      t: "`$STRING`"
+    }
+    poster_url: {
+      fo: "uri"
+      h: "Poster Url"
+      n: "poster_url"
+      r: false
+      sh: "URL to the poster image from TMDB"
+      t: "`$STRING`"
+    }
+    release_date: {
+      fo: "date"
+      h: "Release Date"
+      n: "release_date"
+      r: true
+      sh: "Release date in YYYY-MM-DD format"
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: true
+      sh: "Title of the following production"
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "Type of production"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "dcn"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /dc"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/dc"
+          s: [
+            {
+              lit: "dc"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.following_production`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

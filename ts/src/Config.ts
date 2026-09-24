@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -148,45 +141,52 @@ class Config {
       "fields": [
         {
           "name": "days_until",
+          "title": "Days Until",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "Number of days until release",
-          "type": "`$INTEGER`"
+          "short": "Number of days until release"
         },
         {
           "name": "id",
+          "title": "Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "TMDB ID of the following production",
-          "type": "`$INTEGER`"
+          "short": "TMDB ID of the following production"
         },
         {
           "name": "overview",
-          "short": "Brief overview/synopsis of the production",
-          "type": "`$STRING`"
+          "title": "Overview",
+          "type": "`$STRING`",
+          "short": "Brief overview/synopsis of the production"
         },
         {
-          "format": "uri",
           "name": "poster_url",
+          "title": "Poster Url",
+          "type": "`$STRING`",
           "short": "URL to the poster image from TMDB",
-          "type": "`$STRING`"
+          "format": "uri"
         },
         {
-          "format": "date",
           "name": "release_date",
+          "title": "Release Date",
+          "type": "`$STRING`",
           "req": true,
           "short": "Release date in YYYY-MM-DD format",
-          "type": "`$STRING`"
+          "format": "date"
         },
         {
           "name": "title",
+          "title": "Title",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Title of the following production",
-          "type": "`$STRING`"
+          "short": "Title of the following production"
         },
         {
           "name": "type",
+          "title": "Type",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Type of production",
-          "type": "`$STRING`"
+          "short": "Type of production"
         }
       ],
       "id": {
@@ -200,24 +200,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": "2025-01-01",
-                    "kind": "query",
-                    "name": "date",
-                    "orig": "date",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "1",
-                    "kind": "query",
-                    "name": "list_id",
-                    "orig": "list_id",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/api",
@@ -226,19 +208,38 @@ class Config {
                   "lit": "api"
                 }
               ],
+              "parts": [
+                "api"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body.following_production`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "date",
+                    "orig": "date",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "2025-01-01"
+                  },
+                  {
+                    "name": "list_id",
+                    "orig": "list_id",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "1"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "date",
                   "list_id"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body.following_production`"
-              },
-              "parts": [
-                "api"
-              ]
+              }
             }
           ]
         }
@@ -251,45 +252,52 @@ class Config {
       "fields": [
         {
           "name": "days_until",
+          "title": "Days Until",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "Number of days until release",
-          "type": "`$INTEGER`"
+          "short": "Number of days until release"
         },
         {
           "name": "id",
+          "title": "Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "TMDB ID of the following production",
-          "type": "`$INTEGER`"
+          "short": "TMDB ID of the following production"
         },
         {
           "name": "overview",
-          "short": "Brief overview/synopsis of the production",
-          "type": "`$STRING`"
+          "title": "Overview",
+          "type": "`$STRING`",
+          "short": "Brief overview/synopsis of the production"
         },
         {
-          "format": "uri",
           "name": "poster_url",
+          "title": "Poster Url",
+          "type": "`$STRING`",
           "short": "URL to the poster image from TMDB",
-          "type": "`$STRING`"
+          "format": "uri"
         },
         {
-          "format": "date",
           "name": "release_date",
+          "title": "Release Date",
+          "type": "`$STRING`",
           "req": true,
           "short": "Release date in YYYY-MM-DD format",
-          "type": "`$STRING`"
+          "format": "date"
         },
         {
           "name": "title",
+          "title": "Title",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Title of the following production",
-          "type": "`$STRING`"
+          "short": "Title of the following production"
         },
         {
           "name": "type",
+          "title": "Type",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Type of production",
-          "type": "`$STRING`"
+          "short": "Type of production"
         }
       ],
       "id": {
@@ -303,7 +311,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/batman",
@@ -312,14 +319,16 @@ class Config {
                   "lit": "batman"
                 }
               ],
-              "select": {},
+              "parts": [
+                "batman"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.following_production`"
               },
-              "parts": [
-                "batman"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -332,45 +341,52 @@ class Config {
       "fields": [
         {
           "name": "days_until",
+          "title": "Days Until",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "Number of days until release",
-          "type": "`$INTEGER`"
+          "short": "Number of days until release"
         },
         {
           "name": "id",
+          "title": "Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "TMDB ID of the following production",
-          "type": "`$INTEGER`"
+          "short": "TMDB ID of the following production"
         },
         {
           "name": "overview",
-          "short": "Brief overview/synopsis of the production",
-          "type": "`$STRING`"
+          "title": "Overview",
+          "type": "`$STRING`",
+          "short": "Brief overview/synopsis of the production"
         },
         {
-          "format": "uri",
           "name": "poster_url",
+          "title": "Poster Url",
+          "type": "`$STRING`",
           "short": "URL to the poster image from TMDB",
-          "type": "`$STRING`"
+          "format": "uri"
         },
         {
-          "format": "date",
           "name": "release_date",
+          "title": "Release Date",
+          "type": "`$STRING`",
           "req": true,
           "short": "Release date in YYYY-MM-DD format",
-          "type": "`$STRING`"
+          "format": "date"
         },
         {
           "name": "title",
+          "title": "Title",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Title of the following production",
-          "type": "`$STRING`"
+          "short": "Title of the following production"
         },
         {
           "name": "type",
+          "title": "Type",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Type of production",
-          "type": "`$STRING`"
+          "short": "Type of production"
         }
       ],
       "id": {
@@ -384,7 +400,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/dc",
@@ -393,14 +408,16 @@ class Config {
                   "lit": "dc"
                 }
               ],
-              "select": {},
+              "parts": [
+                "dc"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.following_production`"
               },
-              "parts": [
-                "dc"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -413,45 +430,52 @@ class Config {
       "fields": [
         {
           "name": "days_until",
+          "title": "Days Until",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "Number of days until release",
-          "type": "`$INTEGER`"
+          "short": "Number of days until release"
         },
         {
           "name": "id",
+          "title": "Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "TMDB ID of the following production",
-          "type": "`$INTEGER`"
+          "short": "TMDB ID of the following production"
         },
         {
           "name": "overview",
-          "short": "Brief overview/synopsis of the production",
-          "type": "`$STRING`"
+          "title": "Overview",
+          "type": "`$STRING`",
+          "short": "Brief overview/synopsis of the production"
         },
         {
-          "format": "uri",
           "name": "poster_url",
+          "title": "Poster Url",
+          "type": "`$STRING`",
           "short": "URL to the poster image from TMDB",
-          "type": "`$STRING`"
+          "format": "uri"
         },
         {
-          "format": "date",
           "name": "release_date",
+          "title": "Release Date",
+          "type": "`$STRING`",
           "req": true,
           "short": "Release date in YYYY-MM-DD format",
-          "type": "`$STRING`"
+          "format": "date"
         },
         {
           "name": "title",
+          "title": "Title",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Title of the following production",
-          "type": "`$STRING`"
+          "short": "Title of the following production"
         },
         {
           "name": "type",
+          "title": "Type",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Type of production",
-          "type": "`$STRING`"
+          "short": "Type of production"
         }
       ],
       "id": {
@@ -465,7 +489,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/star-wars",
@@ -474,14 +497,16 @@ class Config {
                   "lit": "star-wars"
                 }
               ],
-              "select": {},
+              "parts": [
+                "star-wars"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.following_production`"
               },
-              "parts": [
-                "star-wars"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
